@@ -20,13 +20,13 @@
         }
 
         .messages-container {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 1000;
-      max-width: 300px;
-      overflow: hidden;
-    }
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            max-width: 300px;
+            overflow: hidden;
+        }
     </style>
 </head>
 
@@ -35,13 +35,13 @@
     <div class="messages-container">
         {% for message in messages %}
         <div class="alert alert-{{ message.tags }} alert-dismissible fade show light-alert" role="alert">
-          <strong>Message:</strong> {{ message }}
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+            <strong>Message:</strong> {{ message }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
         </div>
         {% endfor %}
-      </div>
+    </div>
 
     <section class="vh-100 gradient-custom">
         <div class="container py-3 h-100">
@@ -52,10 +52,10 @@
                         <div class="card-body p-5 text-center">
                             <a href="{% url 'home' %}" style="text-decoration: none; color: inherit;">
                                 <h5 class="text mb-4" style="font-weight: bold; font-family: 'Open Sans', sans-serif;">
-                                  <img src="..\static\img\logo.jpg" alt="Logo"
-                                    style="max-width: 40px; height: auto; border-radius: 50%" /> NextGen Retail
+                                    <img src="..\static\img\logo.jpg" alt="Logo"
+                                        style="max-width: 40px; height: auto; border-radius: 50%" /> NextGen Retail
                                 </h5>
-                              </a>
+                            </a>
 
                             <div class="mb-md-2 mt-md-4 pb-5">
                                 <h2 class="fw-bold mb-3">Profile Update</h2>
@@ -65,7 +65,7 @@
                                         <input type="text" name="username" id="username" class="form-control"
                                             placeholder="Username" value={{user.username}}>
                                     </div>
-                                    
+
                                     <div class="red-border form-white mb-4">
                                         <input type="email" name="email" id="email" class="form-control"
                                             placeholder="E-mail" value={{user.email}} readonly>
@@ -95,6 +95,15 @@
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+        // Function to close the alert message when the close button is clicked
+        document.querySelectorAll('.close').forEach(function (closeBtn) {
+            closeBtn.addEventListener('click', function () {
+                // Find the parent element (alert message) and remove it
+                this.parentNode.remove();
+            });
+        });
+    </script>
 </body>
 
 </html>
