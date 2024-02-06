@@ -15,7 +15,7 @@
     }
 
     .light-alert {
-      background-color: #33ffa0;
+      background-color: #87b1ff;
       color: black;
     }
 
@@ -115,6 +115,15 @@
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script>
+    // Function to close the alert message when the close button is clicked
+    document.querySelectorAll('.close').forEach(function (closeBtn) {
+      closeBtn.addEventListener('click', function () {
+        // Find the parent element (alert message) and remove it
+        this.parentNode.remove();
+      });
+    });
+  </script>
 </body>
 
 </html>
