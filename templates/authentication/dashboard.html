@@ -129,7 +129,7 @@
       align-items: center;
     }
 
-    #contentToClear h5 {
+    #contentToClear h4 {
       width: 100%;
       text-align: center;
       margin-bottom: 10px;
@@ -151,33 +151,113 @@
       margin-bottom: 20px;
     } */
     #contentToClear {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      margin-top: 30px;
+    }
 
-.item {
-  text-align: center;
-  margin-bottom: 20px; /* Add some space between items */
-}
+    .item {
+      text-align: center;
+      margin: 0 20px 20px 20px;
+      /* Add space around items */
+      width: calc(50% - 40px);
+      /* Add some space between items */
+    }
 
-.item h5 {
-  margin-bottom: 10px; /* Add some space between h5 and image */
-}
+    .item h4 {
+      margin-bottom: 10px;
+      text-align: center;
+      justify-content: center;
+      /* Add some space between h4 and image */
+    }
 
-.item img {
-  width: 300px; /* Adjust the width as needed */
-  height: auto;
-  margin: 0 auto; /* Center the image horizontally */
-  display: block; /* Ensure the image is treated as a block element */
-}
+    .item img {
+      width: 570px;
+      /* height: auto; */
+      height: 550px;
+      /* margin: 0 auto; 
+  display: block;  */
+    }
 
-.row-1{
-  display: flex;
-  flex-direction: column;
-}
+    .row-1,
+    .row-2 {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .row-3,
+    #clearAllBtn {
+      display: flex;
+      justify-content: center;
+      /* Horizontally center the content */
+      align-items: center;
+      /* Vertically center the content */
+      width: 100%;
+    }
+
+    #clearAllBtn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100px;
+      margin-left: 575px;
+      margin-top: 15px;
+    }
+
+    /* Style for the form container */
+    .form-container {
+      max-width: 600px;
+      /* Adjust the maximum width as needed */
+      margin: 0 auto;
+      /* Center the form horizontally */
+      padding: 20px;
+      background-color: #f8f9fa;
+      /* Light background color */
+      border-radius: 10px;
+      /* Rounded corners */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      /* Box shadow for a subtle effect */
+    }
+
+    /* Style for the form fields */
+    .form-control {
+      color: black;
+      width: 500px;
+      padding: 10px;
+      margin-bottom: 15px;
+      /* border: 1px solid #a3a6a8; */
+      /* Border color */
+      border-radius: 5px;
+      /* Rounded corners */
+      box-sizing: border-box;
+      margin-left: 30px;
+    }
+
+    /* Style for the submit button */
+    .btn-primary {
+      display: block;
+      width: 100px;
+      padding: 10px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      margin-left: 193px;
+      margin-top: 20px;
+    }
+
+    .btn-primary:hover {
+      background-color: #0056b3;
+      /* Darker background color on hover */
+    }
+
 
     @media (max-width: 640px) {
       #contentToClear img {
@@ -247,99 +327,66 @@
 
   <div class="viz-class" style="padding: 120px;">
     <div class="form-container" style="text-align: center;">
-      <h2>Upload a CSV file for prediction and analysis</h2>
-      <form method="post" enctype="multipart/form-data">
-        {% csrf_token %} {{ form }}
-        <button class="btn btn-outline-dark" type="submit" style="margin-top: 10px">Upload</button>
-      </form>
+      <h2 style="color: black;">Upload a CSV file for prediction and analysis</h2>
+      <div class="form-control">
+        <form method="post" enctype="multipart/form-data">
+          {% csrf_token %} {{ form }}
+          <button class="btn btn-primary" type="submit">Upload</button>
+        </form>
+      </div>
     </div>
 
-    <!-- <div id="contentToClear">
+    <div id="contentToClear"> 
       <div class="row-1">
-        
         {% if pie_chart %}
-        
-        <img src="data:image/png;base64,{{ pie_chart }}" alt="Category Distribution Pie Chart" />
+        <div class="item">
+          <h4>Category Distribution</h4>
+          <img src="data:image/png;base64,{{ pie_chart }}" alt="Category Distribution Pie Chart" />
+        </div>
         {% endif %}
 
         {% if bar_graph %}
-        <h5>Top 10 Products by Quantity Sold</h5>
-        <br>
-        <img src="data:image/png;base64,{{ bar_graph }}" alt="Top 10 Products Bar Graph" />
+        <div class="item">
+          <h4>Top 10 Products by Quantity Sold</h4>
+          <img src="data:image/png;base64,{{ bar_graph }}" alt="Top 10 Products Bar Graph" />
+        </div>
         {% endif %}
       </div>
 
       <div class="row-2">
         {% if line_graph %}
-        <h5>Total Amount Over Time</h5>
-        <br>
-        <img src="data:image/png;base64,{{ line_graph }}" alt="Total Amount Over Time Line Graph" />
+        <div class="item">
+          <h4>Total Amount Over Time</h4>
+          <img src="data:image/png;base64,{{ line_graph }}" alt="Total Amount Over Time Line Graph" />
+        </div>
         {% endif %}
         {% if predicted_amount_plot %}
-        <h5>Predicted TotalAmount Visualization</h5>
-        <br>
-        <img src="data:image/png;base64,{{ predicted_amount_plot }}" alt="Predicted TotalAmount Plot" />
+        <div class="item">
+          <h4>Predicted TotalAmount Visualization</h4>
+          <img src="data:image/png;base64,{{ predicted_amount_plot }}" alt="Predicted TotalAmount Plot" />
+        </div>
         {% endif %}
       </div>
 
       <div class="row-3">
         {% if revenue_prediction_graph %}
-        <h5>Predicted Revenue for Next 6 Months</h5>
-        <br>
-        <img src="data:image/png;base64,{{ revenue_prediction_graph }}" alt="Predicted Revenue Line Graph" />
+        <div class="item">
+          <h4>Predicted Revenue for Next 6 Months</h4>
+          <img src="data:image/png;base64,{{ revenue_prediction_graph }}" alt="Predicted Revenue Line Graph" />
+        </div>
         {% endif %}
-      </div> -->
-      <div id="contentToClear">
-        <div class="row-1">
-          {% if pie_chart %}
-          <div class="item">
-            <h5>Category Distribution</h5>
-            <img src="data:image/png;base64,{{ pie_chart }}" alt="Category Distribution Pie Chart" />
-          </div>
-          {% endif %}
-      
-          {% if bar_graph %}
-          <div class="item">
-            <h5>Top 10 Products by Quantity Sold</h5>
-            <img src="data:image/png;base64,{{ bar_graph }}" alt="Top 10 Products Bar Graph" />
-          </div>
-          {% endif %}
-        </div>
-      
-        <div class="row-2">
-          {% if line_graph %}
-          <div class="item">
-            <h5>Total Amount Over Time</h5>
-            <img src="data:image/png;base64,{{ line_graph }}" alt="Total Amount Over Time Line Graph" />
-          </div>
-          {% endif %}
-          {% if predicted_amount_plot %}
-          <div class="item">
-            <h5>Predicted TotalAmount Visualization</h5>
-            <img src="data:image/png;base64,{{ predicted_amount_plot }}" alt="Predicted TotalAmount Plot" />
-          </div>
-          {% endif %}
-        </div>
-      
-        <div class="row-3">
-          {% if revenue_prediction_graph %}
-          <div class="item">
-            <h5>Predicted Revenue for Next 6 Months</h5>
-            <img src="data:image/png;base64,{{ revenue_prediction_graph }}" alt="Predicted Revenue Line Graph" />
-          </div>
-          {% endif %}
-        </div>
       </div>
-      
-
-      {% if images_present %}
-      <div class="d-flex align-items-center">
-        <button class="btn btn-primary me-3" id="clearAllBtn">
-          Clear All
-        </button>
-      </div>
-      {% endif %}
     </div>
+
+
+    {% if images_present %}
+    <!-- <div class="d-flex align-items-center"> -->
+    <button class="btn btn-danger me-3 btn-clear" id="clearAllBtn">
+      Clear All
+    </button>
+    <!-- </div> -->
+    {% endif %}
+  </div>
   </div>
 
   <script>
