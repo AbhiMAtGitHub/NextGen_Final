@@ -1,430 +1,369 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-      crossorigin="anonymous"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <style>
-    body {
-      margin: 0;
-      font-family: "Open Sans", sans-serif;
-      background-image: url("../static/img/bg.png");
-      background-attachment: fixed;
-      background-size: cover;
-    }
 
-    .navbar {
-      background-color: rgb(148, 172, 250);
-      position: fixed;
-      width: 100%;
-      z-index: 10;
-      top: 0;
-      padding: 17px;
-    }
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
+</head>
+<style>
+  body {
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
+    background-image: url("../static/img/bg.png");
+    background-attachment: fixed;
+    background-size: cover;
+  }
 
-    @media screen and (max-width: 600px) {
-      .navbar a {
-        float: none;
-        display: block;
-        text-align: left;
-      }
-    }
+  .navbar {
+    background-color: rgb(148, 172, 250);
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    top: 0;
+    padding: 17px;
+  }
 
-    .box-container {
-      display: flex;
-      flex-wrap: wrap;
-      margin-top: 60px;
-      height: 100vh;
-    }
-
-    .box {
-      box-sizing: border-box;
-      width: 50%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-      color: white;
-    }
-
-    .box img {
-      max-width: 90%;
-      max-height: 90%;
+  @media screen and (max-width: 600px) {
+    .navbar a {
+      float: none;
       display: block;
-      margin-top: 20px;
+      text-align: left;
     }
+  }
 
-    .buttons-container {
-      display: flex;
-      gap: 10px;
-      margin-top: 20px;
+  .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 60px;
+    height: 100vh;
+  }
+
+  .box {
+    box-sizing: border-box;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: white;
+  }
+
+  .box img {
+    max-width: 90%;
+    max-height: 90%;
+    display: block;
+    margin-top: 20px;
+  }
+
+  .buttons-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .box-container ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .box-container li::before {
+    content: "\2713";
+    color: white;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+  }
+
+  .button {
+    padding: 20px 73px;
+    background-color: transparent;
+    color: #fff;
+    text-decoration: none;
+    border: 3px solid #fff;
+    cursor: pointer;
+    border-radius: 27px;
+    font-size: large;
+    transition: border-color 0.3s, color 0.3s;
+  }
+
+  .card-container {
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+
+  .card {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  .tag-line {
+    font-size: 50px;
+  }
+
+  @media screen and (max-width: 1000px) {
+    .box {
+      width: 100%;
+      background-image: url("../static/img/bgonmed.png");
     }
+  }
 
-    .box-container ul {
-      list-style-type: none;
-      padding: 0;
+  @media screen and (max-width: 950px) {
+    .box {
+      width: 100%;
+      background-image: url("../static/img/bgonmed.png");
+      padding: 0%;
     }
-
-    .box-container li::before {
-      content: "\2713";
-      color: white;
-      display: inline-block;
-      width: 1em;
-      margin-left: -1em;
-    }
-
-    .button {
-      padding: 20px 73px;
-      background-color: transparent;
-      color: #fff;
-      text-decoration: none;
-      border: 3px solid #fff;
-      cursor: pointer;
-      border-radius: 27px;
-      font-size: large;
-      transition: border-color 0.3s, color 0.3s;
-    }
-
-    .card-container {
-      margin-left: 12px;
-      margin-right: 12px;
-    }
-
-    .card {
-      border-bottom-left-radius: 10px;
-      border-bottom-right-radius: 10px;
-      margin-left: 5%;
-      margin-right: 5%;
-    }
-
-    .tag-line {
-      font-size: 50px;
-    }
-
-    @media screen and (max-width: 1000px) {
-      .box {
-        width: 100%;
-        background-image: url("../static/img/bgonmed.png");
+      .box-container .box:nth-child(2) img {
+        display: none !important;
       }
-    }
 
-    .light-alert {
-      background-color: #739eee;
-      color: black;
-      z-index: 100;
     }
+  
 
-    .bg-primary-dark {
-      background-color: #3d5eb9;
-    }
-    .messages-container {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 1000;
-      max-width: 300px;
-      overflow: hidden;
-    }
-  </style>
+  .light-alert {
+    background-color: #739eee;
+    color: black;
+    z-index: 100;
+  }
 
-  <body>
-    <div class="messages-container">
-      {% for message in messages %}
-      <div class="alert alert-{{ message.tags }} alert-dismissible fade show light-alert" role="alert">
-        <strong>Message:</strong> {{ message }}
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      {% endfor %}
+  .bg-primary-dark {
+    background-color: #3d5eb9;
+  }
+
+  .messages-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    max-width: 300px;
+    overflow: hidden;
+  }
+</style>
+
+<body>
+  <div class="messages-container">
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show light-alert" role="alert">
+      <strong>Message:</strong> {{ message }}
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
     </div>
+    {% endfor %}
+  </div>
 
-    <nav class="navbar navbar-expand-lg bg-dark">
-      <div class="container-fluid">
-        <a class="navbar-brand text-white fw-bold fs-3" href="{% url 'home' %}">
-          <img
-            src="../static/img/logo.jpg"
-            alt="Logo"
-            class="img-fluid mr-2"
-            style="max-width: 40px; height: auto; border-radius: 50%"
-          />
-          NextGen Retail</a
-        >
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div
-          class="collapse navbar-collapse justify-content-end"
-          id="navbarSupportedContent"
-          style="margin-left: -15px"
-        >
-          <ul class="navbar-nav mb-2 mb-lg-0 custom-navbar">
-            <li class="nav-item ms-5">
-              <a class="btn btn-outline-primary fs-5" href="{% url 'home' %}"
-                >Home</a
-              >
-            </li>
-            <li class="nav-item ms-5">
-              <a class="btn btn-outline-primary fs-5" href="#about-section"
-                >About</a
-              >
-            </li>
-            <li class="nav-item ms-5">
-              <a class="btn btn-outline-primary fs-5" href="{% url 'signin' %}"
-                >Login</a
-              >
-            </li>
-            <li class="nav-item ms-5">
-              <a class="btn btn-outline-primary fs-5" href="{% url 'signup' %}"
-                >Signup</a
-              >
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-    <div class="box-container">
-      <div class="box">
-        <h3 class="tag-line">
-          <b>Discover the future of retail with NextGen Retail Website</b>
-        </h3>
-        <h5 style="margin-right: 40%; margin-top: 10%">
-          See what turns your visitors into customers.
-        </h5>
-        <ul>
-          <li>Robust security measures for customer data.</li>
-          <li>Intuitive and easy-to-use dashboard for real-time insights.</li>
-          <li>
-            Accurate revenue predictions and comprehensive data analytics.
+  <nav class="navbar navbar-expand-lg bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand text-white fw-bold fs-3" href="{% url 'home' %}">
+        <img src="../static/img/logo.jpg" alt="Logo" class="img-fluid mr-2"
+          style="max-width: 40px; height: auto; border-radius: 50%" />
+        NextGen Retail</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent" style="margin-left: -15px">
+        <ul class="navbar-nav mb-2 mb-lg-0 custom-navbar">
+          <li class="nav-item ms-5">
+            <a class="btn btn-outline-primary fs-5" href="{% url 'home' %}">Home</a>
+          </li>
+          <li class="nav-item ms-5">
+            <a class="btn btn-outline-primary fs-5" href="#about-section">About</a>
+          </li>
+          <li class="nav-item ms-5">
+            <a class="btn btn-outline-primary fs-5" href="{% url 'signin' %}">Login</a>
+          </li>
+          <li class="nav-item ms-5">
+            <a class="btn btn-outline-primary fs-5" href="{% url 'signup' %}">Signup</a>
           </li>
         </ul>
       </div>
-      <div class="box">
-        <img src="../static/img/box2_image.png" alt="Box 2 Image" />
-      </div>
     </div>
+  </nav>
 
-    <h5
-      style="
+  <div class="box-container">
+    <div class="box">
+      <h3 class="tag-line">
+        <b>Discover the future of retail with NextGen Retail Website</b>
+      </h3>
+      <h5 style="margin-right: 40%; margin-top: 10%">
+        See what turns your visitors into customers.
+      </h5>
+      <ul>
+        <li>Robust security measures for customer data.</li>
+        <li>Intuitive and easy-to-use dashboard for real-time insights.</li>
+        <li>
+          Accurate revenue predictions and comprehensive data analytics.
+        </li>
+      </ul>
+    </div>
+    <div class="box">
+      <img src="../static/img/box2_image.png" alt="Box 2 Image" />
+    </div>
+  </div>
+
+  <h5 style="
         color: white;
         font-size: 30px;
         text-align: center;
         margin-bottom: 5%;
-      "
-    >
-      <b>Which Factors makes you to use our website</b>
-    </h5>
-    <div class="card-container mt-4 mb-4 d-flex">
-      <div class="row">
-        <div class="col-4 mb-4">
-          <div class="card w-80 h-100">
-            <img
-              src="../../static/img/image_data.jpg"
-              class="card-img-top"
-              style="height: 200px"
-              alt="..."
-            />
-            <div class="card-body">
-              <h5
-                class="card-title"
-                style="text-align: center; font-weight: bold"
-              >
-                Growing Data
-              </h5>
-              <p class="card-text">
-                Refers to the exponential increase in the volume, variety, and
-                velocity of data available, especially in the retail sector.
-                Businesses are inundated with vast amounts of information from
-                various sources like sales transactions, customer interactions,
-                market trends, etc.
-              </p>
-            </div>
+      ">
+    <b>Which Factors makes you to use our website</b>
+  </h5>
+  <div class="card-container mt-4 mb-4 d-flex">
+    <div class="row">
+      <div class="col-lg-4 col-sm-12 mb-4">
+        <div class="card w-80 h-100">
+          <img src="../../static/img/image_data.jpg" class="card-img-top" style="height: 200px" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title" style="text-align: center; font-weight: bold">
+              Growing Data
+            </h5>
+            <p class="card-text">
+              Refers to the exponential increase in the volume, variety, and
+              velocity of data available, especially in the retail sector.
+              Businesses are inundated with vast amounts of information from
+              various sources like sales transactions, customer interactions,
+              market trends, etc.
+            </p>
           </div>
         </div>
-        <div class="col-4 mb-4">
-          <div class="card w-80 h-100">
-            <img
-              src="../../static/img/image-growingneeds.jpg"
-              class="card-img-top"
-              style="height: 200px"
-              alt="..."
-            />
-            <div class="card-body">
-              <h5
-                class="card-title"
-                style="text-align: center; font-weight: bold"
-              >
-                Growing Needs
-              </h5>
-              <p class="card-text">
-                As data grows, so do the requirements and demands of businesses
-                to effectively harness this information. Companies in the retail
-                industry seek tools and platforms that can assist in not just
-                managing but making sense of this data. They need solutions that
-                provide insights to drive better decision-making.
-              </p>
-            </div>
+      </div>
+      <div class="col-lg-4 col-sm-12 mb-4">
+        <div class="card w-80 h-100">
+          <img src="../../static/img/image-growingneeds.jpg" class="card-img-top" style="height: 200px" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title" style="text-align: center; font-weight: bold">
+              Growing Needs
+            </h5>
+            <p class="card-text">
+              As data grows, so do the requirements and demands of businesses
+              to effectively harness this information. Companies in the retail
+              industry seek tools and platforms that can assist in not just
+              managing but making sense of this data. They need solutions that
+              provide insights to drive better decision-making.
+            </p>
           </div>
         </div>
-        <div class="col-4 mb-4">
-          <div class="card w-80 h-100">
-            <img
-              src="../../static/img/image_confusion.jpg"
-              class="card-img-top"
-              style="height: 200px"
-              alt="..."
-            />
-            <div class="card-body">
-              <h5
-                class="card-title"
-                style="text-align: center; font-weight: bold"
-              >
-                Growing Confusion
-              </h5>
-              <p class="card-text">
-                With the abundance of data, businesses often face challenges in
-                analyzing, and deriving meaningful insights. The complexity of
-                data can overwhelm without the right tools or strategies in
-                place, leading to confusion regarding what data is relevant, how
-                to interpret it, and how to derive actionable insights.
-              </p>
-            </div>
+      </div>
+      <div class="col-lg-4 col-sm-12 mb-4">
+        <div class="card w-80 h-100">
+          <img src="../../static/img/image_confusion.jpg" class="card-img-top" style="height: 200px" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title" style="text-align: center; font-weight: bold">
+              Growing Confusion
+            </h5>
+            <p class="card-text">
+              With the abundance of data, businesses often face challenges in
+              analyzing, and deriving meaningful insights. The complexity of
+              data can overwhelm without the right tools or strategies in
+              place, leading to confusion regarding what data is relevant, how
+              to interpret it, and how to derive actionable insights.
+            </p>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- Footer starts here -->
+  <!-- Footer starts here -->
 
-    <!-- Remove the container if you want to extend the Footer to full width. -->
-    <footer
-      class="text-white text-center text-lg-start bg-primary-dark"
-      id="about-section"
-    >
-      <!-- Grid container -->
-      <div class="container p-1">
-        <!--Grid row-->
-        <div class="row mt-4">
-          <!--Grid column-->
-          <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
-            <h5 class="text-uppercase mb-4">About website</h5>
+  <!-- Remove the container if you want to extend the Footer to full width. -->
+  <footer class="text-white text-center text-lg-start bg-primary-dark" id="about-section">
+    <!-- Grid container -->
+    <div class="container p-1">
+      <!--Grid row-->
+      <div class="row mt-4">
+        <!--Grid column-->
+        <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
+          <h5 class="text-uppercase mb-4">About website</h5>
 
-            <p>
-              "NextGen Retail" is a web platform designed to assist users in
-              predicting revenue based on provided files. The website offers a
-              user-friendly interface for data visualization and prediction.
-            </p>
+          <p>
+            "NextGen Retail" is a web platform designed to assist users in
+            predicting revenue based on provided files. The website offers a
+            user-friendly interface for data visualization and prediction.
+          </p>
 
-            <p>"Empowering retailers with data-driven insights."</p>
+          <p>"Empowering retailers with data-driven insights."</p>
 
-            <p>"Transforming retail experiences through advanced analytics."</p>
+          <p>"Transforming retail experiences through advanced analytics."</p>
 
-          </div>
-          <!--Grid column-->
-
-          <!--Grid column-->
-          <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-            <h5 class="text-uppercase mb-4 pb-1">Any Query for us</h5>
-
-            <div class="form-outline form-white mb-4">
-              <form action="{% url 'contact_us' %}" method="POST">
-                {% csrf_token %}
-                <div class="mb-3">
-                  <input
-                    type="email"
-                    class="form-control"
-                    id="email"
-                    name="email"
-                    placeholder="Your email"
-                  />
-                </div>
-                <div class="mb-3">
-                  <textarea
-                    class="form-control"
-                    id="message"
-                    name="message"
-                    rows="3"
-                    placeholder="Your Query"
-                  ></textarea>
-                </div>
-                <button
-                  type="submit"
-                  class="btn btn-primary"
-                  style="border: 1px solid white"
-                >
-                  Submit
-                </button>
-              </form>
-            </div>
-          </div>
-          <!--Grid column-->
-
-          <!--Grid column-->
-          <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-            <h5 class="mb-4 px-4">Contact Us</h5>
-            <ul class="fa-ul" style="margin-left: 1.65em">
-              <li class="mb-3">
-                <span class="fa-li"><i class="fas fa-home"></i></span
-                ><span class="ms-2">Bangalore, Karnataka, 560098, India</span>
-              </li>
-              <li class="mb-3">
-                <span class="fa-li"><i class="fas fa-envelope"></i></span
-                ><span class="ms-2">nextgenretail65@gmail.com </span>
-              </li>
-              <li class="mb-3">
-                <span class="fa-li"><i class="fas fa-phone"></i></span
-                ><span class="ms-2"
-                  >Abhishek Mandalageri : + 01 234 567 88
-                </span>
-              </li>
-              <li class="mb-3">
-                <span class="fa-li"><i class="fas fa-print"></i></span
-                ><span class="ms-2">Sujith Sai Marpuri : + 01 234 567 89 </span>
-              </li>
-            </ul>
-          </div>
-
-          <!--Grid column-->
         </div>
-        <!--Grid row-->
-      </div>
-      <!-- Grid container -->
+        <!--Grid column-->
 
-      <!-- Copyright -->
-      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-        © 2024 Copyright:
-        <a class="text-white" href="{% url 'home' %}">NextgenRetail.com</a>
-      </div>
-      <!-- Copyright -->
-    </footer>
-    <!-- Footer ends here -->
+        <!--Grid column-->
+        <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase mb-4 pb-1">Any Query for us</h5>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-  </body>
+          <div class="form-outline form-white mb-4">
+            <form action="{% url 'contact_us' %}" method="POST">
+              {% csrf_token %}
+              <div class="mb-3">
+                <input type="email" class="form-control" id="email" name="email" placeholder="Your email" />
+              </div>
+              <div class="mb-3">
+                <textarea class="form-control" id="message" name="message" rows="3" placeholder="Your Query"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary" style="border: 1px solid white">
+                Submit
+              </button>
+            </form>
+          </div>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+          <h5 class="mb-4 px-4">Contact Us</h5>
+          <ul class="fa-ul" style="margin-left: 1.65em">
+            <li class="mb-3">
+              <span class="fa-li"><i class="fas fa-home"></i></span><span class="ms-2">Bangalore, Karnataka, 560098,
+                India</span>
+            </li>
+            <li class="mb-3">
+              <span class="fa-li"><i class="fas fa-envelope"></i></span><span class="ms-2">nextgenretail65@gmail.com
+              </span>
+            </li>
+            <li class="mb-3">
+              <span class="fa-li"><i class="fas fa-phone"></i></span><span class="ms-2">Abhishek Mandalageri : + 01 234
+                567 88
+              </span>
+            </li>
+            <li class="mb-3">
+              <span class="fa-li"><i class="fas fa-print"></i></span><span class="ms-2">Sujith Sai Marpuri : + 01 234
+                567 89 </span>
+            </li>
+          </ul>
+        </div>
+
+        <!--Grid column-->
+      </div>
+      <!--Grid row-->
+    </div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+      © 2024 Copyright:
+      <a class="text-white" href="{% url 'home' %}">NextgenRetail.com</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer ends here -->
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
 </html>
