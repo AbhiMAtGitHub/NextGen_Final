@@ -1,11 +1,9 @@
 version: "3.8"
 services:
   backend:
-    image: nextGenretailpredict:latest
+    image: backend:latest
     ports:
-      - "8000:8000"
-    depends_on:
-      - mysql
+      - "9000:9000"
     networks:
       - mynetwork
     environment:
@@ -17,20 +15,7 @@ services:
       - DB_PORT=3306
     restart: always
 
-  mysql:
-    image: mysql:latest
-    networks:
-      - mynetwork
-    volumes:
-      - ./mysql:/var/lib/mysql
-    environment:
-      - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=predictdb
-      - MYSQL_USER=root
-      - MYSQL_PASSWORD=root
-    restart: always
-
 networks:
   mynetwork:
-    name: django-network
-    driver: bridge
+    name: deploy-link
+    external: true
