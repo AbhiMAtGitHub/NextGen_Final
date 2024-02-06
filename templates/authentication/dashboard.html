@@ -102,7 +102,8 @@
     }
 
     .light-alert {
-      background-color: #87b1ff;
+      background-color: #33ffa0;
+      ;
       color: black;
     }
 
@@ -117,39 +118,10 @@
     }
 
     .custom-navbar .dropdown-menu {
-      background-color: rgb(167, 188, 255);
+      background-color: rgb(201, 228, 249);
       margin-right: 10px;
     }
 
-    /* #contentToClear {
-      display: flex;
-      flex-direction: column;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-    }
-
-    #contentToClear h4 {
-      width: 100%;
-      text-align: center;
-      margin-bottom: 10px;
-    }
-
-    #contentToClear img {
-      width: 300px;
-      height: 500px;
-      margin: 10px;
-      box-sizing: border-box;
-    }
-
-    .row-1,
-    .row-2,
-    .row-3 {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      margin-bottom: 20px;
-    } */
     #contentToClear {
       display: flex;
       flex-wrap: wrap;
@@ -162,24 +134,18 @@
     .item {
       text-align: center;
       margin: 0 20px 20px 20px;
-      /* Add space around items */
       width: calc(50% - 40px);
-      /* Add some space between items */
     }
 
     .item h4 {
       margin-bottom: 10px;
       text-align: center;
       justify-content: center;
-      /* Add some space between h4 and image */
     }
 
     .item img {
       width: 570px;
-      /* height: auto; */
       height: 550px;
-      /* margin: 0 auto; 
-  display: block;  */
     }
 
     .row-1,
@@ -194,9 +160,7 @@
     #clearAllBtn {
       display: flex;
       justify-content: center;
-      /* Horizontally center the content */
       align-items: center;
-      /* Vertically center the content */
       width: 100%;
     }
 
@@ -209,36 +173,26 @@
       margin-top: 15px;
     }
 
-    /* Style for the form container */
+
     .form-container {
       max-width: 600px;
-      /* Adjust the maximum width as needed */
       margin: 0 auto;
-      /* Center the form horizontally */
       padding: 20px;
       background-color: #f8f9fa;
-      /* Light background color */
       border-radius: 10px;
-      /* Rounded corners */
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      /* Box shadow for a subtle effect */
     }
 
-    /* Style for the form fields */
     .form-control {
       color: black;
       width: 500px;
       padding: 10px;
       margin-bottom: 15px;
-      /* border: 1px solid #a3a6a8; */
-      /* Border color */
       border-radius: 5px;
-      /* Rounded corners */
       box-sizing: border-box;
       margin-left: 30px;
     }
 
-    /* Style for the submit button */
     .btn-primary {
       display: block;
       width: 100px;
@@ -255,14 +209,12 @@
 
     .btn-primary:hover {
       background-color: #0056b3;
-      /* Darker background color on hover */
     }
 
 
     @media (max-width: 640px) {
       #contentToClear img {
         width: 100%;
-        /* Adjust for smaller screens */
       }
     }
   </style>
@@ -336,7 +288,7 @@
       </div>
     </div>
 
-    <div id="contentToClear"> 
+    <div id="contentToClear">
       <div class="row-1">
         {% if pie_chart %}
         <div class="item">
