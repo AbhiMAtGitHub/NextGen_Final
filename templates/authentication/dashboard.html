@@ -102,7 +102,7 @@
     }
 
     .light-alert {
-      background-color: #33ffa0;
+      background-color: #7affc1;
       ;
       color: black;
     }
@@ -181,6 +181,7 @@
       background-color: #f8f9fa;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
     }
 
     .form-control {
@@ -205,6 +206,21 @@
       transition: background-color 0.3s;
       margin-left: 193px;
       margin-top: 20px;
+    }
+
+    .download-csv {
+      display: block;
+      width: 136px;
+      padding: 10px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      margin-left: 173px;
+      margin-top: 20px;
+      margin-bottom: 20px;
     }
 
     .btn-primary:hover {
@@ -281,6 +297,7 @@
     <div class="form-container" style="text-align: center;">
       <h2 style="color: black;">Upload a CSV file for prediction and analysis</h2>
       <div class="form-control">
+        <a href="../../static/sample.csv" download="sample.csv" class="download-csv btn">Download Sample CSV</a>
         <form method="post" enctype="multipart/form-data">
           {% csrf_token %} {{ form }}
           <button class="btn btn-primary" type="submit">Upload</button>
