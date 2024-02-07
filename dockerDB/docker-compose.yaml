@@ -9,8 +9,6 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=predictdb
-      - MYSQL_USER=root
-      - MYSQL_PASSWORD=root
     restart: always
  
 networks:
