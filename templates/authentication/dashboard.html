@@ -297,7 +297,6 @@
     <div class="form-container" style="text-align: center;">
       <h2 style="color: black;">Upload a CSV file for prediction and analysis</h2>
       <div class="form-control">
-        <a href="../../static/sample.csv" download="sample.csv" class="download-csv btn">Download Sample CSV</a>
         <form method="post" enctype="multipart/form-data">
           {% csrf_token %} {{ form }}
           <button class="btn btn-primary" type="submit">Upload</button>
