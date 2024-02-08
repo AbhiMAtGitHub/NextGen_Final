@@ -31,9 +31,6 @@ def home(request):
 def dashboard(request):
     return render(request,"authentication/dashboard.html")
 
-def login_msg(request):
-    return render(request,"authentication/login_msg.html")
-
 def signup(request):
     if request.method == "POST":
         username = request.POST["username"]
