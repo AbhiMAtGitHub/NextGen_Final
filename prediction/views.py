@@ -34,11 +34,11 @@ def dashboard(request):
 def signup(request):
     if request.method == "POST":
         username = request.POST["username"]
-        fname = request.POST["fname"]
-        lname = request.POST["lname"]
+        first_name = request.POST["first_name"]
+        last_name = request.POST["last_name"]
         email = request.POST["email"]
-        pass1 = request.POST["pass1"]
-        pass2 = request.POST["pass2"]
+        password = request.POST["password"]
+        confirm_password = request.POST["confirm_password"]
 
         if not any(char.isdigit() for char in username) or not any(char.isalpha() for char in username):
             messages.error(request, "Username must be Alpha-Numeric!!")
@@ -56,13 +56,13 @@ def signup(request):
             messages.error(request, "Username must be under 20 charcters!!")
             return redirect('signup')
         
-        if pass1 != pass2:
+        if password != confirm_password:
             messages.error(request, "Passwords didn't matched!!")
             return redirect('signup')
         
-        myuser = User.objects.create_user(username, email, pass1)
-        myuser.first_name = fname
-        myuser.last_name = lname
+        myuser = User.objects.create_user(username, email, password)
+        myuser.first_name = first_name
+        myuser.last_name = last_name
         myuser.is_active = False
         myuser.save()
         
@@ -115,8 +115,8 @@ def activate(request,uidb64,token):
 def signin(request):
     if request.method == "POST":
         username = request.POST["username"]
-        pass1 = request.POST["pass1"]
-        user = authenticate(username=username, password=pass1)
+        password = request.POST["password"]
+        user = authenticate(username=username, password=password)
         if user is not None:
             if user.is_active:
                 login(request, user)
@@ -161,8 +161,8 @@ def signout(request):
 def change_password(request):
     if request.method == 'POST':
         old_password = request.POST.get('old_password')
-        new_password1 = request.POST.get('new_password1')
-        new_password2 = request.POST.get('new_password2')
+        new_password = request.POST.get('new_password')
+        confirm_new_password = request.POST.get('confirm_new_password')
 
         user = request.user
 
@@ -172,12 +172,12 @@ def change_password(request):
             return redirect('change_password')
 
         # Check if the new passwords match
-        if new_password1 != new_password2:
+        if new_password != confirm_new_password:
             messages.error(request, 'New passwords do not match. Please try again.')
             return redirect('change_password')
 
         # Set the new password
-        user.set_password(new_password1)
+        user.set_password(new_password)
         user.save()
 
         # Update session to prevent logout
@@ -200,7 +200,7 @@ def profile_update(request):
         # Validate if the new username is available (not taken by another user)
         if username != request.user.username and User.objects.filter(username=username).exists():
             messages.error(request, "Username is already taken. Please choose a different username.")
-            return redirect('profile')
+            return redirect('profile_update')
 
         # Update user profile
         user.username = username
@@ -290,7 +290,7 @@ def delete_user(request):
     return render(request, 'authentication/delete_user_confirmation.html')
 
 @login_required
-def predict_total_amount(request):
+def prediction(request):
     # Initialize variables
     predicted_amount_plot = None
     pie_chart = None
