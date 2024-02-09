@@ -63,40 +63,32 @@
 
                 <form action="/signup" method="post">
                   {% csrf_token %}
-                  <div class="form-outline form-white mb-4">
-                    <input type="text" id="username" class="form-control" placeholder="User Name" name="username"
-                      required />
-                  </div>
-
-                  <div class="form-outline form-white mb-4">
-                    <input type="text" id="fname" class="form-control" placeholder="First Name" name="fname" required />
-                  </div>
-
-                  <div class="form-outline form-white mb-4">
-                    <input type="text" id="lname" class="form-control" placeholder="Last Name" name="lname" required />
-                  </div>
 
                   <div class="form-outline form-white mb-4">
                     <input type="email" id="email" class="form-control" placeholder="Email" name="email" required />
                   </div>
 
                   <div class="form-outline form-white mb-4">
-                    <input type="password" id="pass1" class="form-control" placeholder="Password" name="pass1"
+                    <input type="text" id="first_name" class="form-control" placeholder="First Name" name="first_name" required />
+                  </div>
+
+                  <div class="form-outline form-white mb-4">
+                    <input type="text" id="last_name" class="form-control" placeholder="Last Name" name="last_name" />
+                  </div>
+
+                  <div class="form-outline form-white mb-4">
+                    <input type="password" id="password" class="form-control" placeholder="Password" name="password"
                       required />
                   </div>
 
                   <div class="form-outline form-white mb-4">
-                    <input type="password" id="pass2" class="form-control" placeholder="Confirm Password" name="pass2"
+                    <input type="password" id="confirm_password" class="form-control" placeholder="Confirm Password" name="confirm_password"
                       required />
                   </div>
 
                   <button type="submit" class="loginbtn btn btn-outline-light btn-lg px-5">
                     Sign Up
                   </button>
-                  {% comment %}
-                  <a class="loginbtn btn btn-outline-light btn-lg px-5" type="submit" href="{% url 'signin' %}">Sign
-                    Up</a>
-                  {% endcomment %}
                 </form>
               </div>
 

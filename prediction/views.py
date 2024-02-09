@@ -17,6 +17,8 @@ from .forms import CSVUploadForm
 from datetime import datetime, timedelta
 from django.utils.crypto import get_random_string
 from .models import UserToken
+from django.core.validators import validate_email
+from django.core.exceptions import ValidationError
 
 import matplotlib.pyplot as plt
 import joblib
@@ -28,71 +30,61 @@ import pandas as pd
 def home(request):
     return render(request,"authentication/index.html")
 
-def dashboard(request):
-    return render(request,"authentication/dashboard.html")
-
 def signup(request):
     if request.method == "POST":
-        username = request.POST["username"]
+        email = request.POST["email"]
         first_name = request.POST["first_name"]
         last_name = request.POST["last_name"]
-        email = request.POST["email"]
         password = request.POST["password"]
         confirm_password = request.POST["confirm_password"]
 
-        if not any(char.isdigit() for char in username) or not any(char.isalpha() for char in username):
-            messages.error(request, "Username must be Alpha-Numeric!!")
+        try:
+            validate_email(email)
+        except ValidationError:
+            messages.error(request, "Invalid email address.")
             return redirect('signup')
 
-        if User.objects.filter(username=username).exists():
-            messages.error(request, "Username already exist! Please try some other username.")
-            return redirect('signup')
-        
         if User.objects.filter(email=email).exists():
             messages.error(request, "Email Already Registered!!")
             return redirect('signup')
-        
-        if len(username)>20:
-            messages.error(request, "Username must be under 20 charcters!!")
-            return redirect('signup')
-        
+
         if password != confirm_password:
             messages.error(request, "Passwords didn't matched!!")
             return redirect('signup')
-        
-        myuser = User.objects.create_user(username, email, password)
+
+        myuser = User.objects.create_user(username=email, email=email, password=password)
         myuser.first_name = first_name
         myuser.last_name = last_name
         myuser.is_active = False
         myuser.save()
-        
+
         # Welcome Email
         subject = "Welcome to NextGen Retail Login!!"
-        message = "Hello " + myuser.first_name + "!! \n" + "Welcome to NextGen Retail!! \nThank you for visiting our website\n. We have also sent you a confirmation email, please confirm your email address. \n\nThanking You\n"        
+        message = "Hello " + myuser.first_name + "!! \n" + "Welcome to NextGen Retail!! \nThank you for visiting our website\n. We have also sent you a confirmation email, please confirm your email address. \n\nThanking You\n"
         from_email = settings.EMAIL_HOST_USER
         to_list = [myuser.email]
         send_mail(subject, message, from_email, to_list, fail_silently=True)
-        
+
         # Email Address Confirmation Email
         current_site = get_current_site(request)
         email_subject = "Confirm your Email @ NextGen Retail - Login!!"
-        message2 = render_to_string('authentication/email_confirmation.html',{
-            
+        message2 = render_to_string('authentication/email_confirmation.html', {
+
             'name': myuser.first_name,
             'domain': current_site.domain,
             'uid': urlsafe_base64_encode(force_bytes(myuser.pk)),
             'token': generate_token.make_token(myuser)
         })
         email = EmailMessage(
-        email_subject,
-        message2,
-        settings.EMAIL_HOST_USER,
-        [myuser.email],
+            email_subject,
+            message2,
+            settings.EMAIL_HOST_USER,
+            [myuser.email],
         )
         send_mail(email_subject, message2, from_email, to_list, fail_silently=True)
-        
-        return render(request,'authentication/login_msg.html')
-             
+
+        return render(request, 'authentication/login_msg.html')
+
     return render(request, "authentication/signup.html")
 
 def activate(request,uidb64,token):
@@ -104,23 +96,22 @@ def activate(request,uidb64,token):
 
     if myuser is not None and generate_token.check_token(myuser,token):
         myuser.is_active = True
-        # user.profile.signup_confirmation = True
         myuser.save()
         login(request,myuser)
         messages.success(request, "Your Account has been activated!!")
         return redirect('signin')
     else:
+        myuser.delete()
         return render(request,'authentication/activation_failed.html')
     
 def signin(request):
     if request.method == "POST":
-        username = request.POST["username"]
+        email = request.POST["email"]  # Change username to email
         password = request.POST["password"]
-        user = authenticate(username=username, password=password)
+        user = authenticate(username= email, password=password)  # Change username to email
         if user is not None:
             if user.is_active:
                 login(request, user)
-                username = user.username
                 return redirect('predict')
             else:
                 messages.error(request, "Please activate your account in order to login.")
@@ -182,35 +173,64 @@ def change_password(request):
 
         # Update session to prevent logout
         update_session_auth_hash(request, user)
-
+        logout(request)
         messages.success(request, 'Your password was successfully updated!')
         return redirect('signin')
     else:
         return render(request, 'authentication/change_password.html')
-    
+
 @login_required
 def profile_update(request):
     if request.method == "POST":
         user = request.user
         
-        username = request.POST["username"]
-        first_name = request.POST["first_name"]
-        last_name = request.POST["last_name"]
+        new_email = request.POST.get("new_email")
+        confirm_email = request.POST.get("confirm_email")
+        first_name = request.POST.get("first_name")
+        last_name = request.POST.get("last_name")
 
-        # Validate if the new username is available (not taken by another user)
-        if username != request.user.username and User.objects.filter(username=username).exists():
-            messages.error(request, "Username is already taken. Please choose a different username.")
+        # Validate new email address
+        try:
+            validate_email(new_email)
+        except ValidationError:
+            messages.error(request, "Invalid email address.")
             return redirect('profile_update')
 
-        # Update user profile
-        user.username = username
+        if new_email != confirm_email:
+            messages.error(request, "Email addresses do not match.")
+            return redirect('profile_update')
+
+        # Check if the new email is already taken
+        if User.objects.exclude(pk=user.pk).filter(email=new_email).exists():
+            messages.error(request, "Email address is already in use.")
+            return redirect('profile_update')
+
+        # Update user profile and set is_active to False
+        user.username = new_email
+        user.email = new_email
         user.first_name = first_name
         user.last_name = last_name
+        user.is_active = False  # Set is_active to False
         user.save()
 
-        messages.success(request, "Profile updated successfully!")
+        # Send activation email to the updated email
+        current_site = get_current_site(request)
+        from_email = settings.EMAIL_HOST_USER
+        to_list = [user.email]
+        mail_subject = 'Activate your account'
+        message = render_to_string('authentication/email_confirmation.html', {
+            'user': user,
+            'domain': current_site.domain,
+            'uid': urlsafe_base64_encode(force_bytes(user.pk)),
+            'token': generate_token.make_token(user),
+        })
 
-        return redirect('dashboard')
+        send_mail(mail_subject, message, from_email, to_list, fail_silently=True)
+        
+        logout(request)
+        messages.success(request, 'An activation link has been sent to your new email address. Please check your email to activate your account.')
+        
+        return render(request, 'authentication/email_change_msg.html')
 
     return render(request, "authentication/profile.html")
 
@@ -270,9 +290,6 @@ def reset_password(request, token):
         user.set_password(new_password)
         user.save()
 
-        # if user.email == user_token.email:
-            # user_token.email = None
-            # user_token.reset_password_token = None
         user_token.delete()
         return render(request, 'authentication/password_reset_complete.html')
     return render(request, 'authentication/reset_password.html', {'token': token})
@@ -286,7 +303,7 @@ def delete_user(request):
             messages.success(request, "Your account has been deleted successfully!")
             return redirect('home')
         else:
-            return redirect('dashboard')
+            return redirect('predict')
     return render(request, 'authentication/delete_user_confirmation.html')
 
 @login_required
