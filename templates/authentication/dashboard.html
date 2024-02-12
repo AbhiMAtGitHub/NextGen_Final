@@ -22,7 +22,7 @@
       body {
         margin: 0;
         font-family: "Open Sans", sans-serif;
-        background-image: url("../static/img/bg.png");
+        background-image: url('{% static "img/bg.png" %}');
         background-attachment: fixed;
         background-size: cover;
         color: white;
@@ -115,7 +115,7 @@
       @media screen and (max-width: 1000px) {
         .box {
           width: 100%;
-          background-image: url("../static/img/bgonmed.png");
+          background-image: url('{% static "img/bgonmed.png" %}');
         }
       }
 
