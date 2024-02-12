@@ -18,6 +18,120 @@
       rel="stylesheet"
     />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawCharts);
+
+      function drawCharts() {
+          drawPieChart();
+          drawBarGraph();
+          drawLineGraph();
+          drawPredictedAmountPlot();
+          drawRevenuePredictionGraph();
+      }
+
+      function drawPieChart() {
+          var data = google.visualization.arrayToDataTable([
+              ['Category', 'Quantity'],
+              {% for category, quantity in pie_chart_data %}
+                  ['{{ category }}', {{ quantity }}],
+              {% endfor %}
+          ]);
+
+          var options = {
+              title: 'Category Distribution'
+          };
+
+          var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+          chart.draw(data, options);
+      }
+
+      function drawBarGraph() {
+          var data = google.visualization.arrayToDataTable([
+              ['Product', 'Quantity'],
+              {% for product, quantity in bar_graph_data %}
+                  ['{{ product }}', {{ quantity }}],
+              {% endfor %}
+          ]);
+
+          var options = {
+              title: 'Top 10 Products by Quantity Sold',
+              legend: { position: 'none' }
+          };
+
+          var chart = new google.visualization.BarChart(document.getElementById('bargraph'));
+
+          chart.draw(data, options);
+      }
+
+      function drawLineGraph() {
+          var data = new google.visualization.DataTable();
+          data.addColumn('date', 'Date');
+          data.addColumn('number', 'Total Amount');
+
+          data.addRows([
+              {% for date, amount in line_graph_data %}
+                  [new Date('{{ date }}'), {{ amount }}],
+              {% endfor %}
+          ]);
+
+          var options = {
+              title: 'Total Amount Over Time',
+              legend: { position: 'none' }
+          };
+
+          var chart = new google.visualization.LineChart(document.getElementById('linegraph'));
+
+          chart.draw(data, options);
+      }
+
+      function drawPredictedAmountPlot() {
+          var data = new google.visualization.DataTable();
+          data.addColumn('date', 'Date');
+          data.addColumn('number', 'Predicted Total Amount');
+
+          data.addRows([
+              {% for date, amount in predicted_amount_plot_data %}
+                  [new Date('{{ date }}'), {{ amount }}],
+              {% endfor %}
+          ]);
+
+          var options = {
+              title: 'Predicted Total Amount for Next 6 Months',
+              legend: { position: 'none' }
+          };
+
+          var chart = new google.visualization.LineChart(document.getElementById('predictedamountplot'));
+
+          chart.draw(data, options);
+      }
+
+      function drawRevenuePredictionGraph() {
+          var data = new google.visualization.DataTable();
+          data.addColumn('date', 'Date');
+          data.addColumn('number', 'Predicted Revenue');
+
+          data.addRows([
+              {% for date, revenue in revenue_prediction_graph_data %}
+                  [new Date('{{ date }}'), {{ revenue }}],
+              {% endfor %}
+          ]);
+
+          var options = {
+              title: 'Predicted Revenue for Next 6 Months',
+              legend: { position: 'none' }
+          };
+
+          var chart = new google.visualization.LineChart(document.getElementById('revenuepredictiongraph'));
+
+          chart.draw(data, options);
+      }
+    </script>
     <style>
       body {
         margin: 0;
@@ -234,7 +348,6 @@
         margin-left: 193px;
         margin-top: 20px;
       }
-    
 
       .download-csv {
         display: block;
@@ -262,7 +375,6 @@
       }
     </style>
   </head>
-
   <body>
     <div class="messages-container">
       {% for message in messages %}
@@ -294,8 +406,8 @@
             class="img-fluid mr-2"
             style="max-width: 40px; height: auto; border-radius: 50%"
           />
-          NextGen Retail</a
-        >
+          NextGen Retail
+        </a>
         <!-- Navbar toggle button -->
         <button
           class="navbar-toggler"
@@ -318,7 +430,7 @@
           <ul class="navbar-nav mb-2 mb-lg-0 custom-navbar">
             <li class="nav-item ms-5">
               <a class="nav-link btn-outline-primary fs-5"
-                >Hi, {{user.first_name}}</a
+                >Hi, {{user_first_name}}</a
               >
             </li>
             <li class="nav-item ms-5">
@@ -330,7 +442,7 @@
                   id="dropdownMenuButton"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
-                  style="color: white; border-color: transparent;"
+                  style="color: white; border-color: transparent"
                 >
                   User Settings
                 </button>
@@ -339,11 +451,9 @@
                   <a class="dropdown-item" href="{% url 'change_password' %}"
                     >Change Password</a
                   >
-
                   <a class="dropdown-item" href="{% url 'profile_update' %}"
                     >Update Profile</a
                   >
-
                   <a class="dropdown-item" href="{% url 'delete_user' %}"
                     >Delete Account</a
                   >
@@ -361,7 +471,6 @@
         </div>
       </div>
     </nav>
-
     <div class="viz-class" style="padding: 120px">
       <div class="form-container" style="text-align: center">
         <h4 style="color: black">
@@ -374,80 +483,15 @@
           </form>
         </div>
       </div>
-
-      <div id="contentToClear">
-        <div class="row-1">
-          {% if pie_chart %}
-          <div class="item">
-            <h4>Category Distribution</h4>
-            <img
-              src="data:image/png;base64,{{ pie_chart }}"
-              alt="Category Distribution Pie Chart"
-            />
-          </div>
-          {% endif %} {% if bar_graph %}
-          <div class="item">
-            <h4>Top 10 Products by Quantity Sold</h4>
-            <img
-              src="data:image/png;base64,{{ bar_graph }}"
-              alt="Top 10 Products Bar Graph"
-            />
-          </div>
-          {% endif %}
-        </div>
-
-        <div class="row-2">
-          {% if line_graph %}
-          <div class="item">
-            <h4>Total Amount Over Time</h4>
-            <img
-              src="data:image/png;base64,{{ line_graph }}"
-              alt="Total Amount Over Time Line Graph"
-            />
-          </div>
-          {% endif %} {% if predicted_amount_plot %}
-          <div class="item">
-            <h4>Predicted TotalAmount Visualization</h4>
-            <img
-              src="data:image/png;base64,{{ predicted_amount_plot }}"
-              alt="Predicted TotalAmount Plot"
-            />
-          </div>
-          {% endif %}
-        </div>
-
-        <div class="row-3">
-          {% if revenue_prediction_graph %}
-          <div class="item">
-            <h4>Predicted Revenue for Next 6 Months</h4>
-            <img
-              src="data:image/png;base64,{{ revenue_prediction_graph }}"
-              alt="Predicted Revenue Line Graph"
-            />
-          </div>
-          {% endif %}
-        </div>
-        {% if images_present %}
-        <!-- <div class="d-flex align-items-center"> -->
-        <button class="btn btn-danger mt-3 btn-clear" id="clearAllBtn">
-          Clear All
-        </button>
-        <!-- </div> -->
-        {% endif %}
-      </div>
+      <div id="piechart" style="width: 100%; height: 400px"></div>
+      <div id="bargraph" style="width: 100%; height: 400px"></div>
+      <div id="linegraph" style="width: 100%; height: 400px"></div>
+      <div id="predictedamountplot" style="width: 100%; height: 400px"></div>
+      <div id="revenuepredictiongraph" style="width: 100%; height: 400px"></div>
     </div>
 
-    <script>
-      document
-        .getElementById("clearAllBtn")
-        .addEventListener("click", function () {
-          // Clear the content inside the contentToClear div
-          document.getElementById("contentToClear").innerHTML = "";
-        });
-    </script>
-
-      <!-- JavaScript libraries -->
-      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JavaScript libraries -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

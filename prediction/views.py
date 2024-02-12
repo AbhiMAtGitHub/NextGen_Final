@@ -19,7 +19,8 @@ from django.utils.crypto import get_random_string
 from .models import UserToken
 from django.core.validators import validate_email
 from django.core.exceptions import ValidationError
-
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import joblib
 import os
@@ -37,12 +38,6 @@ def signup(request):
         last_name = request.POST["last_name"]
         password = request.POST["password"]
         confirm_password = request.POST["confirm_password"]
-
-        try:
-            validate_email(email)
-        except ValidationError:
-            messages.error(request, "Invalid email address.")
-            return redirect('signup')
 
         if User.objects.filter(email=email).exists():
             messages.error(request, "Email Already Registered!!")
@@ -108,7 +103,7 @@ def signin(request):
     if request.method == "POST":
         email = request.POST["email"]  # Change username to email
         password = request.POST["password"]
-        user = authenticate(username= email, password=password)  # Change username to email
+        user = authenticate(username=email, email= email, password=password)  # Change username to email
         if user is not None:
             if user.is_active:
                 login(request, user)
@@ -120,6 +115,66 @@ def signin(request):
             messages.error(request, "Bad Credentials! Please try again.")
             return redirect("signin")
     return render(request, "authentication/signin.html")
+
+def contact_us(request):
+    if request.method == 'POST':
+        email = request.POST.get('email')
+        message = request.POST.get('message')
+        send_mail(
+            'Query for NextGen Retail Website',
+            f'Email: {email}\n\nMessage: {message}',
+            'nextgenretail65@gmail.com',
+            ['nextgenretail65@gmail.com'],  # Replace with your email address
+            fail_silently=False,
+        )
+        # Redirect to a thank you page or back to the home page
+        messages.success(request,"You Query has been submitted.")
+        return HttpResponseRedirect(reverse('home'))
+    else:
+        # If the request method is not POST, render the home page wth an eror message
+        messages.error(request, "Can't send the mail, please try again!")
+        return render(request, 'authentication/index.html')
+
+def forgot_password(request):
+    if request.method == 'POST':
+        email = request.POST.get('email', '')
+        user = User.objects.filter(email=email).first()
+        if user:
+            # Generate a unique token and save it to the user model
+            token = get_random_string(length=32)
+            user_token = UserToken.objects.create(email=email, reset_password_token=token)
+             # Get the current site's domain
+            current_site = get_current_site(request)
+            domain = current_site.domain
+            
+            # Construct the reset link dynamically
+            reset_link = f"http://{domain}/reset_password/{token}/"
+            send_mail('Reset Password', f'Click the following link to reset your password: {reset_link}',
+                      settings.DEFAULT_FROM_EMAIL, [user.email], fail_silently=False)
+            return render(request, 'authentication/password_reset_done.html')
+        else:
+            return render(request, 'authentication/password_reset_failed.html')
+    return render(request, 'authentication/forgot_password.html')
+
+def reset_password(request, token):
+    user_token = UserToken.objects.filter(reset_password_token=token).first()
+    if not user_token:
+        # Handle invalid or expired token
+        return render(request, 'authentication/password_reset_invalid.html')
+    if request.method == 'POST':
+        new_password = request.POST.get('new_password', '')
+        confirm_new_password = request.POST.get('confirm_new_password', '')
+        if new_password != confirm_new_password:
+            error_message = "Passwords do not match."
+            return render(request, 'authentication/reset_password.html', {'error_message': error_message, 'token': token})
+        # Update the user's password and reset the token
+        user = User.objects.get(email=user_token.email)
+        user.set_password(new_password)
+        user.save()
+
+        user_token.delete()
+        return render(request, 'authentication/password_reset_complete.html')
+    return render(request, 'authentication/reset_password.html', {'token': token})
 
 class SessionTimeoutMiddleware:
     def __init__(self, get_response):
@@ -189,13 +244,6 @@ def profile_update(request):
         first_name = request.POST.get("first_name")
         last_name = request.POST.get("last_name")
 
-        # Validate new email address
-        try:
-            validate_email(new_email)
-        except ValidationError:
-            messages.error(request, "Invalid email address.")
-            return redirect('profile_update')
-
         if new_email != confirm_email:
             messages.error(request, "Email addresses do not match.")
             return redirect('profile_update')
@@ -234,66 +282,6 @@ def profile_update(request):
 
     return render(request, "authentication/profile.html")
 
-def contact_us(request):
-    if request.method == 'POST':
-        email = request.POST.get('email')
-        message = request.POST.get('message')
-        send_mail(
-            'Query for NextGen Retail Website',
-            f'Email: {email}\n\nMessage: {message}',
-            'nextgenretail65@gmail.com',
-            ['nextgenretail65@gmail.com'],  # Replace with your email address
-            fail_silently=False,
-        )
-        # Redirect to a thank you page or back to the home page
-        messages.success(request,"You Query has been submitted.")
-        return HttpResponseRedirect(reverse('home'))
-    else:
-        # If the request method is not POST, render the home page wth an eror message
-        messages.error(request, "Can't send the mail, please try again!")
-        return render(request, 'authentication/index.html')
-
-def forgot_password(request):
-    if request.method == 'POST':
-        email = request.POST.get('email', '')
-        user = User.objects.filter(email=email).first()
-        if user:
-            # Generate a unique token and save it to the user model
-            token = get_random_string(length=32)
-            user_token = UserToken.objects.create(email=email, reset_password_token=token)
-             # Get the current site's domain
-            current_site = get_current_site(request)
-            domain = current_site.domain
-            
-            # Construct the reset link dynamically
-            reset_link = f"http://{domain}/reset_password/{token}/"
-            send_mail('Reset Password', f'Click the following link to reset your password: {reset_link}',
-                      settings.DEFAULT_FROM_EMAIL, [user.email], fail_silently=False)
-            return render(request, 'authentication/password_reset_done.html')
-        else:
-            return render(request, 'authentication/password_reset_failed.html')
-    return render(request, 'authentication/forgot_password.html')
-
-def reset_password(request, token):
-    user_token = UserToken.objects.filter(reset_password_token=token).first()
-    if not user_token:
-        # Handle invalid or expired token
-        return render(request, 'authentication/password_reset_invalid.html')
-    if request.method == 'POST':
-        new_password = request.POST.get('new_password', '')
-        confirm_new_password = request.POST.get('confirm_new_password', '')
-        if new_password != confirm_new_password:
-            error_message = "Passwords do not match."
-            return render(request, 'authentication/reset_password.html', {'error_message': error_message, 'token': token})
-        # Update the user's password and reset the token
-        user = User.objects.get(email=user_token.email)
-        user.set_password(new_password)
-        user.save()
-
-        user_token.delete()
-        return render(request, 'authentication/password_reset_complete.html')
-    return render(request, 'authentication/reset_password.html', {'token': token})
-
 @login_required
 def delete_user(request):
     if request.method == 'POST':
@@ -331,7 +319,15 @@ def prediction(request):
                 return redirect('predict')
  
             try:
-                df = pd.read_csv(csv_file)
+                sample_data = pd.read_csv(csv_file)
+                
+                # Preprocess the data
+                sample_data['PurchaseDate'] = pd.to_datetime(sample_data['PurchaseDate'])
+                sample_data['Year'] = sample_data['PurchaseDate'].dt.year
+                sample_data['Month'] = sample_data['PurchaseDate'].dt.month
+                sample_data['Day'] = sample_data['PurchaseDate'].dt.day
+                sample_data['Quantity'] = pd.to_numeric(sample_data['Quantity'])
+                
             except Exception as e:
                 messages.error(request, f'Error reading CSV: {e}')
                 return redirect('predict')
@@ -349,81 +345,110 @@ def prediction(request):
                 return redirect('predict')
              
             try:
-                # Predict TotalAmount
-                df['PredictedTotalAmount'] = model.predict(df[['CustomerID', 'ProductID', 'Quantity']])
-                
-                # Create a scatter plot of Predicted TotalAmount vs Actual TotalAmount
-                plt.figure(figsize=(8, 6))
-                plt.scatter(df['TotalAmount'], df['PredictedTotalAmount'])
-                plt.xlabel('Actual TotalAmount')
-                plt.ylabel('Predicted TotalAmount')
-                plt.title('Actual vs Predicted TotalAmount')
+                # Test the model
+                sample_data['PredictedTotalAmount'] = model.predict(sample_data[['Year', 'Month', 'Day', 'Quantity']])
+
+                # Plotting the line graph for Predicted TotalAmount & Actual TotalAmount vs PurchaseDate
+                sample_data_month = sample_data.groupby(['Year', 'Month']).agg({
+                    'PurchaseDate': 'max',
+                    'TotalAmount': 'sum',
+                    'PredictedTotalAmount': 'sum'
+                }).reset_index()
+
+                sample_data_month['PurchaseDate'] = pd.to_datetime(sample_data_month[['Year', 'Month']].assign(DAY=1))
+                plt.figure(figsize=(10, 6))
+                plt.plot(sample_data_month['PurchaseDate'], sample_data_month['PredictedTotalAmount'], marker='o', label='Predicted TotalAmount')
+                plt.plot(sample_data_month['PurchaseDate'], sample_data_month['TotalAmount'], marker='o', label='Actual TotalAmount')
+                plt.title('Monthly TotalAmount')
+                plt.xlabel('Date')
+                plt.ylabel('TotalAmount')
+                plt.legend()
+                plt.grid(True)
+                plt.xticks(rotation=45)
+                plt.gca().xaxis.set_major_formatter(plt.matplotlib.dates.DateFormatter('%Y'))
+                plt.gca().xaxis.set_major_locator(plt.matplotlib.dates.YearLocator())
+                plt.tight_layout()
+                plt.subplots_adjust(bottom=0.15)
+                # Convert the plot to base64 format
                 buffer = io.BytesIO()
                 plt.savefig(buffer, format='png')
                 buffer.seek(0)
                 predicted_amount_plot = base64.b64encode(buffer.getvalue()).decode('utf-8')
                 buffer.close()
- 
-                # Create additional graphs
-                # Pie Chart
-                pie_data = df['Category'].value_counts()
-                plt.figure(figsize=(8, 6))
-                plt.pie(pie_data, labels=pie_data.index, autopct='%1.1f%%')
+                plt.close()
+
+                # Scenario 2: Pie chart of Category Distribution
+                plt.figure(figsize=(8, 8))
+                plt.pie(sample_data['Category'].value_counts(), labels=sample_data['Category'].value_counts().index, autopct='%1.1f%%')
                 plt.title('Category Distribution')
                 buffer = io.BytesIO()
                 plt.savefig(buffer, format='png')
                 buffer.seek(0)
                 pie_chart = base64.b64encode(buffer.getvalue()).decode('utf-8')
                 buffer.close()
- 
-                # Bar Graph
-                bar_data = df.groupby('ProductName')['Quantity'].sum().sort_values(ascending=False).head(10)
-                plt.figure(figsize=(10, 10))
-                bar_data.plot(kind='bar')
-                plt.xlabel('Product Name')
-                plt.ylabel('Total Quantity Sold')
+                plt.close()
+                
+                # Scenario 3: Bar chart for Top 10 Products by Quantity Sold
+                top_10_products = sample_data.groupby('ProductName')['Quantity'].sum().nlargest(10)
+                plt.figure(figsize=(10, 6))
+                top_10_products.plot(kind='bar')
                 plt.title('Top 10 Products by Quantity Sold')
+                plt.xlabel('Product Name')
+                plt.ylabel('Quantity Sold')
+                plt.xticks(rotation=45)
                 buffer = io.BytesIO()
                 plt.savefig(buffer, format='png')
                 buffer.seek(0)
                 bar_graph = base64.b64encode(buffer.getvalue()).decode('utf-8')
                 buffer.close()
+                plt.close()
  
-                # Line Graph
-                line_data = df.groupby('PurchaseDate')['TotalAmount'].sum()
+                # Scenario 4: Line graph for TotalAmount Over PurchaseDate
                 plt.figure(figsize=(10, 6))
-                line_data.plot(kind='line', marker='o')
-                plt.xlabel('Purchase Date')
-                plt.ylabel('Total Amount')
-                plt.title('Total Amount Over Time')
+                plt.plot(sample_data_month['PurchaseDate'], sample_data_month['TotalAmount'], marker='o')
+                plt.title('Monthly TotalAmount')
+                plt.xlabel('Date')
+                plt.ylabel('TotalAmount')
+                plt.grid(True)
+                plt.xticks(rotation=45)
+                plt.gca().xaxis.set_major_formatter(plt.matplotlib.dates.DateFormatter('%Y'))
+                plt.gca().xaxis.set_major_locator(plt.matplotlib.dates.YearLocator())
+                plt.tight_layout()
+                plt.subplots_adjust(bottom=0.15)
                 buffer = io.BytesIO()
                 plt.savefig(buffer, format='png')
                 buffer.seek(0)
                 line_graph = base64.b64encode(buffer.getvalue()).decode('utf-8')
                 buffer.close()
+                plt.close()
  
-                # Predict Revenue for the next 6 months
-                latest_date = df['PurchaseDate'].max()
-                latest_date = datetime.strptime(latest_date.split()[0], '%Y-%m-%d')  # Extract date part and convert to datetime object
-                prediction_dates = [(latest_date + timedelta(days=30 * i)).strftime('%Y-%m-%d') for i in range(1, 7)]
- 
-                predicted_revenue = []
-                for date in prediction_dates:
-                    last_data_point = df.iloc[-1]
-                    predicted_revenue.append(model.predict([[last_data_point['CustomerID'], last_data_point['ProductID'], last_data_point['Quantity']]])[0])
- 
-                # Create a line graph for predicted revenue vs next 6 months
-                plt.figure(figsize=(10, 7))
-                plt.plot(prediction_dates, predicted_revenue, marker='o')
+                # Scenario 5: Line graph for predicted TotalAmount vs next 6 months
+                last_purchase_date = sample_data['PurchaseDate'].max()
+                next_6_months = pd.date_range(start=last_purchase_date, periods=6, freq='ME')
+                future_data = pd.DataFrame({'Year': next_6_months.year,
+                                            'Month': next_6_months.month,
+                                            'Day': 1,  # Default to 1 for the day
+                                            'Quantity': 1})  # Assume quantity as 1 for prediction
+                future_data['PredictedTotalAmount'] = model.predict(future_data[['Year', 'Month', 'Day', 'Quantity']])
+                future_data['PurchaseDate'] = next_6_months
+                # Plot the graph
+                plt.figure(figsize=(10, 6))
+                plt.plot(future_data['PurchaseDate'], future_data['PredictedTotalAmount'], marker='o')
+                plt.title('Predicted TotalAmount for Next 6 Months')
                 plt.xlabel('Date')
-                plt.ylabel('Predicted Revenue')
-                plt.title('Predicted Revenue for Next 6 Months')
+                plt.ylabel('Predicted TotalAmount')
+                plt.grid(True)
                 plt.xticks(rotation=45)
+                plt.gca().xaxis.set_major_formatter(plt.matplotlib.dates.DateFormatter('%Y-%m'))
+                plt.gca().xaxis.set_major_locator(plt.matplotlib.dates.MonthLocator())
+                plt.tight_layout()
+                plt.subplots_adjust(bottom=0.15)
                 buffer = io.BytesIO()
                 plt.savefig(buffer, format='png')
                 buffer.seek(0)
                 revenue_prediction_graph = base64.b64encode(buffer.getvalue()).decode('utf-8')
                 buffer.close()
+                plt.close()
                
                 images_present = True
             except Exception as e:
