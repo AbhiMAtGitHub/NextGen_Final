@@ -17,8 +17,6 @@ from .forms import CSVUploadForm
 from datetime import datetime, timedelta
 from django.utils.crypto import get_random_string
 from .models import UserToken
-from django.core.validators import validate_email
-from django.core.exceptions import ValidationError
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
@@ -101,9 +99,9 @@ def activate(request,uidb64,token):
     
 def signin(request):
     if request.method == "POST":
-        email = request.POST["email"]  # Change username to email
+        email = request.POST["email"]
         password = request.POST["password"]
-        user = authenticate(username=email, email= email, password=password)  # Change username to email
+        user = authenticate(username=email, email= email, password=password)
         if user is not None:
             if user.is_active:
                 login(request, user)
@@ -124,14 +122,12 @@ def contact_us(request):
             'Query for NextGen Retail Website',
             f'Email: {email}\n\nMessage: {message}',
             'nextgenretail65@gmail.com',
-            ['nextgenretail65@gmail.com'],  # Replace with your email address
+            ['nextgenretail65@gmail.com'],
             fail_silently=False,
         )
-        # Redirect to a thank you page or back to the home page
         messages.success(request,"You Query has been submitted.")
         return HttpResponseRedirect(reverse('home'))
     else:
-        # If the request method is not POST, render the home page wth an eror message
         messages.error(request, "Can't send the mail, please try again!")
         return render(request, 'authentication/index.html')
 
@@ -140,14 +136,10 @@ def forgot_password(request):
         email = request.POST.get('email', '')
         user = User.objects.filter(email=email).first()
         if user:
-            # Generate a unique token and save it to the user model
             token = get_random_string(length=32)
             user_token = UserToken.objects.create(email=email, reset_password_token=token)
-             # Get the current site's domain
             current_site = get_current_site(request)
             domain = current_site.domain
-            
-            # Construct the reset link dynamically
             reset_link = f"http://{domain}/reset_password/{token}/"
             send_mail('Reset Password', f'Click the following link to reset your password: {reset_link}',
                       settings.DEFAULT_FROM_EMAIL, [user.email], fail_silently=False)
@@ -159,7 +151,6 @@ def forgot_password(request):
 def reset_password(request, token):
     user_token = UserToken.objects.filter(reset_password_token=token).first()
     if not user_token:
-        # Handle invalid or expired token
         return render(request, 'authentication/password_reset_invalid.html')
     if request.method == 'POST':
         new_password = request.POST.get('new_password', '')
@@ -167,7 +158,6 @@ def reset_password(request, token):
         if new_password != confirm_new_password:
             error_message = "Passwords do not match."
             return render(request, 'authentication/reset_password.html', {'error_message': error_message, 'token': token})
-        # Update the user's password and reset the token
         user = User.objects.get(email=user_token.email)
         user.set_password(new_password)
         user.save()
@@ -184,15 +174,12 @@ class SessionTimeoutMiddleware:
         if request.user.is_authenticated:
             last_activity = request.session.get('last_activity')
             if last_activity:
-                # Check if the session has expired
                 timeout_seconds = settings.SESSION_COOKIE_AGE
                 if datetime.now() - last_activity > timedelta(seconds=timeout_seconds):
-                    # Session has expired, logout the user
                     logout(request)
                     messages.info(request, 'You have been logged out due to inactivity.')
                     return redirect('signin')
 
-        # Update last activity timestamp in the session
         request.session['last_activity'] = datetime.now()
         response = self.get_response(request)
         return response
@@ -212,21 +199,17 @@ def change_password(request):
 
         user = request.user
 
-        # Check if the old password is correct
         if not user.check_password(old_password):
             messages.error(request, 'Incorrect old password. Please try again.')
             return redirect('change_password')
 
-        # Check if the new passwords match
         if new_password != confirm_new_password:
             messages.error(request, 'New passwords do not match. Please try again.')
             return redirect('change_password')
 
-        # Set the new password
         user.set_password(new_password)
         user.save()
 
-        # Update session to prevent logout
         update_session_auth_hash(request, user)
         logout(request)
         messages.success(request, 'Your password was successfully updated!')
@@ -239,46 +222,56 @@ def profile_update(request):
     if request.method == "POST":
         user = request.user
         
-        new_email = request.POST.get("new_email")
-        confirm_email = request.POST.get("confirm_email")
-        first_name = request.POST.get("first_name")
-        last_name = request.POST.get("last_name")
+        new_email = request.POST["new_email"]
+        confirm_email = request.POST["confirm_email"]
+        first_name = request.POST["first_name"]
+        last_name = request.POST["last_name"]
+
+        if (
+            user.email == new_email
+            and user.first_name == first_name
+            and user.last_name == last_name
+        ):
+            messages.info(request, "No changes in details.")
+            return redirect('profile_update')
 
         if new_email != confirm_email:
             messages.error(request, "Email addresses do not match.")
             return redirect('profile_update')
 
-        # Check if the new email is already taken
-        if User.objects.exclude(pk=user.pk).filter(email=new_email).exists():
+        if new_email != user.email and User.objects.exclude(pk=user.pk).filter(email=new_email).exists():
             messages.error(request, "Email address is already in use.")
             return redirect('profile_update')
 
-        # Update user profile and set is_active to False
-        user.username = new_email
-        user.email = new_email
         user.first_name = first_name
         user.last_name = last_name
-        user.is_active = False  # Set is_active to False
-        user.save()
 
-        # Send activation email to the updated email
-        current_site = get_current_site(request)
-        from_email = settings.EMAIL_HOST_USER
-        to_list = [user.email]
-        mail_subject = 'Activate your account'
-        message = render_to_string('authentication/email_confirmation.html', {
-            'user': user,
-            'domain': current_site.domain,
-            'uid': urlsafe_base64_encode(force_bytes(user.pk)),
-            'token': generate_token.make_token(user),
-        })
+        if new_email != user.email:
+            user.username = new_email
+            user.email = new_email
+            user.is_active = False
 
-        send_mail(mail_subject, message, from_email, to_list, fail_silently=True)
-        
-        logout(request)
-        messages.success(request, 'An activation link has been sent to your new email address. Please check your email to activate your account.')
-        
-        return render(request, 'authentication/email_change_msg.html')
+            current_site = get_current_site(request)
+            from_email = settings.EMAIL_HOST_USER
+            to_list = [user.email]
+            mail_subject = 'Activate your account'
+            message = render_to_string('authentication/email_confirmation.html', {
+                'user': user,
+                'domain': current_site.domain,
+                'uid': urlsafe_base64_encode(force_bytes(user.pk)),
+                'token': generate_token.make_token(user),
+            })
+
+            send_mail(mail_subject, message, from_email, to_list, fail_silently=True)
+
+            logout(request)
+            messages.success(request, 'An activation link has been sent to your new email address. Please check your email to activate your account.')
+            
+            return render(request, 'authentication/email_change_msg.html')
+        else:
+            user.save()
+            messages.success(request, 'Profile updated.')
+            return redirect('predict')
 
     return render(request, "authentication/profile.html")
 
@@ -296,7 +289,6 @@ def delete_user(request):
 
 @login_required
 def prediction(request):
-    # Initialize variables
     predicted_amount_plot = None
     pie_chart = None
     bar_graph = None
