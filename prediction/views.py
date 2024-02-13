@@ -340,7 +340,7 @@ def prediction(request):
                 # Test the model
                 sample_data['PredictedTotalAmount'] = model.predict(sample_data[['Year', 'Month', 'Day', 'Quantity']])
 
-                # Plotting the line graph for Predicted TotalAmount & Actual TotalAmount vs PurchaseDate
+                # Scenario 1: Line graph Plotting the line graph for Predicted TotalAmount & Actual TotalAmount vs PurchaseDate
                 sample_data_month = sample_data.groupby(['Year', 'Month']).agg({
                     'PurchaseDate': 'max',
                     'TotalAmount': 'sum',

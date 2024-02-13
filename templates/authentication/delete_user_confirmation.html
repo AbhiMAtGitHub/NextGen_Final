@@ -43,7 +43,7 @@
                             <div>
                                 <h3>Delete User Confirmation</h3>
                                 <p>Are you sure you want to delete your account?</p>
-                                <form method="post">
+                                <form method="post" action="/delete_user">
                                     {% csrf_token %}
                                     <button type="submit" name="confirm" value="yes"
                                         class="btn btn-danger me-2">Yes, Delete My Account</button>
