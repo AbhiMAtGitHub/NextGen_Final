@@ -289,15 +289,15 @@ def delete_user(request):
 
 @login_required
 def prediction(request):
-    predicted_amount_plot = None
-    pie_chart = None
-    bar_graph = None
-    line_graph = None
-    revenue_prediction_graph = None
-    images_present = False
-    user_first_name = request.user.first_name if request.user.first_name else ""
-
     if request.method == 'POST':
+        predicted_amount_plot = None
+        pie_chart = None
+        bar_graph = None
+        line_graph = None
+        revenue_prediction_graph = None
+        images_present = False
+        user_first_name = request.user.first_name if request.user.first_name else ""
+        
         form = CSVUploadForm(request.POST, request.FILES)
         if form.is_valid():
             csv_file = request.FILES['csv_file']
@@ -446,16 +446,33 @@ def prediction(request):
             except Exception as e:
                 messages.error(request, f'Error in prediction or data processing: {e}')
                 return redirect('predict')
-    else:
+        return render(request, 'authentication/dashboard.html', {
+            'user_first_name': user_first_name,
+            'form': form,
+            'pie_chart': pie_chart,
+            'bar_graph': bar_graph,
+            'line_graph': line_graph,
+            'predicted_amount_plot': predicted_amount_plot,
+            'revenue_prediction_graph': revenue_prediction_graph,
+            'images_present': images_present,
+        })
+    elif request.method == "GET":
         form = CSVUploadForm()
+        predicted_amount_plot = None
+        pie_chart = None
+        bar_graph = None
+        line_graph = None
+        revenue_prediction_graph = None
+        images_present = False
+        user_first_name = request.user.first_name if request.user.first_name else ""
         
-    return render(request, 'authentication/dashboard.html', {
-        'user_first_name': user_first_name,
-        'form': form,
-        'pie_chart': pie_chart,
-        'bar_graph': bar_graph,
-        'line_graph': line_graph,
-        'predicted_amount_plot': predicted_amount_plot,
-        'revenue_prediction_graph': revenue_prediction_graph,
-        'images_present': images_present,
-    })
+        return render(request, 'authentication/dashboard.html', {
+            'user_first_name': user_first_name,
+            'form': form,
+            'pie_chart': pie_chart,
+            'bar_graph': bar_graph,
+            'line_graph': line_graph,
+            'predicted_amount_plot': predicted_amount_plot,
+            'revenue_prediction_graph': revenue_prediction_graph,
+            'images_present': images_present,
+        })
