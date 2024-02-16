@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Line Graph</title>
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+    <script type="text/javascript">
+      // Google Charts API scripts for drawing charts
+      // Script for Line Chart: Predicted vs Actual Total Amount
+      google.charts.load("current", { packages: ["corechart"] });
+      google.charts.setOnLoadCallback(drawPredictLineChart);
+
+      function drawPredictLineChart() {
+        var chartData = JSON.parse("{{ chart_data|escapejs }}");
+
+        var data = new google.visualization.DataTable();
+        data.addColumn("string", "Date");
+        data.addColumn("number", "Predicted Amount");
+        data.addColumn("number", "Actual Amount");
+        data.addRows(chartData.labels.length);
+
+        for (var i = 0; i < chartData.labels.length; i++) {
+          data.setValue(i, 0, chartData.labels[i]);
+          data.setValue(i, 1, chartData.predicted_amount[i]);
+          data.setValue(i, 2, chartData.actual_amount[i]);
+        }
+
+        var options = {
+          title: "Predicted Monthly Total Amount",
+          curveType: "function",
+          legend: { position: "bottom" },
+          width: "100%",
+          height: "400px",
+        };
+
+        var chart = new google.visualization.LineChart(
+          document.getElementById("pre_line_chart_div")
+        );
+        chart.draw(data, options);
+      }
+
+      // Script for Pie Chart: Category Distribution
+      google.charts.setOnLoadCallback(drawPieChart);
+
+      function drawPieChart() {
+        var chartData = JSON.parse("{{ chart_data|escapejs }}");
+
+        var data = new google.visualization.DataTable();
+        data.addColumn("string", "Category");
+        data.addColumn("number", "Count");
+        data.addRows(chartData.category_labels.length);
+
+        for (var i = 0; i < chartData.category_labels.length; i++) {
+          data.setValue(i, 0, chartData.category_labels[i]);
+          data.setValue(i, 1, chartData.category_counts[i]);
+        }
+
+        var options = {
+          title: "Category Distribution",
+          width: "100%",
+          height: "400px",
+        };
+
+        var chart = new google.visualization.PieChart(
+          document.getElementById("pie_chart_div")
+        );
+        chart.draw(data, options);
+      }
+
+      // Script for Bar Chart: Top 10 Products by Quantity Sold
+      google.charts.setOnLoadCallback(drawBarChart);
+
+      function drawBarChart() {
+        var chartData = JSON.parse("{{ chart_data|escapejs }}");
+
+        var data = new google.visualization.DataTable();
+        data.addColumn("string", "Product Name");
+        data.addColumn("number", "Quantity Sold");
+        data.addRows(chartData.top_products.length);
+
+        for (var i = 0; i < chartData.top_products.length; i++) {
+          data.setValue(i, 0, chartData.top_products[i]);
+          data.setValue(i, 1, chartData.top_products_quantities[i]);
+        }
+
+        var options = {
+          title: "Top 10 Products by Quantity Sold",
+          width: "100%",
+          height: "400px",
+          legend: { position: "none" },
+        };
+
+        var chart = new google.visualization.BarChart(
+          document.getElementById("bar_chart_div")
+        );
+        chart.draw(data, options);
+      }
+
+      google.charts.setOnLoadCallback(drawLineChart);
+
+      function drawLineChart() {
+        var chartData = JSON.parse("{{ chart_data|escapejs }}");
+
+        var data = new google.visualization.DataTable();
+        data.addColumn("string", "Date");
+        data.addColumn("number", "Actual Amount");
+        data.addRows(chartData.labels.length);
+
+        for (var i = 0; i < chartData.labels.length; i++) {
+          data.setValue(i, 0, chartData.labels[i]);
+          data.setValue(i, 1, chartData.actual_amount[i]);
+        }
+
+        var options = {
+          title: "Monthly Total Amount",
+          curveType: "function",
+          legend: { position: "bottom" },
+          width: "100%",
+          height: "400px",
+        };
+
+        var chart = new google.visualization.LineChart(
+          document.getElementById("line_chart_div")
+        );
+        chart.draw(data, options);
+      }
+
+      google.charts.setOnLoadCallback(drawLineChart4);
+
+      function drawLineChart4() {
+        var chartData = JSON.parse("{{ chart_data|escapejs }}");
+
+        var data = new google.visualization.DataTable();
+        data.addColumn("date", "Purchase Date");
+        data.addColumn("number", "Total Amount");
+        data.addRows(chartData.purchase_dates.length);
+
+        for (var i = 0; i < chartData.purchase_dates.length; i++) {
+          var purchaseDate = new Date(chartData.purchase_dates[i]);
+          data.setValue(i, 0, purchaseDate);
+          data.setValue(i, 1, chartData.total_amounts[i]);
+        }
+
+        var options = {
+          title: "TotalAmount Over PurchaseDate",
+          legend: { position: "bottom" },
+          width: "100%",
+          height: "400px",
+          hAxis: {
+            format: "MMM yyyy",
+          },
+        };
+
+        var chart = new google.visualization.LineChart(
+          document.getElementById("line_chart_div_4")
+        );
+        chart.draw(data, options);
+      }
+
+      google.charts.setOnLoadCallback(drawChart5);
+
+      function drawChart5() {
+        var chartData = JSON.parse("{{ chart_data|escapejs }}");
+
+        var data = new google.visualization.DataTable();
+        data.addColumn("string", "Purchase Date");
+        data.addColumn("number", "Predicted TotalAmount");
+
+        for (var i = 0; i < chartData.future_purchase_dates.length; i++) {
+          data.addRow([
+            chartData.future_purchase_dates[i],
+            chartData.predicted_total_amounts[i],
+          ]);
+        }
+
+        var options = {
+          title: "Predicted TotalAmount for Next 6 Months",
+          legend: { position: "bottom" },
+          width: "100%",
+          height: "400px",
+          hAxis: {
+            format: "MMM yyyy",
+          },
+        };
+
+        var chart = new google.visualization.LineChart(
+          document.getElementById("line_chart_div_5")
+        );
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %} {{ form }}
+      <button class="btn btn-primary" type="submit">Upload</button>
+    </form>
+    {% if images_present %}
+    <div id="pre_line_chart_div" style="height: 400px"></div>
+    <div id="pie_chart_div" style="height: 400px"></div>
+    <div id="bar_chart_div" style="height: 400px"></div>
+    <div id="line_chart_div" style="height: 400px"></div>
+    <div id="line_chart_div_4" style="height: 400px"></div>
+    <div id="line_chart_div_5" style="height: 800px"></div>
+
+    {% else %}
+    <p>No data available.</p>
+    {% endif %}
+  </body>
+</html>

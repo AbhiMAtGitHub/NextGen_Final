@@ -427,22 +427,14 @@
         </div>
         {% if images_present %}
         <!-- <div class="d-flex align-items-center"> -->
-        <button class="btn btn-danger mt-3 btn-clear" id="clearAllBtn">
+        {% comment %} <button class="btn btn-danger mt-3 btn-clear" id="clearAllBtn"> {% endcomment %}
+        <a href="{% url 'predict' %}" class="btn btn-danger mt-3 btn-clear">
           Clear All
-        </button>
+        </a>
         <!-- </div> -->
         {% endif %}
       </div>
     </div>
-
-    <script>
-      document
-        .getElementById("clearAllBtn")
-        .addEventListener("click", function () {
-          // Clear the content inside the contentToClear div
-          document.getElementById("contentToClear").innerHTML = "";
-        });
-    </script>
 
     <!-- JavaScript libraries -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
