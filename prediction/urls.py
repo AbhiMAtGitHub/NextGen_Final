@@ -3,6 +3,7 @@ from . import views
 urlpatterns = [
     path('', views.home, name = 'home'),
     path('activate/<uidb64>/<token>', views.activate, name='activate'),
+    path('activate_profile/<uidb64>/<token>', views.activate_profile, name='activate_profile'),
     path('signup',views.signup, name='signup'),
     path('signin',views.signin, name='signin'),
     path('predict',views.prediction, name='predict'),
@@ -13,4 +14,5 @@ urlpatterns = [
     path('reset_password/<str:token>/', views.reset_password, name='reset_password'),
     path('change_password', views.change_password, name='change_password'),
     path('profile_update', views.profile_update, name='profile_update'),
+    path('download_chart_image', views.download_chart_image, name='download_chart_image'),
 ]

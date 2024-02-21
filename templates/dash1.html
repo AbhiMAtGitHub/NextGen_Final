@@ -1,214 +1,416 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Line Graph</title>
-    <script
-      type="text/javascript"
-      src="https://www.gstatic.com/charts/loader.js"
-    ></script>
-    <script type="text/javascript">
-      // Google Charts API scripts for drawing charts
-      // Script for Line Chart: Predicted vs Actual Total Amount
-      google.charts.load("current", { packages: ["corechart"] });
-      google.charts.setOnLoadCallback(drawPredictLineChart);
 
-      function drawPredictLineChart() {
-        var chartData = JSON.parse("{{ chart_data|escapejs }}");
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard - NextGen Retail</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+  <script type="text/javascript">
+    // Google Charts API scripts for drawing charts
+    // Script for Line Chart: Predicted vs Actual Total Amount
+    google.charts.load("current", { packages: ["corechart"] });
+    google.charts.setOnLoadCallback(drawPredictLineChart);
 
-        var data = new google.visualization.DataTable();
-        data.addColumn("string", "Date");
-        data.addColumn("number", "Predicted Amount");
-        data.addColumn("number", "Actual Amount");
-        data.addRows(chartData.labels.length);
+    function drawPredictLineChart() {
+      var chartData = JSON.parse("{{ chart_data|escapejs }}");
 
-        for (var i = 0; i < chartData.labels.length; i++) {
-          data.setValue(i, 0, chartData.labels[i]);
-          data.setValue(i, 1, chartData.predicted_amount[i]);
-          data.setValue(i, 2, chartData.actual_amount[i]);
-        }
+      var data = new google.visualization.DataTable();
+      data.addColumn("string", "Date");
+      data.addColumn("number", "Predicted Amount");
+      data.addColumn("number", "Actual Amount");
+      data.addRows(chartData.labels.length);
 
-        var options = {
-          title: "Predicted Monthly Total Amount",
-          curveType: "function",
-          legend: { position: "bottom" },
-          width: "100%",
-          height: "400px",
-        };
-
-        var chart = new google.visualization.LineChart(
-          document.getElementById("pre_line_chart_div")
-        );
-        chart.draw(data, options);
+      for (var i = 0; i < chartData.labels.length; i++) {
+        data.setValue(i, 0, chartData.labels[i]);
+        data.setValue(i, 1, chartData.predicted_amount[i]);
+        data.setValue(i, 2, chartData.actual_amount[i]);
       }
 
-      // Script for Pie Chart: Category Distribution
-      google.charts.setOnLoadCallback(drawPieChart);
+      var options = {
+        title: "Predicted Monthly Total Amount",
+        curveType: "function",
+        legend: { position: "bottom" },
+        width: "100%",
+        height: "400px",
+      };
 
-      function drawPieChart() {
-        var chartData = JSON.parse("{{ chart_data|escapejs }}");
+      var chart = new google.visualization.LineChart(
+        document.getElementById("pre_line_chart_div")
+      );
+      chart.draw(data, options);
+    }
 
-        var data = new google.visualization.DataTable();
-        data.addColumn("string", "Category");
-        data.addColumn("number", "Count");
-        data.addRows(chartData.category_labels.length);
+    // Script for Pie Chart: Category Distribution
+    google.charts.setOnLoadCallback(drawPieChart);
 
-        for (var i = 0; i < chartData.category_labels.length; i++) {
-          data.setValue(i, 0, chartData.category_labels[i]);
-          data.setValue(i, 1, chartData.category_counts[i]);
-        }
+    function drawPieChart() {
+      var chartData = JSON.parse("{{ chart_data|escapejs }}");
 
-        var options = {
-          title: "Category Distribution",
-          width: "100%",
-          height: "400px",
-        };
+      var data = new google.visualization.DataTable();
+      data.addColumn("string", "Category");
+      data.addColumn("number", "Count");
+      data.addRows(chartData.category_labels.length);
 
-        var chart = new google.visualization.PieChart(
-          document.getElementById("pie_chart_div")
-        );
-        chart.draw(data, options);
+      for (var i = 0; i < chartData.category_labels.length; i++) {
+        data.setValue(i, 0, chartData.category_labels[i]);
+        data.setValue(i, 1, chartData.category_counts[i]);
       }
 
-      // Script for Bar Chart: Top 10 Products by Quantity Sold
-      google.charts.setOnLoadCallback(drawBarChart);
+      var options = {
+        title: "Category Distribution",
+        width: "100%",
+        height: "400px",
+      };
 
-      function drawBarChart() {
-        var chartData = JSON.parse("{{ chart_data|escapejs }}");
+      var chart = new google.visualization.PieChart(
+        document.getElementById("pie_chart_div")
+      );
+      chart.draw(data, options);
+    }
 
-        var data = new google.visualization.DataTable();
-        data.addColumn("string", "Product Name");
-        data.addColumn("number", "Quantity Sold");
-        data.addRows(chartData.top_products.length);
+    // Script for Bar Chart: Top 10 Products by Quantity Sold
+    google.charts.setOnLoadCallback(drawBarChart);
 
-        for (var i = 0; i < chartData.top_products.length; i++) {
-          data.setValue(i, 0, chartData.top_products[i]);
-          data.setValue(i, 1, chartData.top_products_quantities[i]);
-        }
+    function drawBarChart() {
+      var chartData = JSON.parse("{{ chart_data|escapejs }}");
 
-        var options = {
-          title: "Top 10 Products by Quantity Sold",
-          width: "100%",
-          height: "400px",
-          legend: { position: "none" },
-        };
+      var data = new google.visualization.DataTable();
+      data.addColumn("string", "Product Name");
+      data.addColumn("number", "Quantity Sold");
+      data.addRows(chartData.top_products.length);
 
-        var chart = new google.visualization.BarChart(
-          document.getElementById("bar_chart_div")
-        );
-        chart.draw(data, options);
+      for (var i = 0; i < chartData.top_products.length; i++) {
+        data.setValue(i, 0, chartData.top_products[i]);
+        data.setValue(i, 1, chartData.top_products_quantities[i]);
       }
 
-      google.charts.setOnLoadCallback(drawLineChart);
+      var options = {
+        title: "Top 10 Products by Quantity Sold",
+        width: "100%",
+        height: "400px",
+        legend: { position: "none" },
+      };
 
-      function drawLineChart() {
-        var chartData = JSON.parse("{{ chart_data|escapejs }}");
+      var chart = new google.visualization.BarChart(
+        document.getElementById("bar_chart_div")
+      );
+      chart.draw(data, options);
+    }
 
-        var data = new google.visualization.DataTable();
-        data.addColumn("string", "Date");
-        data.addColumn("number", "Actual Amount");
-        data.addRows(chartData.labels.length);
+    google.charts.setOnLoadCallback(drawLineChart);
 
-        for (var i = 0; i < chartData.labels.length; i++) {
-          data.setValue(i, 0, chartData.labels[i]);
-          data.setValue(i, 1, chartData.actual_amount[i]);
-        }
+    function drawLineChart() {
+      var chartData = JSON.parse("{{ chart_data|escapejs }}");
 
-        var options = {
-          title: "Monthly Total Amount",
-          curveType: "function",
-          legend: { position: "bottom" },
-          width: "100%",
-          height: "400px",
-        };
+      var data = new google.visualization.DataTable();
+      data.addColumn("string", "Date");
+      data.addColumn("number", "Actual Amount");
+      data.addRows(chartData.labels.length);
 
-        var chart = new google.visualization.LineChart(
-          document.getElementById("line_chart_div")
-        );
-        chart.draw(data, options);
+      for (var i = 0; i < chartData.labels.length; i++) {
+        data.setValue(i, 0, chartData.labels[i]);
+        data.setValue(i, 1, chartData.actual_amount[i]);
       }
 
-      google.charts.setOnLoadCallback(drawLineChart4);
+      var options = {
+        title: "Monthly Total Amount",
+        curveType: "function",
+        legend: { position: "bottom" },
+        width: "100%",
+        height: "400px",
+      };
 
-      function drawLineChart4() {
-        var chartData = JSON.parse("{{ chart_data|escapejs }}");
+      var chart = new google.visualization.LineChart(
+        document.getElementById("line_chart_div")
+      );
+      chart.draw(data, options);
+    }
 
-        var data = new google.visualization.DataTable();
-        data.addColumn("date", "Purchase Date");
-        data.addColumn("number", "Total Amount");
-        data.addRows(chartData.purchase_dates.length);
+    google.charts.setOnLoadCallback(drawLineChart4);
 
-        for (var i = 0; i < chartData.purchase_dates.length; i++) {
-          var purchaseDate = new Date(chartData.purchase_dates[i]);
-          data.setValue(i, 0, purchaseDate);
-          data.setValue(i, 1, chartData.total_amounts[i]);
-        }
+    function drawLineChart4() {
+      var chartData = JSON.parse("{{ chart_data|escapejs }}");
 
-        var options = {
-          title: "TotalAmount Over PurchaseDate",
-          legend: { position: "bottom" },
-          width: "100%",
-          height: "400px",
-          hAxis: {
-            format: "MMM yyyy",
-          },
-        };
+      var data = new google.visualization.DataTable();
+      data.addColumn("date", "Purchase Date");
+      data.addColumn("number", "Total Amount");
+      data.addRows(chartData.purchase_dates.length);
 
-        var chart = new google.visualization.LineChart(
-          document.getElementById("line_chart_div_4")
-        );
-        chart.draw(data, options);
+      for (var i = 0; i < chartData.purchase_dates.length; i++) {
+        var purchaseDate = new Date(chartData.purchase_dates[i]);
+        data.setValue(i, 0, purchaseDate);
+        data.setValue(i, 1, chartData.total_amounts[i]);
       }
 
-      google.charts.setOnLoadCallback(drawChart5);
+      var options = {
+        title: "TotalAmount Over PurchaseDate",
+        legend: { position: "bottom" },
+        width: "100%",
+        height: "400px",
+        hAxis: {
+          format: "MMM yyyy",
+        },
+      };
 
-      function drawChart5() {
-        var chartData = JSON.parse("{{ chart_data|escapejs }}");
+      var chart = new google.visualization.LineChart(
+        document.getElementById("line_chart_div_4")
+      );
+      chart.draw(data, options);
+    }
 
-        var data = new google.visualization.DataTable();
-        data.addColumn("string", "Purchase Date");
-        data.addColumn("number", "Predicted TotalAmount");
+    google.charts.setOnLoadCallback(drawChart5);
 
-        for (var i = 0; i < chartData.future_purchase_dates.length; i++) {
-          data.addRow([
-            chartData.future_purchase_dates[i],
-            chartData.predicted_total_amounts[i],
-          ]);
-        }
+    function drawChart5() {
+      var chartData = JSON.parse("{{ chart_data|escapejs }}");
 
-        var options = {
-          title: "Predicted TotalAmount for Next 6 Months",
-          legend: { position: "bottom" },
-          width: "100%",
-          height: "400px",
-          hAxis: {
-            format: "MMM yyyy",
-          },
-        };
+      var data = new google.visualization.DataTable();
+      data.addColumn("string", "Purchase Date");
+      data.addColumn("number", "Predicted TotalAmount");
 
-        var chart = new google.visualization.LineChart(
-          document.getElementById("line_chart_div_5")
-        );
-        chart.draw(data, options);
+      for (var i = 0; i < chartData.future_purchase_dates.length; i++) {
+        data.addRow([
+          chartData.future_purchase_dates[i],
+          chartData.predicted_total_amounts[i],
+        ]);
       }
-    </script>
-  </head>
-  <body>
-    <form method="post" enctype="multipart/form-data">
-      {% csrf_token %} {{ form }}
-      <button class="btn btn-primary" type="submit">Upload</button>
-    </form>
-    {% if images_present %}
-    <div id="pre_line_chart_div" style="height: 400px"></div>
-    <div id="pie_chart_div" style="height: 400px"></div>
-    <div id="bar_chart_div" style="height: 400px"></div>
-    <div id="line_chart_div" style="height: 400px"></div>
-    <div id="line_chart_div_4" style="height: 400px"></div>
-    <div id="line_chart_div_5" style="height: 800px"></div>
 
-    {% else %}
-    <p>No data available.</p>
-    {% endif %}
-  </body>
+      var options = {
+        title: "Predicted TotalAmount for Next 6 Months",
+        legend: { position: "bottom" },
+        width: "100%",
+        height: "400px",
+        hAxis: {
+          format: "MMM yyyy",
+        },
+      };
+
+      var chart = new google.visualization.LineChart(
+        document.getElementById("line_chart_div_5")
+      );
+      chart.draw(data, options);
+    }
+
+
+  </script>
+  <style>
+    .navbar {
+      background-color: rgb(148, 172, 250);
+      position: fixed;
+      width: 100%;
+      z-index: 1000;
+      top: 0;
+      padding: 17px;
+    }
+
+    @media screen and (max-width: 600px) {
+      .navbar a {
+        float: none;
+        display: block;
+        text-align: left;
+      }
+
+      .navbar-nav {
+        justify-content: center;
+      }
+    }
+
+    .navbar-brand img {
+      max-width: 40px;
+      height: auto;
+      border-radius: 50%;
+    }
+
+    .navbar-toggler {
+      color: white !important;
+    }
+
+    .navbar-nav .nav-link {
+      color: white;
+      text-align: center;
+    }
+
+    .custom-navbar .dropdown-menu {
+      background-color: rgb(201, 228, 249);
+      margin-right: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg bg-dark">
+    <!-- Logo and toggle button -->
+    <div class="container-fluid">
+      <!-- Logo with link to home -->
+      <a class="navbar-brand text-white fw-bold fs-3" href="{% url 'home' %}">
+        <img src="../static/img/logo.jpg" alt="Logo" class="img-fluid mr-2"
+          style="max-width: 40px; height: auto; border-radius: 50%" />
+        NextGen Retail</a>
+      <!-- Navbar toggle button -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+        style="color: white; border-color: white">
+        <span class="navbar-toggler-icon" style="color: white; border-color: #fff"></span>
+      </button>
+
+      <!-- Navbar links -->
+      <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent" style="margin-left: -15px">
+        <ul class="navbar-nav mb-2 mb-lg-0 custom-navbar">
+          <li class="nav-item ms-5">
+            <a class="nav-link btn-outline-primary fs-5">Hi, {{user.first_name}}</a>
+          </li>
+          <li class="nav-item ms-5">
+            <!-- Dropdown menu for User Settings -->
+            <div class="dropdown show">
+              <button class="btn btn-outline-primary dropdown-toggle fs-5" type="button" id="dropdownMenuButton"
+                data-bs-toggle="dropdown" aria-expanded="false" style="color: white; border-color: transparent">
+                User Settings
+              </button>
+
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="{% url 'change_password' %}">Change Password</a>
+
+                <a class="dropdown-item" href="{% url 'profile_update' %}">Update Profile</a>
+
+                <a class="dropdown-item" href="{% url 'delete_user' %}">Delete Account</a>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item ms-5">
+            <a class="nav-link btn btn-outline-primary fs-5" href="{% url 'signout' %}">Sign Out</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  
+    <div class="form-container" style="padding: 120px">
+      <h4 style="color: black">
+        Upload a CSV file for prediction and analysis
+      </h4>
+      <form method="post" enctype="multipart/form-data">
+        {% csrf_token %} {{ form }}
+        <button class="btn btn-primary" type="submit">Upload</button>
+      </form>
+      {% if images_present %}
+      <div id="pre_line_chart_div" style="height: 400px"></div>
+      <div id="pie_chart_div" style="height: 400px"></div>
+      <div id="bar_chart_div" style="height: 400px"></div>
+      <div id="line_chart_div" style="height: 400px"></div>
+      <div id="line_chart_div_4" style="height: 400px"></div>
+      <div id="line_chart_div_5" style="height: 800px"></div>
+      <div id="clear_button_container" class="text-center">
+        <a href="{% url 'predict' %}" class="btn btn-danger mt-3 btn-clear">
+          Clear All
+        </a>
+        <button onclick="downloadCharts()" class="btn btn-primary mt-3 ml-2">Download Charts</button>
+      </div>
+      {% endif %}
+    </div>
+
+  <script type="text/javascript">
+    function downloadCharts() {
+    // Function to download each chart
+    function downloadChart(chartId, filename) {
+        var chartElement = document.getElementById(chartId);
+
+        // Use html2canvas to capture the chart as an image
+        html2canvas(chartElement, {
+            allowTaint: true,
+            useCORS: true
+        }).then(function(canvas) {
+            // Convert canvas to JPEG image
+            var imageData = canvas.toDataURL('image/jpeg');
+
+            // Create a temporary link element to trigger the download
+            var link = document.createElement('a');
+            link.setAttribute('href', imageData);
+            link.setAttribute('download', filename + '.jpg');
+            link.click();
+        });
+    }
+
+    // Call the downloadChart function for each chart
+    downloadChart('pre_line_chart_div', 'predicted_line_chart');
+    downloadChart('pie_chart_div', 'pie_chart');
+    downloadChart('bar_chart_div', 'bar_chart');
+    downloadChart('line_chart_div', 'monthly_total_amount');
+    downloadChart('line_chart_div_4', 'total_amount_over_purchase_date');
+    downloadChart('line_chart_div_5', 'predicted_total_amount_next_6_months');
+}
+
+    // function downloadCharts() {
+        // var chartDivs = [
+        //     "pre_line_chart_div",
+        //     "pie_chart_div",
+        //     "bar_chart_div",
+        //     "line_chart_div",
+        //     "line_chart_div_4",
+        //     "line_chart_div_5"
+        // ];
+
+        // // Create an array to hold chart data
+        // var chartData = [];
+
+        // chartDivs.forEach(function (divId) {
+        //     var chartDiv = document.getElementById(divId);
+        //     var width = chartDiv.offsetWidth;
+        //     var height = chartDiv.offsetHeight;
+        //     var content = chartDiv.innerHTML;
+
+        //     // Add chart data to the array
+        //     chartData.push({
+        //         width: width,
+        //         height: height,
+        //         content: content
+        //     });
+        // });
+
+        // // Send chart data to the backend
+        // fetch("{% url 'download_chart_image' %}", {
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type': 'application/json',
+        //         'X-CSRFToken': '{{ csrf_token }}'
+        //     },
+        //     body: JSON.stringify(chartData)
+        // })
+        // .then(response => response.blob())
+        // .then(blob => {
+        //     // Create a URL for the blob
+        //     var url = window.URL.createObjectURL(blob);
+
+        //     // Create a link element
+        //     var a = document.createElement('a');
+        //     a.href = url;
+        //     a.download = 'charts.pdf';
+
+        //     // Append the link to the body and click it to initiate download
+        //     document.body.appendChild(a);
+        //     a.click();
+
+        //     // Remove the link element
+        //     document.body.removeChild(a);
+
+        //     // Revoke the URL to release resources
+        //     window.URL.revokeObjectURL(url);
+        // })
+        // .catch(error => console.error('Error downloading PDF:', error));
+    // }
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+</body>
+
 </html>
