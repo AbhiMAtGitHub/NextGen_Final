@@ -20,5 +20,4 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('prediction.urls')),
-    path('predict1/', include('sampleCharts.urls')),
 ]

@@ -1,0 +1,600 @@
+CustomerID,CustomerName,CustomerEmail,ProductID,ProductName,Category,PurchaseID,PurchaseDate,Quantity,TotalAmount
+8453,Kevin Hood,rodriguezrachelkevinhood@example.net,4,Jeans,Clothing,14c45bb4-1559-4c01-a11b-43f97a65fe7d,2023-11-05 09:47:45,2,19.92
+9994,Tommy Sampson,angieboydtommysampson@example.net,455,Dress,Clothing,75b5783c-1643-4717-991f-9bd7aca99bd0,2021-10-16 09:12:16,5,132.3
+8448,Andrew White,catherinerileyandrewwhite@example.com,50,Chair,Home,2881d7fd-67d2-4231-9ed4-b9c6e8d27cf6,2020-04-05 12:34:32,5,227.99
+5824,Kimberly Adams,williamsbaileykimberlyadams@example.com,25,Shirt,Clothing,68c553ff-c6b7-456b-a74f-1ca1c6931921,2020-12-03 15:17:42,6,495.63
+6757,Kelli Wilson,walkerjameskelliwilson@example.net,483,Laptop,Electronics,2ea3ded0-b48e-4e71-ae46-34e3fc782cd9,2018-04-13 12:15:11,3,241.35
+9964,Michael Robinson,margaretpiercemichaelrobinson@example.net,1,Smartwatch,Electronics,9b671cb0-7a6f-43b9-84ea-2a99bc57a57f,2017-10-04 06:52:24,4,373.02
+2796,Jill Thompson,michael41jillthompson@example.com,119,Laptop,Electronics,41d19e76-6ead-44c0-bcc4-793349d2a5bf,2018-03-25 22:25:42,8,217.16
+3282,Terri Walker,jordanjacobterriwalker@example.net,424,Table,Home,bcd7c201-b738-4a32-95e7-1a1bcfc1cf0e,2020-08-15 13:12:14,2,81.86
+2863,Jessica Willis,ufloresjessicawillis@example.net,317,Tools,Beauty,eb78d8af-8454-4ecb-b1cf-69036743ad91,2019-12-02 06:44:06,6,156.65
+8242,James Boyd,brandon69jamesboyd@example.net,307,Makeup,Beauty,6c0ea5b8-502b-4cfa-9852-fb0460ca63f2,2020-12-18 17:21:11,8,250.3
+4164,Joel Suarez,robert07joelsuarez@example.com,131,Curtains,Home,bc331b7a-9686-4737-89d0-22a452382f8a,2023-05-23 13:25:36,5,124.14
+6874,William Nguyen,jenniferguerrerowilliamnguyen@example.com,401,Fiction,Books,eae56cba-bdac-434e-b26c-996d629e1c31,2018-07-30 09:08:26,5,359.66
+3254,David Henderson,michael55davidhenderson@example.net,378,Curtains,Home,7127ef1f-de25-4902-ad02-bcd5b20ab3f0,2017-05-17 22:32:45,1,319.3
+4336,Craig Hernandez,chancockcraighernandez@example.org,410,Bed,Home,2834ab73-d40f-4d17-a0c1-66d0f228eaef,2023-10-07 02:06:12,6,487.66
+1394,Jennifer Booth,tdavisjenniferbooth@example.com,163,Smartwatch,Electronics,a1b1789f-65ea-4d6a-ba4f-daed15e67f5e,2019-12-20 16:33:06,10,87.6
+3796,Kimberly Fisher,tmarkskimberlyfisher@example.com,300,Laptop,Electronics,2cc49683-68ed-4b1c-9387-9914ffa87e80,2017-12-04 08:59:17,4,194.13
+3655,Jeffrey Collins,juliebryantjeffreycollins@example.org,162,Skincare,Beauty,6cb33793-1905-4db0-97fb-af17ae0d1c23,2023-03-18 10:55:42,6,389.32
+9306,Nathaniel Wood,uwoodnathanielwood@example.com,334,Fiction,Books,31eb0e0d-1638-4877-89a0-7c121476f1d4,2018-02-03 17:30:08,10,49.12
+9886,Sarah Perry,michael89sarahperry@example.com,451,Trousers,Clothing,d4b8edf3-2fe7-4354-a3c3-403db3417e19,2018-07-20 00:46:11,3,380.9
+3290,Alexander Walker,summer68alexanderwalker@example.net,65,Smartphone,Electronics,a8d4b09a-143d-4f0c-8ed5-510c45feaf23,2023-10-10 06:15:57,6,233.97
+5987,Theresa Ali,ayerspatricktheresaali@example.net,121,Jeans,Clothing,cd6424cb-84e1-436f-92c9-afb455c173c9,2020-03-20 09:23:07,1,290.62
+1778,Jonathan Phillips,gordon07jonathanphillips@example.org,148,Self-help,Books,4118f35c-4eb6-4559-b0fa-5a706b83399e,2018-07-26 18:55:37,2,339.63
+9951,Darin Ramirez,james42darinramirez@example.com,33,Bath & Body,Beauty,406b9681-ac11-4b8f-b18e-e1fa19c92e2d,2023-06-03 08:33:25,1,465.72
+4901,Debra Vance,ftaylordebravance@example.net,244,Dress,Clothing,3150137a-352d-40fd-8f2d-40cdcbab7e27,2021-05-27 14:13:43,6,146.2
+4932,Sandra Robinson,cunninghamjaviersandrarobinson@example.org,46,Mystery,Books,68de8779-b0df-4914-948f-b55fc62092f0,2017-03-17 23:52:09,9,58.81
+6146,Kent Wagner,megan37kentwagner@example.net,197,Haircare,Beauty,f54f4086-ce4d-4c66-b4a9-71572db7901d,2018-10-18 16:26:15,8,446.8
+8851,Jacqueline Boone,hensleyjamesjacquelineboone@example.org,249,Shirt,Clothing,ba10ee83-fafe-4a15-8002-07d559260e1d,2021-09-05 13:56:33,6,187.02
+7143,Daniel Hensley,calebwalkerdanielhensley@example.org,388,Curtains,Home,a2acaa94-5656-4532-aa82-e02e723cf755,2022-08-14 05:10:47,5,440.7
+8580,Adam Curtis,johnsalexisadamcurtis@example.com,21,Mystery,Books,6e7be184-440c-4904-a896-a2f235111d42,2018-06-04 15:47:51,3,372.44
+8049,Seth Jones,kfloressethjones@example.com,328,Jacket,Clothing,054f3814-1e45-49d7-9580-d99ccf43b560,2018-04-20 14:48:23,9,95.83
+9051,Sharon Carr,xflynnsharoncarr@example.org,136,Non-fiction,Books,4bcb0aba-7823-49c0-a125-085f52a88311,2020-08-08 16:05:27,5,430.31
+2199,Carolyn Townsend,alex85carolyntownsend@example.net,224,Headphones,Electronics,2a108a0f-967b-4077-b0e5-ed5fe31df3a9,2022-12-04 16:00:08,8,102.89
+6596,Larry Davis,robert82larrydavis@example.net,100,Jeans,Clothing,1411caf5-e0a9-4c56-87ec-8eabcd7f1245,2021-09-19 00:18:14,4,120.62
+3549,Nathan Berry,andrea82nathanberry@example.org,65,Smartwatch,Electronics,2493d7a7-88d2-45f5-a31e-2ed41c0ec42c,2020-06-03 20:20:54,6,166.19
+3361,Eric Rangel,jonathanfrederickericrangel@example.com,46,Skincare,Beauty,bc2ac2a6-254f-40a0-b6a3-650abfed9384,2018-04-16 16:13:15,2,396.87
+7273,Christopher Hill,nicholasnolanchristopherhill@example.net,276,Table,Home,c68e74eb-c6bb-4fb8-b2eb-1a2c2b5ac200,2018-02-19 07:31:53,2,123.9
+5657,Anthony Ramsey,hopkinsthomasanthonyramsey@example.org,479,Smartphone,Electronics,88af04ae-8ec2-4109-ae9a-9c796a591cce,2022-02-16 06:15:18,7,170.48
+9350,Angela Owens,clarkangelangelaowens@example.net,78,Gaming Console,Electronics,d8ca02ed-0efa-435e-a643-89592da6ebf2,2023-07-11 10:13:05,9,32.71
+5383,Jeffrey Sanchez,nicolemorsejeffreysanchez@example.com,55,Headphones,Electronics,534da17c-e2ef-40d6-bd82-3209b274759b,2020-07-07 10:25:34,6,397.07
+2790,Marcia Woods,chadmartinezmarciawoods@example.org,314,Chair,Home,d84e326d-7059-4212-96ac-c95cc0e1731f,2020-12-23 03:27:26,2,235.51
+8134,Donald Hale,frank34donaldhale@example.com,89,Camera,Electronics,36380d1a-e589-4972-9dac-6858f645f340,2017-04-06 09:45:54,3,98.88
+7257,Stephen King,julie31stephenking@example.com,98,Non-fiction,Books,50b4f297-a5c0-4e60-b478-39ea17c4eec7,2019-02-22 09:43:58,2,330.43
+6688,Jamie Wright,arobertsjamiewright@example.com,288,Fragrance,Beauty,5df6de1f-3ba5-4af4-9a24-44fe166355b4,2018-06-29 19:34:17,8,79.91
+5980,Kelsey Williams,rachelgraykelseywilliams@example.net,213,Smartwatch,Electronics,f6444be6-ebbd-40e4-a26c-a51bf76ae801,2021-07-14 05:54:19,6,298.79
+7294,Jamie Allen,barrettjosephjamieallen@example.net,97,Mystery,Books,6a167417-7705-4dd8-b081-edf7a4848ea2,2021-12-02 08:03:48,7,24.62
+1643,Megan Morgan,teresagreenmeganmorgan@example.net,203,Rug,Home,cd4eb455-7d29-4e66-bc64-fc74a6756e4a,2019-09-16 10:15:06,6,226.58
+2600,Keith Elliott,nicolehickskeithelliott@example.net,460,Self-help,Books,4b2e2591-d391-45d2-b466-51cd99b3e87e,2019-11-30 15:05:36,10,240.06
+2344,Robert Clayton,smithallisonrobertclayton@example.net,168,Curtains,Home,e4eeaa44-07bc-4dbd-84f3-01638c29d5c3,2017-02-12 14:18:40,1,337.53
+8198,Jason Crawford,kristin78jasoncrawford@example.org,487,Science Fiction,Books,1affb4cd-f2f6-42a6-8254-972c6ec70b6d,2020-06-11 12:45:08,6,341.11
+7186,Donna Smith,angelawisedonnasmith@example.net,184,Fragrance,Beauty,ba07105e-908e-4f30-aa59-093ddd9392b7,2023-11-27 10:36:28,7,441.37
+9998,Jillian Romero,jennifer18jillianromero@example.net,277,Chair,Home,beac7ee5-fbc8-4090-b5bf-891738cf3054,2018-12-02 16:04:27,3,382.21
+8303,Michael Turner,waynedaviesmichaelturner@example.com,290,Thriller,Books,791ffcf7-4bc7-4901-81bd-8f0ec41bfe83,2018-03-10 20:54:40,5,116.8
+2692,Edward Spears,laurie95edwardspears@example.org,149,Rug,Home,f9bedc08-3f55-40cf-8459-d90d1ca74200,2017-06-22 20:30:05,6,129.23
+9701,Cindy Little,michaelwilliamscindylittle@example.com,176,Thriller,Books,9aa240d9-fb5f-4172-be7d-794eadea3237,2017-11-08 15:41:08,3,83.33
+8562,Alexandra Johnson,pnealalexandrajohnson@example.org,19,Smartphone,Electronics,4c324d3d-8b8a-43b5-ad85-9963e2aef8f6,2020-02-17 15:02:26,5,63.9
+9101,Julie Adams,kaylarossjulieadams@example.com,138,Lamp,Home,2e184b3f-1e40-4a84-8aaf-c1ccc1867519,2017-11-14 11:37:19,3,338.34
+8326,Carolyn Bray,lstephenscarolynbray@example.net,490,Thriller,Books,c812a6a9-82d8-42bc-b254-5aa5429b6d23,2023-09-13 01:57:16,3,260.82
+7296,Anne Lewis,david24annelewis@example.org,396,Self-help,Books,eec10c31-1afe-4c20-a68d-3c207d135ec7,2021-01-10 06:30:22,1,487.66
+6555,Harold Smith,chris88haroldsmith@example.com,436,Thriller,Books,0debab85-cc7e-4f0e-863f-0f28cf4121f0,2019-08-06 09:32:54,5,485.13
+7562,Stephanie Mosley,xdeanstephaniemosley@example.net,438,Non-fiction,Books,8fdd0f7d-7f6a-45b9-823c-f50cefad1f33,2017-04-28 03:45:30,8,497.84
+4037,Miguel Poole,jameskellymiguelpoole@example.org,132,Lamp,Home,af7e0956-0034-473b-b95e-6c12de082870,2023-03-13 13:33:23,7,165.98
+4756,Tracy Berry,lisa38tracyberry@example.com,70,Gaming Console,Electronics,826d8530-4b8d-4e0b-9c28-3c7a80e4f3d8,2020-04-10 06:42:20,3,494.03
+7897,Madison Cohen,tsanchezmadisoncohen@example.com,135,Skincare,Beauty,1e36cc34-3665-4836-bbc5-12816c1f168e,2018-11-24 11:34:39,5,161.18
+8691,Michael Schaefer,nreedmichaelschaefer@example.com,33,Sweater,Clothing,21423480-cb38-4859-846a-adedf28309a6,2019-09-16 16:12:13,8,138.31
+5918,Rhonda White,sparkstracyrhondawhite@example.net,318,Biography,Books,3afca950-75d5-4df3-aed0-f55d292a48db,2017-01-13 07:40:55,9,497.11
+1392,Timothy Perez,moorealiciatimothyperez@example.net,373,Haircare,Beauty,1cefe1c7-4ab1-4d3d-936d-7dc0ea46288f,2017-04-01 08:56:16,8,222.53
+7150,Paul White,drewshepherdpaulwhite@example.net,446,Sofa,Home,6186c1e0-bd17-4d39-b4ed-be5e60546777,2019-10-14 00:12:23,5,143.66
+8651,Richard Estes,angelacardenasrichardestes@example.com,339,Skincare,Beauty,e126af89-0a52-4c30-8b7c-9792979c71b8,2020-08-21 07:01:50,3,486.48
+8341,Jennifer Tran,heathercoxjennifertran@example.org,486,Chair,Home,14c7230e-d2b7-410d-9746-0406544dc5c4,2017-09-19 14:22:04,1,275.88
+9949,Ryan Conley,jfrancoryanconley@example.com,27,Self-help,Books,4f69e4df-68fb-4d6b-91ad-4e14de20d78f,2017-04-05 16:10:01,5,54.46
+2980,Alex Hughes,andersenmonicaalexhughes@example.org,91,Nail Care,Beauty,14024206-bd60-4527-87d6-56fceb83b44b,2022-02-20 01:48:06,3,66.3
+8620,Kristy Griffin,davidboonekristygriffin@example.com,171,Smartwatch,Electronics,1f984881-db3f-4c27-981e-6a656bc63f6d,2020-07-14 07:13:24,1,415.55
+5668,Manuel Mcdaniel,xwilliamsmanuelmcdaniel@example.org,419,Chair,Home,ea9e286d-e031-4161-9279-43e26ddfa84b,2019-11-25 08:26:52,7,448.12
+9747,Amy Clark,kaiserandrewamyclark@example.com,78,Bath & Body,Beauty,a20c2ce8-7066-4371-a178-64a9a5b5dd0c,2019-01-16 23:24:21,10,361.82
+6073,Carolyn Ramirez,wardcourtneycarolynramirez@example.net,206,Tablet,Electronics,8e138bec-e653-4121-a1b3-3f3083e86b34,2023-10-10 22:11:29,6,184.04
+7556,Michael Morris,davidfoleymichaelmorris@example.net,34,Thriller,Books,5a078a03-21d3-4833-94a0-0d59fa107f6b,2023-10-01 17:21:03,4,172.03
+1539,Elizabeth Gamble,ocontreraselizabethgamble@example.com,53,Bath & Body,Beauty,8baf6cfa-ed87-4a4d-a67c-f88dded1cfac,2020-04-07 09:33:47,1,410.87
+1361,Jay Hernandez,april13jayhernandez@example.org,98,Chair,Home,a6dd9bec-e2c4-4e1a-8ac6-82348534991d,2023-01-16 12:33:23,3,192.84
+9515,Jennifer Faulkner,ortegaheatherjenniferfaulkner@example.net,332,Self-help,Books,0de2a37f-616d-434a-8955-8fd9036a3f5d,2020-05-03 20:20:33,9,137.08
+6640,Sheryl Patrick,samuelmullensherylpatrick@example.net,149,Shirt,Clothing,a0f1d630-959b-4d9d-abb4-3577452436d5,2017-01-11 17:56:31,9,204.34
+9943,Tina Myers,jerome94tinamyers@example.net,410,Table,Home,2390c082-1360-495a-8016-f92582c00843,2022-09-07 14:02:45,1,266.04
+7885,Adam Duffy,lpriceadamduffy@example.net,162,Curtains,Home,5b89c73d-9f1f-4514-821c-fda50c122250,2018-07-30 16:55:05,3,212.72
+2923,Jason Schneider,tfloresjasonschneider@example.com,488,Haircare,Beauty,0259e46b-46fd-48d0-b009-da05ffd0b000,2019-05-26 20:56:38,2,165.1
+3108,Leslie Miller,alexissantoslesliemiller@example.org,374,Tablet,Electronics,635e84e0-a5b3-4318-a2c8-d705cb5071b5,2019-02-16 02:02:11,10,345.49
+8679,John Reyes,orrjoshuajohnreyes@example.com,292,Jeans,Clothing,da807f2a-0d5b-4087-83ec-575860c1ab77,2022-05-04 20:47:04,10,44.76
+1334,Kenneth Pitts,zwilliamskennethpitts@example.net,339,Nail Care,Beauty,2c60c8b0-68f3-4efe-b425-eec135974dfe,2023-11-14 09:33:00,10,87.42
+9566,Jessica Lewis,loganmarkjessicalewis@example.com,192,Rug,Home,7138d806-53a7-4716-8564-87ed9bc7b340,2019-05-13 15:08:34,4,121.97
+4929,Nicole Fischer,brittney37nicolefischer@example.org,167,Science Fiction,Books,1adb94a3-4ce3-41a7-ba29-e709c4b40323,2023-12-03 20:45:06,4,193.99
+7562,Nicholas Alexander,jacksonericnicholasalexander@example.net,144,Thriller,Books,83ef20a8-9efc-4257-8dfb-5846cc4c9dd9,2022-04-07 11:33:14,6,218.61
+8326,Derrick Fox,sparksgarrettderrickfox@example.org,94,Fragrance,Beauty,14a2a49e-5812-47cb-bea8-31f7d43c76f3,2022-08-28 11:23:54,2,124.76
+4953,Lauren Castillo,haydenmarklaurencastillo@example.org,485,Bed,Home,1b3026ac-4f3f-4e78-8834-278ceb2a5180,2019-09-21 13:15:56,6,359.97
+9681,Brenda Foster,grantjamesbrendafoster@example.com,283,Nail Care,Beauty,53a6564b-36cd-47ac-8548-afc71677a13b,2019-09-25 14:44:36,2,185.9
+1642,Nicole Thompson,sgreennicolethompson@example.net,335,Headphones,Electronics,30a861ff-1570-4baf-ace7-dd8063a956c6,2018-11-12 05:28:16,7,147.73
+6764,Billy Davis,johnsongregorybillydavis@example.net,39,Non-fiction,Books,1ffa0985-eb7d-4872-8c13-3aae0a233b96,2019-05-24 22:29:23,3,321.34
+2282,Jesus Campbell,cindyrileyjesuscampbell@example.org,356,Curtains,Home,847a1f3f-85f3-43e5-9452-00eb9ba7f0bf,2021-11-11 18:40:42,2,74.23
+4399,Christopher Hawkins,joshua07christopherhawkins@example.org,113,Fiction,Books,0b21d1a0-d69b-4465-83c8-e8788eae5634,2018-07-29 23:28:48,6,310.9
+6279,Jack Chan,coxcynthiajackchan@example.org,38,Lamp,Home,a557bb13-d1c2-4b64-a108-9830dd1886a6,2017-11-13 23:20:16,4,436.01
+5366,Janice Nelson,shawnparkerjanicenelson@example.org,8,Dress,Clothing,57ae932e-f296-4261-931c-8c7f0b4e7dd3,2023-03-21 09:32:16,7,158.38
+3389,Timothy Ware,terryjonathontimothyware@example.com,254,Thriller,Books,55b79ad9-76b4-4b71-b321-187e3de82c6a,2020-11-24 14:44:06,6,346.91
+4884,John Ross,alexandra33johnross@example.org,76,Chair,Home,9ac1e955-7419-485b-a206-64183b9e73fe,2020-07-12 22:23:52,1,334.45
+6598,Brenda Garcia,dpruittbrendagarcia@example.net,437,Dress,Clothing,ea70d720-8353-4b28-b390-83beffb86f0a,2021-12-06 23:47:01,1,412.71
+5029,Teresa Nichols,qsmithteresanichols@example.org,30,Rug,Home,4adcae13-7c70-4a34-b809-881ecc7928ed,2018-08-27 02:51:10,8,116.26
+4400,Jason Schneider,tim66jasonschneider@example.com,431,Dress,Clothing,8e0647ba-dcfa-48e2-8446-f0783492bd7f,2019-07-29 21:03:16,4,433.29
+9427,Kevin Smith,loritorreskevinsmith@example.org,338,Table,Home,03bbec55-ed70-40d1-af2b-89d444e4d03c,2023-02-08 04:26:54,6,319.6
+6289,Alexandra Price,kaitlyn49alexandraprice@example.com,281,Sweater,Clothing,4558f022-62e2-43a9-84f6-d121671a4363,2021-08-31 04:54:06,4,206.22
+4135,Deborah West,simmonsjorgedeborahwest@example.com,483,Gaming Console,Electronics,1fd15df2-8f00-4d03-a839-c4a80ebebc77,2018-03-19 23:46:54,3,235.97
+5432,Jimmy Smith,stricklandshelbyjimmysmith@example.com,490,Rug,Home,0fc50b2f-af32-49eb-968f-b7ba682e25d0,2020-11-27 10:30:12,7,411.95
+5398,Brian Weber,brendanleebrianweber@example.com,142,Science Fiction,Books,d81784af-6002-4723-a734-4f22dce12a97,2020-12-09 06:34:56,6,12.22
+5516,Brandi Hall,dlowebrandihall@example.net,477,Trousers,Clothing,9f5549b2-c9a1-4439-8209-ea6f3d060ee0,2019-12-02 14:10:57,6,16.04
+3394,Angela Gallagher,adamortizangelagallagher@example.org,257,Shirt,Clothing,0561cf65-5a58-4878-af0c-8673855b1093,2021-12-28 02:03:12,8,161.99
+8627,Kathleen Baxter,sandra84kathleenbaxter@example.com,26,Tablet,Electronics,e07a0aaa-4e3b-45fe-8782-5962d543d825,2017-06-08 19:24:37,4,330.19
+4591,Lori Mckay,otoddlorimckay@example.org,269,Laptop,Electronics,bada2785-40d9-4106-b4c2-2551d6548087,2023-09-22 17:50:30,2,492.95
+9006,Kyle Williams,hbaileykylewilliams@example.org,472,Laptop,Electronics,f7b0fd16-6b0f-4a1f-add9-346337b28904,2018-01-04 09:57:37,1,272.17
+5581,Rodney Morris,jeremy03rodneymorris@example.org,31,Gaming Console,Electronics,7061c583-7967-4aad-821a-5f5538738cbe,2018-11-24 00:51:27,8,163.95
+7905,Joshua Garza,dennispetersjoshuagarza@example.net,407,Science Fiction,Books,db7d5bdd-bf5a-4b47-900a-93f5147595e7,2021-07-24 05:56:03,6,246.48
+6901,Jennifer Wyatt,katherine11jenniferwyatt@example.com,196,Jeans,Clothing,4491cd00-928a-4f94-95cf-de549dc47cb9,2019-06-04 01:43:31,2,377.74
+9357,Daniel Higgins,jordan79danielhiggins@example.com,396,Fiction,Books,f45b6d82-87e2-493f-a15d-6ddf10f31295,2021-11-30 07:21:06,6,251.02
+6337,Michael Macdonald,normangonzalezmichaelmacdonald@example.net,116,Mystery,Books,8a953b88-b144-48e7-a3c5-c17f627616ac,2017-08-10 16:18:29,9,408.71
+2705,Scott Williams,yedwardsscottwilliams@example.com,230,Sofa,Home,7a999d84-b124-497e-9f19-8441ebf9aca9,2020-02-22 03:28:59,6,427.28
+9395,Jennifer Thomas,carlsonlisajenniferthomas@example.org,480,Skirt,Clothing,da5d870d-c5fa-465e-9026-36346b5ecd8c,2022-04-05 03:53:02,8,403.53
+9540,Michael Schwartz,jaimecunninghammichaelschwartz@example.net,206,Biography,Books,bd04718a-2b26-4cbd-a1a3-69bcce63e0e2,2017-05-10 17:22:09,9,361.38
+4510,Melissa Maldonado,simpsonkarenmelissamaldonado@example.com,367,Makeup,Beauty,b40252d7-c2b4-4745-add0-9503c7c84b2c,2023-03-03 16:20:33,6,74.72
+3727,Shannon Taylor,sanderstaylorshannontaylor@example.net,145,Sweater,Clothing,01ce0491-2fcd-4035-bbf9-7c50dadd292a,2019-04-27 20:41:07,9,345.31
+2591,Shannon Moore,jsanchezshannonmoore@example.net,107,Fiction,Books,0a513c66-3da1-4a6a-8e35-ea1b1e15d598,2019-06-05 00:46:34,6,494.02
+5635,Robert Mason,wduffyrobertmason@example.org,71,Fiction,Books,d773b5d2-5b53-4fb8-b537-62f60c4485ff,2022-09-14 10:57:17,6,420.41
+9200,Tiffany Hill,nelsonconnietiffanyhill@example.com,201,Biography,Books,dea33c28-cd75-4def-9cba-a444762c1c5d,2019-10-04 21:18:45,3,203.18
+7515,Linda Crawford,ghernandezlindacrawford@example.org,406,Makeup,Beauty,50ecb1e9-60c8-43e5-847a-231d8680dd7e,2020-02-14 15:25:46,6,76.24
+5447,Emily Black,lee27emilyblack@example.org,148,Tools,Beauty,76306b99-1536-4987-8197-992ccc85aed0,2018-12-19 07:36:02,10,267.35
+2515,Elizabeth Adams,huffmanstephanieelizabethadams@example.net,38,Gaming Console,Electronics,c63acbe1-5f14-4da5-a64b-d16524e16d53,2019-09-10 08:50:10,2,109.2
+3949,Anthony Harrison,jocelynduffyanthonyharrison@example.net,456,Thriller,Books,4c362f1d-e6ba-4014-9b38-388c73e8421e,2019-06-22 15:10:35,4,250.44
+6974,Christopher Graves,sanderslaurachristophergraves@example.org,459,Curtains,Home,2c752583-27b8-4a47-aced-436e61722817,2020-10-21 12:47:37,9,381.98
+2981,Christine Smith,julian97christinesmith@example.net,361,Self-help,Books,5d8e9c68-7d9c-4f29-a0d4-dc57daf4fd3c,2022-12-13 12:32:29,1,270.68
+8761,Charles Smith,nturnercharlessmith@example.com,100,Tools,Beauty,40f1d21d-9b4b-4598-b662-810dffcf1ebc,2023-05-04 09:46:25,6,392.78
+7328,Seth Santiago,michaelberrysethsantiago@example.org,307,Smartphone,Electronics,decaac2d-0c60-4c46-9fd7-71b85285b3a9,2021-04-22 17:17:16,8,148.99
+3830,Robert Burke,sarahjohnsonrobertburke@example.com,133,Jeans,Clothing,7498b837-8c4a-4a1b-bbfc-a42db2fcaf1c,2023-06-28 18:29:56,3,286.62
+3956,Matthew Mcgrath,bradleyjamiematthewmcgrath@example.org,181,Jacket,Clothing,a3a674ff-2e48-4e48-b887-a43a6cafeac6,2023-11-24 23:25:47,6,53.21
+6101,Daniel Jones,sanchezbeverlydanieljones@example.net,462,Skincare,Beauty,c04ba26e-165a-481d-ab73-5bf2f798197e,2022-05-23 01:38:49,2,345.18
+4805,Nicole Le,mhousenicolele@example.org,125,Dress,Clothing,3ca36abb-82f4-43cc-8559-6748f2de29d6,2022-12-25 11:10:50,5,176.33
+6479,Diana Yates,lauren44dianayates@example.com,141,Headphones,Electronics,8d9d6973-99b9-4d86-84c5-64c7a769005b,2019-07-19 06:08:03,1,123.85
+6674,Susan Rodriguez,theresa08susanrodriguez@example.org,314,Smartphone,Electronics,f1f87165-6cb1-4ce9-a996-6beb839ad72c,2021-11-13 01:30:36,8,121.59
+4416,Jessica Robinson,joelrichardsjessicarobinson@example.org,426,Haircare,Beauty,b6348950-dfc7-4cec-96a6-03c54c8862fe,2020-11-18 14:30:56,8,318.47
+1961,Eric Cole,christina24ericcole@example.org,87,Laptop,Electronics,88273973-61d1-4273-8c1b-378a01a3ee9f,2021-08-02 21:31:38,5,294.07
+8021,Dominique Kennedy,kimberly20dominiquekennedy@example.com,79,Fiction,Books,31efa1ed-2e9b-45e6-8141-ee7d9977c384,2018-11-04 02:42:39,9,39.2
+3776,Ronnie Warren,meganstokesronniewarren@example.net,323,Skirt,Clothing,2b3f52e8-0f7b-4b77-99c0-43e360bb849d,2022-02-17 14:45:19,4,145.23
+1021,Michael Jensen,thomaskingmichaeljensen@example.org,237,Fiction,Books,16763383-6720-4cc6-a5cb-7a4d49fdb19b,2023-06-04 07:56:56,2,44.02
+3933,Kendra Robinson,thallkendrarobinson@example.org,150,Rug,Home,fdb80ce4-ba1a-4331-a043-21bab05b653b,2020-02-18 05:07:03,2,293.21
+6143,Ellen Navarro,jtaylorellennavarro@example.net,415,Skirt,Clothing,816be414-0925-41c4-9a26-177dd9917391,2022-01-18 22:46:11,10,303.32
+3692,Lori Hunt,rsnyderlorihunt@example.net,278,Skirt,Clothing,3097adfb-5dcd-4461-a1a3-e490a285b8c8,2022-03-12 20:00:17,8,376.43
+8415,Adam Wilkerson,lindsaysantosadamwilkerson@example.net,431,Laptop,Electronics,88df0170-2fbf-4923-b477-f62c3eb43b08,2022-07-22 22:18:47,6,196.24
+3722,Valerie Callahan,richard90valeriecallahan@example.org,468,Skirt,Clothing,4b87a238-182f-4c19-b860-f61b52099cd6,2023-10-20 10:45:03,4,169.24
+8477,Martin Ritter,rachelpatelmartinritter@example.org,243,Self-help,Books,5aa4932a-cbfa-4cee-9a35-058238efa9f8,2018-09-22 09:00:33,10,41.37
+8873,Daniel Casey,zachary76danielcasey@example.net,154,Jacket,Clothing,6d9ec375-6b42-4f25-bae8-7e9cd29c0d9e,2023-01-30 09:47:29,7,227.8
+9137,Wendy Reed,laraashleywendyreed@example.com,226,Camera,Electronics,c21049f1-2c15-4823-b49e-07ec17173526,2021-01-24 03:22:34,5,338.65
+7726,Julie Ochoa,twilliamsjulieochoa@example.org,389,Skirt,Clothing,3283f2d7-4191-4cf9-bbc4-acfe49676abf,2017-10-07 14:03:32,1,111.62
+2458,Amy Castaneda,emilycookamycastaneda@example.org,336,Fragrance,Beauty,d5e89500-e21e-43b7-8df5-115021e2ca46,2022-08-18 23:07:27,1,414.31
+7902,Robert Khan,fernandezbradleyrobertkhan@example.com,237,Self-help,Books,413715b1-0f08-49d2-9555-81daaa76d214,2018-10-20 07:19:13,3,18.74
+7405,Michael Spears,xmossmichaelspears@example.org,79,Haircare,Beauty,e3ecf74d-57a6-4b5b-b22a-ea7d40bd71ad,2017-12-27 20:55:41,5,468.12
+8700,Donald Jones,allen15donaldjones@example.org,176,Lamp,Home,fc197c5b-5c30-4570-9e30-0fec4adb6758,2022-05-31 05:43:22,10,322.49
+3574,Dustin Glover,david45dustinglover@example.com,412,Skirt,Clothing,ca3b8b43-2bf4-4a67-a062-d0f7846ba4c8,2019-06-02 22:52:31,9,235.21
+3199,Lisa Phillips,crystal73lisaphillips@example.org,317,Non-fiction,Books,49c33949-ed7f-4905-b26a-76534b50dc79,2018-07-07 01:33:10,7,117.99
+5653,Anna Frazier,diazscottannafrazier@example.org,170,Gaming Console,Electronics,307bcde0-2904-41bd-8582-72a5e95f4340,2022-08-27 18:26:53,3,210.66
+2534,Virginia Anderson,stephen48virginiaanderson@example.org,298,Laptop,Electronics,6b0e9115-0b9f-43a6-8bf6-8a351c10a8b7,2018-05-07 06:36:15,7,190.4
+4894,Andrew Walker,davidroseandrewwalker@example.com,193,Skincare,Beauty,122dfdc0-b86a-4a99-b288-2b20d4a69be8,2021-10-14 21:51:17,7,414.2
+4101,Travis Garner,fjonestravisgarner@example.com,14,Smartwatch,Electronics,9e70d7e3-b501-4196-88ec-0e5cb4693570,2020-06-10 03:12:04,1,219.09
+5526,Madeline Hull,stevenwilsonmadelinehull@example.com,276,Chair,Home,b534acaa-10c0-4ad5-9a34-a8daecca6220,2019-10-17 02:31:20,6,468.12
+5700,Janet Lewis,turnermichaeljanetlewis@example.com,52,Dress,Clothing,2c05dbac-afa3-490e-872d-368a7d77087f,2022-11-12 17:02:10,6,262.24
+8022,Stephen Perez,stephanie63stephenperez@example.org,192,Headphones,Electronics,0bf625ba-dd8f-4cb9-b67f-5835bbfe5f8a,2021-03-07 15:04:21,3,62.95
+4311,Megan Peters,diane98meganpeters@example.net,133,Jeans,Clothing,14a7a1f1-c274-4863-8008-3da609f3ea37,2017-03-03 09:32:39,6,427.02
+5319,Andre Smith,morsetravisandresmith@example.com,58,Fragrance,Beauty,7afe92d6-a6ea-4bc1-a9f5-118a3d3c9017,2020-01-09 21:39:08,3,418.93
+8129,Lisa Miller,jeffrey99lisamiller@example.org,371,Sofa,Home,262be89e-53fe-402b-beb4-d9b234659cf8,2021-04-22 12:28:50,3,410.19
+3939,Elizabeth Herrera,tuckerrogerelizabethherrera@example.com,481,Jacket,Clothing,ba2a5032-91a0-4ab7-b3f0-2be28174fea3,2020-03-03 12:08:25,8,190.78
+9683,Sherri Chapman,upaynesherrichapman@example.org,236,Fragrance,Beauty,4b8251f0-c9ea-414f-b969-556425224c1e,2018-07-20 23:57:49,4,165.73
+7196,Lisa Hernandez,wattsjosephlisahernandez@example.net,341,Bed,Home,ed2e9778-021b-4252-b964-47850eab5978,2023-03-28 04:51:44,3,33.49
+9817,Emily Brown,hallchristineemilybrown@example.org,44,Biography,Books,cad34eb2-3b5b-4dce-860a-4cafc1b733e0,2020-06-13 12:15:44,3,265.22
+8311,Renee Cole,johnchambersreneecole@example.org,368,Jeans,Clothing,0ec7264d-b974-4bbd-90ac-a9af0a21fd31,2019-06-06 21:08:27,8,352.0
+1092,Angela Hill,beckerkelseyangelahill@example.org,101,Sweater,Clothing,5f2798f7-5554-4923-8c19-ce54eb03c631,2020-07-27 03:45:15,9,110.6
+6540,Danny Roy,figueroajasondannyroy@example.org,248,Curtains,Home,3eff108f-8dd6-4416-ad44-24ce44e1d2af,2018-08-28 08:40:30,6,134.54
+6317,Joseph Garcia,gpalmerjosephgarcia@example.org,325,Chair,Home,64f72140-a701-48ee-88d4-fc2a73ee8999,2019-04-22 07:46:33,8,80.13
+3224,Nicole Johnson,wolivernicolejohnson@example.net,390,Science Fiction,Books,ea31cbc8-56e8-4ceb-93dd-2191ab914dee,2021-06-27 08:50:42,10,112.44
+9312,Lucas Jones,dennis19lucasjones@example.net,81,Sofa,Home,1112e9ee-14bc-486b-8821-70428240e0f3,2020-09-30 06:37:45,2,164.76
+3589,Christopher Baker,uhollandchristopherbaker@example.org,463,Science Fiction,Books,1a7f5174-c837-4c41-86a1-07403b2a585b,2017-05-20 23:23:28,1,301.42
+8119,Manuel Wells,carterdonnamanuelwells@example.com,92,Thriller,Books,79f31076-596f-4e2f-b2ae-099d29179651,2017-12-13 17:25:04,1,235.04
+7850,Lacey Ward,victoriamendozalaceyward@example.org,197,Self-help,Books,8c15ea95-317e-4e8a-b422-f9b9bb7d1283,2021-10-10 09:07:23,8,18.82
+9374,Blake Yates,david88blakeyates@example.net,322,Dress,Clothing,a4ffc0af-791e-4773-8262-a48b4cb9bc57,2023-12-05 07:03:33,6,195.39
+3146,Carol Armstrong,donald06carolarmstrong@example.com,373,Sweater,Clothing,d5d93832-dd5b-4b9c-8378-b128b26cda13,2021-12-11 15:39:12,5,75.84
+5301,Wendy Levy,smithalanwendylevy@example.com,169,Tools,Beauty,b6a04250-a4cd-46d7-b2c1-1b3e29f4bbec,2017-12-10 11:48:29,8,43.21
+8329,Derek Perez,vnelsonderekperez@example.com,133,Gaming Console,Electronics,beec8ccc-c215-413b-ac77-9d0a2737fb0e,2021-06-25 07:54:55,5,414.69
+2471,Jill Decker,kristinemorganjilldecker@example.org,299,Jacket,Clothing,8cedfe5e-ee00-4211-bfe7-4a035e264fc6,2022-11-22 11:48:20,7,99.14
+9147,Phillip Wood,maldonadomarkphillipwood@example.net,27,Smartwatch,Electronics,2898f96f-5543-43f0-9db4-ed79838e5d68,2023-01-24 03:17:29,2,266.92
+6674,Teresa Wilson,erica73teresawilson@example.org,261,Tablet,Electronics,e61e44a8-a013-44df-8923-899b73124291,2021-07-10 22:55:17,8,415.44
+2723,Stephanie Green,cmillsstephaniegreen@example.com,315,Skincare,Beauty,24502c6f-ae20-4dc3-9f3c-45286f22c12b,2019-04-01 07:47:04,4,232.47
+4237,Adriana Brady,smithkevinadrianabrady@example.org,322,Mystery,Books,1063ba69-7344-4d6b-bc52-750dae593d19,2018-12-17 13:15:03,4,330.08
+2303,Christina Lewis,madeline25christinalewis@example.net,215,Bed,Home,d8b7cbce-2d89-426a-8697-aea523620ff3,2023-08-13 14:12:57,1,476.45
+6867,Tammy Kennedy,crawfordjosephtammykennedy@example.com,95,Sofa,Home,51824b7c-c156-4889-97fe-cc229aa9d9eb,2020-05-09 05:44:23,9,24.9
+8338,Dwayne Mann,april89dwaynemann@example.net,35,Dress,Clothing,4473a836-7bec-4cd5-9b55-7688c42db8df,2021-02-26 00:54:53,7,12.3
+3933,Matthew Mcdonald,pmaldonadomatthewmcdonald@example.com,381,Nail Care,Beauty,c049b13f-12d6-4e07-9bfd-2f877cc58b38,2019-09-23 22:18:38,9,157.68
+5206,Christopher Schwartz,riggsjenniferchristopherschwartz@example.com,440,Tablet,Electronics,ad00b05a-125f-48d9-a548-9f0cf3b4fed2,2022-02-05 05:47:17,8,457.13
+7310,Benjamin Baker,gshawbenjaminbaker@example.net,330,Jeans,Clothing,fcbdf8e1-bb4b-46d6-b5b2-2d0615d7da9c,2020-01-14 06:09:50,8,140.46
+6198,Tyler Jones,glynchtylerjones@example.com,454,Skirt,Clothing,cd995675-d55a-4b3a-8ebf-cd9cd9dab94e,2022-03-15 20:23:54,10,56.8
+4254,Dwayne Sanders,morrowjonathandwaynesanders@example.net,420,Dress,Clothing,15be5164-22e0-4daa-8edb-9ef220a6e8d7,2018-06-23 16:50:54,10,46.14
+3025,Joshua Howard,rosscourtneyjoshuahoward@example.net,125,Jeans,Clothing,a044ac6c-c6e1-4533-a518-7660bc37b3cd,2019-11-01 13:18:11,7,118.46
+8648,Linda Nunez,kellysmithlindanunez@example.com,337,Camera,Electronics,3b7cf9e4-369a-40b7-a3f3-aec5c498b43e,2020-10-20 12:36:11,5,213.56
+3061,Mark Solomon,williamsbrianmarksolomon@example.net,357,Smartphone,Electronics,2cb6f139-ed39-4758-ab56-75aa10bd3fce,2018-01-05 13:51:17,4,244.34
+4059,Daniel Chang,sanchezmadisondanielchang@example.net,279,Biography,Books,dd5dfaf3-7ef9-4d74-92de-58263ee64a12,2022-11-16 07:14:36,9,87.66
+6654,Mercedes Jones,victor88mercedesjones@example.org,420,Jacket,Clothing,a33c9d44-027b-461f-8bcc-f382ed061b0b,2022-07-13 02:23:34,6,339.96
+3973,Gavin Turner,doughertymichelegavinturner@example.com,129,Camera,Electronics,75d2dfe2-49aa-4516-ad80-cdcefb32223d,2020-05-07 15:44:22,9,480.97
+1272,Vanessa Blackwell,petersonamandavanessablackwell@example.org,249,Non-fiction,Books,68b5e748-eccf-45ab-941e-7d4863b5e5de,2022-10-04 13:49:00,6,193.26
+7782,Wesley Beck,craigcaseywesleybeck@example.org,397,Chair,Home,b6437781-3475-4a30-a350-2ce5c3921c2d,2022-02-27 09:32:14,10,341.03
+6600,Samantha Hernandez,allisonhansonsamanthahernandez@example.net,283,Shirt,Clothing,afd67e58-1f71-436b-87e3-f7685b208df7,2023-04-16 14:33:13,7,157.34
+5342,Michael Barrera,daviskimmichaelbarrera@example.org,486,Sofa,Home,2f8be4ab-3371-4638-aebf-ad7f756c66e3,2020-01-21 22:55:09,10,341.61
+9666,Bobby Hays,echenbobbyhays@example.com,291,Haircare,Beauty,54850261-027a-43fa-9b81-1f76ed8867c5,2022-09-21 22:10:39,9,89.32
+3339,Tiffany Barnes,evansthomastiffanybarnes@example.net,434,Jacket,Clothing,7d7a079e-ec4a-4b23-85c0-04d4fe410ab3,2017-07-21 16:32:37,2,199.62
+8797,Clifford Schwartz,jeffrey87cliffordschwartz@example.com,387,Non-fiction,Books,afabb191-a5b1-4a7b-855b-7f738102879c,2019-06-28 22:10:21,7,453.86
+6961,Sarah Brown,allenwilliamssarahbrown@example.com,299,Fiction,Books,06bf7205-e58b-4b00-a67b-c6c2829874bb,2020-04-01 17:46:31,5,446.77
+9896,Daniel Fritz,brenda65danielfritz@example.net,17,Tools,Beauty,3a21d3b8-d103-42a5-9491-7f0298feb002,2017-09-23 11:08:00,7,227.63
+8218,Brenda Hubbard,jason01brendahubbard@example.com,108,Gaming Console,Electronics,21dd988c-c681-49f2-87e3-21f08f57fde2,2019-12-12 16:54:35,4,497.82
+8005,Tim Moran,ronald25timmoran@example.org,485,Chair,Home,e9561919-3791-445d-bb0b-fc2af3b3ca37,2022-06-06 11:36:49,10,382.45
+4367,Mario Huang,teresawilliamsmariohuang@example.org,8,Fragrance,Beauty,b1accebe-fb8e-48bd-952a-0d1b4b652d55,2019-03-19 21:01:55,10,432.52
+6139,Jon Sims,summer78jonsims@example.org,231,Table,Home,b5c2511e-8574-4f94-86f3-75cf2f76f9e8,2019-06-03 05:16:16,10,35.46
+6926,Cynthia Johnson,irobertsoncynthiajohnson@example.net,285,Table,Home,8b83e08f-d011-4ad7-9b96-d086d73d45dc,2018-01-12 16:40:32,7,324.92
+5035,Kristina Gonzalez,cory19kristinagonzalez@example.net,71,Chair,Home,c92bdf4e-cb84-4f6a-9eb5-94243f5861e4,2023-12-13 02:59:59,2,382.12
+6680,Daniel Daniels,mbakerdanieldaniels@example.org,108,Thriller,Books,5f2c1c42-1d67-4a7b-bbc2-1fdcd73a47a6,2022-08-23 00:08:12,1,215.17
+2550,Dennis Lin,qbarnettdennislin@example.org,238,Tools,Beauty,d359eab2-6437-4624-ab23-53e730566141,2017-03-28 22:34:30,2,346.42
+1078,Lauren Bright,owhitneylaurenbright@example.net,220,Haircare,Beauty,160a6b9a-9300-408b-9ff6-752f0edee280,2020-03-14 22:09:57,8,299.57
+9268,Cheryl Kelly,tony18cherylkelly@example.com,52,Skirt,Clothing,47b4cf4f-1caf-49e8-91bc-5e42ed42a63a,2020-03-02 12:54:59,2,242.42
+8401,Martin Lozano,stephensjuliamartinlozano@example.org,66,Sweater,Clothing,b2e1b2d0-cd34-427a-9942-9eb5ea1c6cba,2021-04-30 10:07:22,8,319.07
+7433,Ronnie Campbell,danielatkinsronniecampbell@example.net,156,Jeans,Clothing,f23d18ce-1506-4fa2-9b5d-b2256b2344b4,2020-09-09 07:16:12,4,357.7
+7166,Benjamin Black,barrettjuliabenjaminblack@example.org,463,Mystery,Books,13034d05-c9c1-49b8-bf25-c1174c331f14,2023-01-01 17:16:22,1,488.5
+4282,Michael Jackson,annanavarromichaeljackson@example.org,189,Thriller,Books,dd65100d-b0eb-49fc-82bb-aacedec7e82c,2017-08-06 13:38:09,8,373.25
+4646,Nathan Nguyen,brockandrewnathannguyen@example.net,12,Fragrance,Beauty,404224f3-1661-47f8-9f29-11b30933d0a8,2017-08-27 05:39:48,10,196.27
+2428,Stephanie Lewis,lisarandolphstephanielewis@example.com,472,Laptop,Electronics,655fc417-eecf-4b86-b7b7-5b15c56a367d,2020-01-16 04:24:21,7,463.34
+7188,Brian Brown,melissawhitebrianbrown@example.net,132,Smartwatch,Electronics,28638457-ac87-4447-9d80-046f1e5d1887,2017-03-05 15:21:00,3,148.13
+4996,Alexander Acosta,james45alexanderacosta@example.org,286,Camera,Electronics,492451cc-5b8b-40b8-8f82-ee685cf0baf9,2018-12-10 15:26:40,4,354.09
+9293,Kathy Wood,gwoodkathywood@example.com,172,Tools,Beauty,107706d0-8fcd-4c0d-9502-ea24470be177,2023-09-02 03:15:32,7,103.68
+2938,Robert Matthews,seth48robertmatthews@example.com,141,Gaming Console,Electronics,55492a32-9c2b-4dfb-adf7-5e4dbe39160a,2020-02-15 04:17:06,5,238.26
+8541,Tanya Smith,jamie27tanyasmith@example.com,37,Lamp,Home,ed388f75-e689-4d0c-afcd-c81013bf5585,2023-12-01 06:03:13,8,491.73
+9735,Charles Lloyd,qmccoycharleslloyd@example.com,317,Fiction,Books,f38ecefc-8bbb-408c-a53f-5e1eadaa5826,2018-07-17 06:12:42,7,11.27
+5519,Suzanne Foster,ohallsuzannefoster@example.net,35,Mystery,Books,8349e0d7-9c57-49be-905f-16d0d30d4812,2019-05-17 21:32:14,5,445.26
+8474,Morgan Moses,amooremorganmoses@example.net,357,Tablet,Electronics,01a49ad8-5783-42b3-80b2-5fbcd772f321,2019-09-24 23:18:25,8,42.74
+9133,Jamie Nelson,gwestjamienelson@example.net,307,Shirt,Clothing,03979bd8-b177-4ca2-b9ee-0bbc8ff06989,2021-10-06 23:27:27,6,145.97
+9883,Matthew Cooper,bbennettmatthewcooper@example.org,265,Trousers,Clothing,eaa0b14d-988f-4496-bfb1-cabd7ecd92fe,2017-04-04 15:02:02,8,141.72
+2732,Sarah Simmons,olsendonaldsarahsimmons@example.net,493,Dress,Clothing,acd82559-79c3-4398-bc1f-b690af784858,2017-12-03 11:06:48,3,58.22
+9440,Rebecca Rodriguez,banksjosephrebeccarodriguez@example.com,425,Lamp,Home,3f4ff2ef-7a84-4fad-a359-a0f02d07b9ee,2023-12-04 17:50:12,5,365.58
+9596,James Frazier,astewartjamesfrazier@example.com,116,Trousers,Clothing,7cd08803-75eb-4e79-a84d-bf5eec171e9c,2018-07-16 22:01:49,10,252.42
+1144,Keith Chapman,myersamykeithchapman@example.net,159,Skincare,Beauty,a4472b45-3b95-46c2-b6a6-e3c15c6d80b4,2023-10-21 14:14:10,2,401.62
+5259,Meghan Hill,theresachaneymeghanhill@example.org,69,Jeans,Clothing,87476c83-8ed8-4411-9153-feccb16bcc1c,2022-06-13 10:34:00,1,122.32
+6245,John Brooks,wilsonstephenjohnbrooks@example.com,259,Camera,Electronics,425b3a6b-748e-428f-8dba-81f8142225c6,2018-12-22 02:14:04,5,75.99
+5031,David Davis,morgan85daviddavis@example.com,286,Rug,Home,a9920505-0ab2-491d-971e-aaaf3fe477af,2017-08-26 01:45:25,10,172.41
+9940,Karen Chapman,garrettgraveskarenchapman@example.com,496,Self-help,Books,113c1583-111e-43f7-b142-a719c0e6ab77,2017-04-04 01:57:49,1,151.83
+2275,Jamie Powell,lisalopezjamiepowell@example.org,349,Biography,Books,d3f215e3-bdbb-4fa6-a267-97e901c5acca,2018-05-01 14:19:29,4,375.75
+8989,Michael Hall,eperrymichaelhall@example.com,145,Jeans,Clothing,8e452da0-c0fc-4e95-8808-de7db5b9d166,2018-05-16 04:17:07,3,311.24
+5269,Sarah Fletcher,tshawsarahfletcher@example.net,448,Sofa,Home,b7046716-baf0-42f2-905a-c86da3f1e3bd,2018-12-07 05:09:55,7,55.85
+3613,Jon Ramirez,scottlaurajonramirez@example.com,445,Self-help,Books,5a3a25d2-3963-4f70-a747-9a9e35f57291,2019-11-28 22:57:16,1,102.94
+5348,Adam Williams,john40adamwilliams@example.org,64,Skincare,Beauty,879fa40d-db44-4a2f-8c17-829ddf3b0d1c,2022-04-21 23:35:24,10,485.08
+8521,Allen Ramos,emily51allenramos@example.net,190,Table,Home,7685abce-a15c-4b8b-b336-27efe060b241,2019-02-18 14:41:22,6,283.65
+1447,Jennifer Kemp,jackandersonjenniferkemp@example.net,175,Tools,Beauty,d14cb69c-1ccb-49e1-84f3-2cb8193004f7,2018-12-20 12:55:06,6,388.21
+1018,Renee Wallace,parkervirginiareneewallace@example.net,224,Smartwatch,Electronics,41928af2-8ba9-42be-8937-330df4cafa3b,2018-07-14 22:59:02,6,166.14
+4681,Christina Brooks,jsmithchristinabrooks@example.net,206,Jeans,Clothing,ef368e4c-8ea7-4ecb-a081-dbc12bd0e5d2,2021-01-17 06:41:52,6,408.65
+8636,Gary Martin,anthonywilliamsgarymartin@example.org,477,Dress,Clothing,992ab108-fb5e-4c18-865a-20cfe43005f2,2018-07-27 15:58:06,4,55.15
+7854,Michelle Flynn,edwardsbarbaramichelleflynn@example.net,10,Fiction,Books,5b6eae6f-54b7-4f01-bbd7-c4660ba80098,2020-03-13 23:23:25,7,203.45
+9777,Kathryn Cochran,smithmelissakathryncochran@example.com,26,Mystery,Books,5558bc7d-171f-4edb-ba02-4b2c3ec4cd4a,2020-05-08 11:33:54,10,143.47
+9362,Donna Jones,jamesnicholsondonnajones@example.net,351,Haircare,Beauty,dd636ae5-fd54-4a3a-8656-94fb8eb79b8f,2022-08-03 09:22:55,5,31.17
+8435,Danielle Barajas,jenniferschroederdaniellebarajas@example.com,93,Table,Home,b8459716-ef61-4005-a85f-57d16310a5ca,2022-03-12 03:52:42,7,20.23
+3478,Tammy Young,dawn73tammyyoung@example.com,325,Rug,Home,3d29c1db-0224-4a5c-af0d-907c10f2b676,2021-12-01 08:58:00,7,250.42
+2178,Pamela Rodriguez,ssweeneypamelarodriguez@example.org,134,Skincare,Beauty,1ba53a46-b6e9-462f-b658-9e2501a3290d,2018-01-30 10:56:34,7,176.9
+4587,Travis Allen,smithjohntravisallen@example.net,68,Nail Care,Beauty,4aa1bdb3-f315-47b9-8322-6d1bbe966d52,2020-01-08 11:42:27,7,51.21
+5159,Scott Young,dtaylorscottyoung@example.com,447,Skirt,Clothing,de8d2df4-a799-4ec6-b688-2ab0535e0a7f,2021-01-14 07:00:30,7,334.51
+3759,Larry Garcia,timothybrownlarrygarcia@example.net,315,Sweater,Clothing,4a3ce57f-58cc-4f09-8242-f529df63cc6f,2019-08-21 01:05:57,7,488.88
+5629,Cynthia Kelley,hjohnsoncynthiakelley@example.com,325,Trousers,Clothing,1aeea331-d71a-494b-ae64-37d14c4a25b3,2022-11-27 18:27:38,8,122.25
+7548,Nicole Larson,stevensjohnnicolelarson@example.net,472,Curtains,Home,b3f1766a-8aa4-4e02-b080-54084c282fbb,2020-04-06 06:23:11,2,72.02
+4809,Keith Williams,kevin82keithwilliams@example.com,142,Smartwatch,Electronics,73186312-f9fc-42b6-9d4a-bb15b079634f,2019-09-28 23:28:36,4,330.31
+1491,Kevin Hernandez,kathylawrencekevinhernandez@example.net,482,Haircare,Beauty,1a4395db-0f10-4855-916a-f9f13e3de5b6,2022-03-01 08:57:32,9,105.9
+4182,Antonio Cochran,davidfarmerantoniocochran@example.net,425,Jeans,Clothing,34815be2-d188-42d0-8664-282183a9bb24,2021-01-19 17:05:30,4,459.5
+6391,Sarah Larson,hilllaurasarahlarson@example.org,103,Skirt,Clothing,d48345d4-be2c-46d8-b70c-b239ce09ab09,2022-06-18 19:29:47,8,213.27
+2372,Thomas Kennedy,atkinsontimothythomaskennedy@example.org,150,Laptop,Electronics,febe251b-154f-43d3-aff2-6f154b712092,2022-05-13 09:43:44,7,374.23
+1682,Joseph Sanchez,carlsonedwinjosephsanchez@example.net,303,Tablet,Electronics,61eb6ad2-98e6-44cb-a51a-3d671f9d3340,2022-03-30 15:09:05,7,248.37
+4667,Steven Parsons,folsenstevenparsons@example.org,3,Jacket,Clothing,1d615b6e-937c-4b39-9fbe-9b163a72d676,2022-06-08 19:40:40,4,55.43
+5528,Joseph Palmer,george28josephpalmer@example.net,195,Bath & Body,Beauty,2efa7076-76df-4522-914e-7b6c1c40c161,2018-11-20 06:41:15,7,51.61
+2089,Shawn Alexander,harrisonstephenshawnalexander@example.net,419,Table,Home,23170371-9869-4d57-a726-a38fb88ba41f,2017-09-14 09:33:49,1,149.71
+9220,Kathleen Ramos,lisa83kathleenramos@example.com,447,Skirt,Clothing,7c7b1012-b84f-4afb-9643-649e300cb65c,2021-07-05 16:44:52,3,206.62
+9926,Gloria Carlson,johnsongeraldgloriacarlson@example.com,75,Science Fiction,Books,2f78c56f-2dcf-4188-8e56-1342c2d30f1c,2017-09-11 05:49:06,3,147.59
+8370,Megan Roberts,qcontrerasmeganroberts@example.com,153,Skincare,Beauty,46f884df-988f-45d9-a2db-c27eb8af920f,2023-02-16 00:27:02,3,382.47
+1242,Kelly Foley,laura73kellyfoley@example.com,337,Sweater,Clothing,18b4d01c-b681-4822-8103-93ecd0c0907c,2018-01-27 18:41:23,7,347.98
+2593,Katie Nelson,ajohnsonkatienelson@example.com,297,Headphones,Electronics,3ad392a1-43a1-4fd6-a542-714cf0b2d86f,2019-09-02 03:53:21,3,381.77
+2079,Stephanie Reynolds,teresa73stephaniereynolds@example.org,297,Biography,Books,efa2b549-e19e-4664-bb70-e059942645a7,2023-04-27 19:29:41,3,162.39
+4368,Tina Jones,carpenterbriannatinajones@example.org,247,Bath & Body,Beauty,fe73258f-d972-4f0b-b393-ea5c29634bf4,2020-02-26 22:37:01,7,309.36
+4852,Zachary Watts,kimwalkerzacharywatts@example.org,410,Headphones,Electronics,36305770-3169-4bfb-b83c-437502ff1a98,2018-11-25 07:24:51,4,26.57
+6046,Bryan Carroll,klyonsbryancarroll@example.org,53,Sofa,Home,51c20b9e-2513-4d99-a703-72634e57b275,2021-01-09 18:09:46,5,159.23
+5766,Emily Foster,qjohnsonemilyfoster@example.com,227,Non-fiction,Books,768ae519-b117-4a10-9ba0-263b2e2c6350,2019-03-13 20:33:24,4,20.53
+8374,Hannah Hansen,ronald42hannahhansen@example.org,347,Smartwatch,Electronics,85c8f6b4-7d1c-4c76-9182-2cb9c106e519,2018-08-03 16:00:47,8,407.3
+2781,Benjamin Washington,kristin19benjaminwashington@example.net,33,Makeup,Beauty,52b88f3c-0ae5-402b-a1a2-cbc9c9368937,2019-01-07 08:51:06,4,319.26
+5109,Matthew Powell,jreevesmatthewpowell@example.org,31,Tablet,Electronics,f86217c6-1e9c-4f4e-85b5-dad291b96e21,2017-06-20 08:31:28,7,125.64
+3816,Marcus Murphy,annaroachmarcusmurphy@example.org,309,Jeans,Clothing,04343dc1-b67f-414c-b1e1-3101cd616672,2018-02-23 19:59:55,10,182.08
+9101,Julie Adams,kaylarossjulieadams@example.com,470,Sofa,Home,737c92a9-258c-4d5b-a879-a958b3fe1810,2017-10-12 17:03:09,6,180.65
+9390,Tammy Johnson,mistymurraytammyjohnson@example.org,18,Tools,Beauty,861199c5-90e9-4fc3-b489-3f866984d504,2023-02-28 04:29:09,10,139.96
+8948,Omar Gibson,blackdanielomargibson@example.net,316,Non-fiction,Books,94bddd9c-c66c-4b62-b413-8a171d00503b,2023-01-09 22:00:18,9,24.5
+9974,Samantha Collins,bfaulknersamanthacollins@example.net,355,Lamp,Home,3eb31247-2250-4492-b8a8-3e6b831cff51,2023-11-20 10:23:25,10,345.36
+6424,Paul Rich,matthew01paulrich@example.net,482,Haircare,Beauty,ef6c8d51-f7d8-41ef-84a0-177afec89c89,2023-12-27 21:09:03,9,150.32
+2306,Barry Medina,michael93barrymedina@example.net,135,Biography,Books,752769d3-b51d-4b45-8687-6e243ae9fd96,2021-11-16 17:19:34,10,435.22
+9153,Amy Deleon,robertsantanaamydeleon@example.com,438,Haircare,Beauty,21de6b48-2751-4409-9839-b1befe4a8705,2019-07-19 05:46:21,9,63.32
+9452,Alex Johnson,jessicahaynesalexjohnson@example.net,300,Bath & Body,Beauty,2b3e980d-11e5-4824-a062-799f702ae335,2018-09-09 15:51:15,10,193.02
+6183,Sandra Livingston,amandastewartsandralivingston@example.com,82,Nail Care,Beauty,0b0d7d99-d5c0-4a81-8363-85075bb16640,2023-10-20 05:49:22,6,365.51
+1943,Scott Crawford,kingemilyscottcrawford@example.org,251,Self-help,Books,d1e2f5fb-b4d9-4f37-807f-335af63412aa,2023-07-07 20:21:20,2,378.53
+6382,Lori Michael,cmcdonaldlorimichael@example.org,287,Makeup,Beauty,58bf5248-2cf5-4989-bc7f-805421641480,2017-09-01 16:23:28,3,367.14
+7365,Jason Lewis,qstewartjasonlewis@example.com,406,Mystery,Books,c887d11f-28d4-4625-81ac-7629d5bb9ce5,2022-04-05 12:44:40,6,395.21
+5301,Wendy Levy,smithalanwendylevy@example.com,229,Gaming Console,Electronics,21d35bad-93a3-40b8-bcf8-f5457d70c749,2022-09-04 18:36:56,9,221.7
+8748,Lisa Gill,michellesimpsonlisagill@example.com,463,Skincare,Beauty,d7851312-f280-48e4-9fd1-9f53795e59d7,2021-06-27 22:18:21,2,371.42
+9572,Lisa Gilbert,angela86lisagilbert@example.com,189,Science Fiction,Books,7fac1914-0f4e-4d98-9e23-3b93eaac76d0,2018-04-11 19:37:47,8,162.62
+1379,Andrew Irwin,danielsnicholasandrewirwin@example.net,415,Science Fiction,Books,8679eb11-7539-4a81-8259-d6d7c6492a4d,2017-04-28 15:31:44,5,91.55
+7691,Caleb Ward,abradfordcalebward@example.net,138,Non-fiction,Books,cc432761-bf86-4cde-bab9-f6919ea24c2d,2020-10-29 16:36:20,10,333.63
+5219,Anthony Smith,ashley22anthonysmith@example.net,206,Table,Home,ce357cff-3284-4a33-b588-efe74a911626,2020-03-23 23:14:23,5,217.4
+3734,Christopher Smith,cynthia24christophersmith@example.com,52,Sweater,Clothing,848b2518-ddf9-4232-8a08-6007852d6d8a,2021-06-09 09:35:38,1,287.52
+4299,Raymond Green,diamond72raymondgreen@example.net,426,Trousers,Clothing,bd5989b4-8c5a-4756-99e6-93120fd41b1b,2023-11-26 22:44:00,2,138.24
+1270,Bethany Brown,ugonzalesbethanybrown@example.com,478,Table,Home,37ea5085-9b87-44ac-93b0-499fbbf5cdb3,2017-02-25 08:54:52,5,362.95
+4177,James Mcdonald,brendamossjamesmcdonald@example.net,238,Skincare,Beauty,971d0b75-6c71-46d3-addd-35e7d496b4a4,2017-12-01 08:54:38,9,164.64
+7324,Eduardo Underwood,michael69eduardounderwood@example.com,165,Skirt,Clothing,b14d7692-eaf6-4ca3-b1a1-95a80913986f,2018-06-29 19:45:17,3,188.94
+5611,Richard Montoya,jacksondorisrichardmontoya@example.com,432,Trousers,Clothing,1ab12a3e-c7fe-43ac-bdae-80416beebac7,2020-01-19 02:40:26,8,239.74
+8156,Michelle Smith,rschwartzmichellesmith@example.com,156,Thriller,Books,ee7194d4-e23f-4012-93ca-cd131758063d,2021-10-25 19:00:11,9,192.48
+8077,Scott Lara,wallsmichaelscottlara@example.org,234,Nail Care,Beauty,e6674207-5fb3-4dd6-8bb3-f88a630ae653,2022-01-27 03:17:50,6,223.81
+3738,Teresa Campbell,hughesthomasteresacampbell@example.net,426,Lamp,Home,87e4e4e7-9564-41d5-9ff1-7926c18b2d64,2022-07-20 00:18:58,8,347.48
+5925,Joanna Taylor,wterryjoannataylor@example.com,391,Laptop,Electronics,1aee9b2c-e606-400f-8d5d-0d707db87d0f,2020-09-11 04:14:07,9,85.44
+7179,Melanie Lewis,victoriaadamsmelanielewis@example.org,454,Sofa,Home,545ae4e3-360d-4d2f-8a01-fe57b4e30b59,2023-03-17 00:43:19,4,384.02
+6502,Mary Salinas,coryfernandezmarysalinas@example.org,269,Bed,Home,67307813-7f7b-4f11-a5f3-806da09d1cc8,2023-08-21 19:05:58,8,199.21
+1298,Sara Jones,cgarnersarajones@example.org,147,Mystery,Books,7a33951e-27dc-4115-9806-459842d14035,2020-12-29 13:55:16,5,185.51
+2632,Carrie Gibson,douglas41carriegibson@example.org,306,Jacket,Clothing,ef533322-45d6-4688-8bee-2f6d21d661f2,2022-11-09 05:02:53,1,354.01
+8269,Christina Gross,sanchezstephaniechristinagross@example.net,162,Jeans,Clothing,bc1b09b5-b86f-4297-928a-3f8e07b581c0,2023-09-15 07:40:10,9,426.63
+8977,Ruth Robinson,rmckinneyruthrobinson@example.com,463,Skincare,Beauty,93898b09-4eb8-47b0-8fb8-2a5f77fbda5f,2019-02-25 08:41:49,9,475.68
+6507,Angela Mason,shelly14angelamason@example.org,370,Headphones,Electronics,48286922-d7de-4dc2-a91e-6e18ec80204c,2019-08-30 18:12:29,1,213.06
+6530,Andrea Baker,mcummingsandreabaker@example.net,254,Thriller,Books,302bdd57-3a99-4c1c-b977-93f1c3c87987,2021-03-26 09:44:27,9,13.7
+8421,Christopher Ryan,brandonlawsonchristopherryan@example.com,147,Gaming Console,Electronics,eddbfebe-d836-45c5-9a89-07dfe55717d2,2018-12-29 06:26:07,7,439.91
+4184,Patrick Dean,benjamin86patrickdean@example.com,105,Shirt,Clothing,131a1ed0-4294-4c17-82e0-37546832eda3,2022-08-13 20:42:25,3,117.93
+2054,Jose Paul,perryanthonyjosepaul@example.net,143,Mystery,Books,ba78c32f-3675-4b20-895d-15027b6ef8d1,2022-05-23 04:54:02,2,480.65
+7963,Timothy Rodriguez,briana04timothyrodriguez@example.com,160,Thriller,Books,1cbda207-c197-4787-966e-0fd24687df6f,2023-01-20 18:50:15,8,134.66
+2745,Isaac Lewis,tthomasisaaclewis@example.net,281,Sweater,Clothing,10af2830-abd2-4ac7-8050-92f1f9ab3e9a,2020-09-17 19:24:10,3,69.22
+8687,Charlene Fritz,adamsjohncharlenefritz@example.net,345,Lamp,Home,168163bb-28f8-42d5-9afe-c59eda168e25,2021-02-01 03:07:44,2,298.62
+5824,Jason Jackson,alexandertylerjasonjackson@example.net,448,Shirt,Clothing,c91bbdee-9067-4349-8589-348659c0bb65,2019-02-03 02:35:58,9,377.31
+2538,James Caldwell,brownsarahjamescaldwell@example.org,413,Bed,Home,c1cd9462-d2c7-4d1c-a6c7-e433e52ccbb0,2023-07-14 11:23:39,7,122.79
+4108,Kyle Rivera,murphydalekylerivera@example.org,480,Fragrance,Beauty,689ccdda-1d7a-4cd0-9141-06af8f46b67c,2021-01-29 03:49:32,1,290.16
+3390,Debra Spears,charlescraigdebraspears@example.net,47,Nail Care,Beauty,0b539087-5d97-433b-931a-712dd0b2b038,2019-04-24 15:10:56,9,415.74
+8113,Lance Lee,jeffreywyattlancelee@example.com,363,Sweater,Clothing,5594725d-9ff4-4058-8152-141094ca25a2,2018-09-09 10:24:29,8,476.25
+7215,Erica Santiago,eholderericasantiago@example.com,210,Sofa,Home,9f4c7251-d39d-4746-965f-bdd2a4ac99f4,2023-01-16 18:26:36,4,462.72
+4140,Daniel Oliver,millerrobertdanieloliver@example.com,136,Rug,Home,48fa22bb-07fe-46c7-8a42-c7ee30b95cb8,2022-01-14 18:14:01,4,378.7
+2834,Elizabeth Cross,martinezchristopherelizabethcross@example.net,20,Tools,Beauty,0c17ca29-4e5d-464e-a99a-98530bb3fe1a,2017-05-25 09:42:19,9,424.44
+2413,Kenneth Wilson,robert39kennethwilson@example.net,473,Tools,Beauty,674c2f9b-08b4-41cf-b4f8-e4f3d08e9b6d,2023-03-06 13:19:10,6,459.56
+5392,Barry Allison,edwardmendezbarryallison@example.com,34,Sweater,Clothing,a8821345-78a1-416c-967f-deea0dad5a37,2018-03-04 16:53:56,4,353.72
+7805,Tyler Jefferson,ijohnsontylerjefferson@example.com,223,Tablet,Electronics,a031164d-0206-4417-ba2b-f8116fead0bd,2020-01-04 15:42:20,2,488.03
+3919,Nicole Johnson,rrochanicolejohnson@example.org,327,Dress,Clothing,8c08f20f-db6a-4dea-b64e-8110f425e14e,2020-11-20 09:54:08,10,434.08
+6233,John Gray,moodyjasonjohngray@example.net,94,Non-fiction,Books,490e277e-39cf-47f7-a9de-8282fa5adb6e,2021-08-19 18:22:07,7,428.26
+1970,Donna Martin,michellelloyddonnamartin@example.com,366,Gaming Console,Electronics,7cd11fe7-6858-4245-a474-3db57a89577d,2017-07-14 03:48:00,4,339.0
+2043,William Perkins,maloneluiswilliamperkins@example.com,303,Chair,Home,aac1e6ad-bb74-4de1-9988-a57a1cf98714,2021-09-17 18:25:14,3,154.74
+7693,Douglas Hines,karenacevedodouglashines@example.com,100,Skincare,Beauty,c7cec831-da41-4039-aac5-7c3d96569e3a,2017-08-08 08:58:28,1,93.48
+8928,Joseph Kelly,andersonmelissajosephkelly@example.com,117,Jeans,Clothing,d0f2c3cf-3ddb-4503-b787-7db156cbbcb6,2017-04-09 09:18:28,1,25.35
+7263,Omar Ferrell,jean38omarferrell@example.com,334,Dress,Clothing,30d60ad0-25e4-4c4f-bfdb-509a84f8e4ed,2018-08-06 04:59:24,6,14.63
+2381,Jennifer Fernandez,muelleralexanderjenniferfernandez@example.org,491,Tablet,Electronics,5f283c56-d6ea-4982-87c0-118175325f15,2019-05-24 13:46:41,8,51.18
+8106,Emily Estes,zthomasemilyestes@example.org,154,Lamp,Home,e04ea658-2cc8-4e29-a91f-98d2ccd17531,2023-08-27 01:37:06,8,426.53
+3768,Jonathan Russell,tsnyderjonathanrussell@example.org,208,Chair,Home,134ca14b-8c1d-4b22-ba36-83a9a93408b6,2019-07-11 13:31:42,3,277.74
+7294,Norma Olson,chavezmelissanormaolson@example.com,239,Shirt,Clothing,e96f25db-7176-41a2-8ea5-111125c45325,2018-01-02 23:26:07,10,14.75
+1892,Margaret Richardson,laurapearsonmargaretrichardson@example.com,462,Smartphone,Electronics,d3d8549e-c858-42b5-88fb-7d6a226a3c37,2022-01-30 21:01:36,5,189.22
+3991,James Nelson,fvazquezjamesnelson@example.com,407,Jeans,Clothing,15ea68a1-d8ea-447f-8c5d-8aba63217e8d,2021-04-08 01:34:54,10,482.3
+7988,James George,watsoncathyjamesgeorge@example.com,328,Jeans,Clothing,30c80255-f75d-4eba-98e6-8bbc826cddcf,2020-11-04 22:27:32,2,337.46
+9904,Michael Phillips,judymcphersonmichaelphillips@example.com,462,Bed,Home,ff3daf26-36ff-409f-b469-b26fdde23b2d,2021-04-14 05:28:46,5,198.09
+1251,Timothy Bell,andrew67timothybell@example.net,285,Sofa,Home,54b680ce-856f-4dce-bdc7-f556e53e031e,2020-07-04 20:05:24,4,296.81
+6894,Patrick Dillon,kthomaspatrickdillon@example.com,147,Shirt,Clothing,30497a55-6b01-4663-a985-9fe442729c76,2022-10-08 23:48:13,9,189.84
+2996,Julie Romero,charlesbarnettjulieromero@example.net,386,Shirt,Clothing,9cfa334a-8157-40ab-ac80-efa451a7d519,2020-03-21 23:57:05,7,108.38
+9500,Barbara Maldonado,dawnjonesbarbaramaldonado@example.net,161,Sweater,Clothing,8285d9dd-2369-4428-9100-778d0cee3b1d,2019-05-26 18:46:32,8,219.97
+3586,Jason Glover,dawnphillipsjasonglover@example.net,135,Lamp,Home,0853be16-fc6a-4106-8598-53bbd9884ae8,2018-12-29 06:51:04,10,363.64
+8496,Eric Williamson,langashleyericwilliamson@example.org,393,Non-fiction,Books,c2d0c5d2-93a4-492f-a19e-75e3bc7a5f4d,2020-11-08 05:00:28,6,273.16
+2881,Rachel Hunter,jasonwolferachelhunter@example.org,151,Science Fiction,Books,bcbe77ca-ed62-42e0-8251-1bfeddb24e96,2019-03-10 05:46:21,3,487.3
+4376,Katelyn Olson,deancharleskatelynolson@example.org,254,Chair,Home,3ed903b9-3561-4cda-8f5d-bdc5a48c92ee,2019-10-16 17:20:26,7,39.09
+5730,Chelsea Guerra,acostascottchelseaguerra@example.net,500,Thriller,Books,baff2ac4-a33e-478c-96e4-5471bd25298e,2017-04-27 13:31:19,4,282.83
+1256,Brian Brooks,scott15brianbrooks@example.org,22,Curtains,Home,089e81b1-c374-4d46-9c2d-3f127bea5082,2020-10-26 11:12:38,7,94.68
+6680,Chad Jones,matthew72chadjones@example.com,346,Sweater,Clothing,655322cb-571e-494c-a0eb-46d8ac835b67,2023-02-15 05:12:46,10,213.55
+4354,Stephanie Roberts,michael03stephanieroberts@example.org,241,Headphones,Electronics,33b3553e-6567-4cc8-8428-acee00108117,2018-09-24 06:18:18,3,281.18
+4048,Margaret Roberson,leesaramargaretroberson@example.net,249,Headphones,Electronics,4975321a-803e-495a-b852-eef431a82e06,2021-02-05 13:29:52,3,378.79
+4716,Lisa Coleman,kendra40lisacoleman@example.org,217,Bath & Body,Beauty,24050143-fd03-4350-b843-b97efafdfd55,2020-01-06 10:28:59,7,84.55
+3551,Tammy French,elizabeth29tammyfrench@example.com,370,Rug,Home,8c1fbd4c-c155-408f-8413-b6ecfa9c7c74,2023-07-16 07:04:06,3,159.8
+9512,Jorge Smith,jacobhobbsjorgesmith@example.org,386,Fiction,Books,8b394029-508d-46a6-adaa-bd486ac03027,2022-11-07 23:08:56,6,285.27
+1885,Judy Willis,greenmarisajudywillis@example.org,190,Jeans,Clothing,10458ad5-40f6-401c-8add-2dff41b3d0c3,2017-02-09 13:28:55,10,19.17
+7794,Yolanda Kim,christyhuntyolandakim@example.net,320,Chair,Home,637cca8e-53fc-492b-b8de-80866dbc7361,2022-10-30 01:56:15,7,317.76
+1920,Christine Martin,suzannemarshallchristinemartin@example.net,338,Tools,Beauty,d482082d-9ed9-4282-8280-94038394a3a1,2020-12-26 13:43:56,9,217.22
+5385,Jennifer Haley,andrew72jenniferhaley@example.com,374,Chair,Home,21babf74-90cc-4678-9afe-db28ece7b26b,2020-11-06 04:35:43,6,359.32
+9554,Grant Mercer,cynthia71grantmercer@example.net,55,Bed,Home,964b526d-9ef4-42ac-8900-6bfc7d6e5af4,2022-05-27 17:10:45,3,60.12
+9867,Chelsea Davenport,nhaaschelseadavenport@example.com,337,Bed,Home,0488a8c0-9728-4326-9184-21b0a7869ed4,2020-07-10 00:20:55,9,86.91
+3955,Tonya Smith,christinalovetonyasmith@example.org,296,Bath & Body,Beauty,fee2f984-a29e-45f4-abd4-52b71b9b366e,2018-11-14 12:04:14,5,199.16
+4572,Tammy Joyce,dwilliamstammyjoyce@example.net,378,Non-fiction,Books,670b377b-334f-4151-b6e9-2b81e570b856,2022-07-30 02:24:26,3,104.24
+2650,Kyle Norris,monicagaykylenorris@example.org,391,Mystery,Books,9d913866-8e6e-4c83-87b1-143658d76698,2017-07-22 11:27:56,3,323.14
+5485,Victoria Miller,smithpatriciavictoriamiller@example.net,420,Headphones,Electronics,7a2a895e-c8b0-460d-9219-81399d957040,2019-08-10 02:48:32,5,426.66
+6808,Dana Mullins,alexanderjohnstondanamullins@example.net,315,Self-help,Books,2bd8e5cd-da50-450e-b6f5-466f474de6bf,2019-10-08 00:46:36,2,388.16
+9377,Larry Cisneros,larsonnicolelarrycisneros@example.net,257,Lamp,Home,422f9a04-e319-4a6a-859d-c6f50afa7660,2023-10-24 21:04:58,5,164.02
+5861,Jason Brooks,sarahphillipsjasonbrooks@example.net,153,Biography,Books,20483f71-2e2b-4232-99c5-c298b8719ce1,2020-06-19 03:46:25,4,476.51
+5754,Robert Vazquez,ginajohnsonrobertvazquez@example.com,77,Curtains,Home,5ecc605a-3f01-4777-a3b1-a50611e665d7,2020-12-27 00:45:42,4,279.93
+9779,Tamara Hill,brookegarciatamarahill@example.net,412,Camera,Electronics,24b11b39-62af-4479-875f-4c6c9f91b0cb,2021-10-12 03:08:28,1,107.63
+9050,Todd Davis,alicialynntodddavis@example.org,1,Chair,Home,02aa0798-a1ce-4bb7-9e09-9ed28780f2fc,2017-06-15 00:01:14,7,138.85
+3568,Martha Anderson,woodwardchristinemarthaanderson@example.com,327,Biography,Books,76c48fb1-7b36-4078-b4c1-046a4404c7a4,2017-05-07 17:23:12,6,49.24
+1393,Jeff Hurley,wangnicolejeffhurley@example.org,53,Smartwatch,Electronics,fac028eb-426b-48d3-bdf6-22a26df5b964,2023-09-22 18:21:16,7,16.83
+3449,Alexis Hill,suzanne26alexishill@example.net,112,Jacket,Clothing,31f77bf8-5569-47d1-b385-688278a45b4d,2018-08-08 11:26:32,9,435.72
+8113,Lance Lee,jeffreywyattlancelee@example.com,7,Haircare,Beauty,7d6e58c5-4145-41e4-914e-6da1ca81e850,2019-12-07 19:45:28,6,234.9
+6888,Matthew Porter,ufieldsmatthewporter@example.net,236,Mystery,Books,e0be0e7b-e373-4cca-babc-ce976ed6f888,2023-06-09 00:20:25,5,326.39
+4415,Gary Brown,clairecartergarybrown@example.net,365,Trousers,Clothing,25e07010-4e18-4fbe-849d-7629febd95ed,2018-03-23 04:11:14,4,338.27
+4500,Timothy Manning,jeffrey66timothymanning@example.com,52,Mystery,Books,811cda32-5df0-4c98-b0e6-09c5734ca7ea,2021-09-19 18:16:34,6,162.94
+8213,Emily Mason,palmerjonathonemilymason@example.com,218,Curtains,Home,10055679-a5d9-48fc-9b8e-9b13459a7a6b,2017-08-17 14:32:27,5,280.57
+4711,Stacy Jones,belinda19stacyjones@example.net,318,Self-help,Books,6a834495-c64f-40e1-9332-625844601951,2018-07-16 10:52:51,2,360.52
+1189,Lauren Myers,anna28laurenmyers@example.com,18,Laptop,Electronics,0869e656-98dc-4b7e-b85d-ae1d94f304e7,2018-06-06 01:29:49,2,491.71
+8841,Robert Franklin,richard37robertfranklin@example.com,179,Tablet,Electronics,1656d06f-791f-4d88-a93c-dfee96c8584c,2022-06-25 11:14:15,5,252.29
+6676,Laura Trujillo,jennifer28lauratrujillo@example.net,16,Sofa,Home,13d70750-f003-4d34-b45c-ac32117c668e,2017-11-13 21:22:19,2,81.61
+2722,Stephanie Hobbs,michelle58stephaniehobbs@example.com,173,Bath & Body,Beauty,26ec28b4-c4fa-4500-85c8-c34b747edbc4,2017-08-08 04:56:53,8,466.41
+3316,Paula Ayala,selena70paulaayala@example.net,194,Tools,Beauty,6f0a724b-abb7-4a89-8764-ea8c9ef590b1,2021-12-04 19:28:24,4,297.15
+3649,Brittany May,martinezchrisbrittanymay@example.net,290,Haircare,Beauty,53c566c6-8436-4731-b261-d2de4879d4d8,2021-12-31 12:04:26,10,357.6
+7455,Beth Dickson,rsolomonbethdickson@example.org,363,Sweater,Clothing,772ce9fe-3461-4154-a1ed-15b64a938a0b,2019-08-06 12:02:55,8,345.23
+8926,William Noble,alexis87williamnoble@example.org,167,Smartwatch,Electronics,ffbf33a2-e9ba-4069-b1b9-3d232ba0cbaf,2019-04-06 12:06:24,3,159.91
+7799,Charles Carpenter,antonio64charlescarpenter@example.org,455,Fiction,Books,cf93b1a0-0890-4e63-97f9-e9a633d39805,2020-11-07 09:19:22,1,451.05
+6564,Gregory Bradford,xkinggregorybradford@example.org,292,Haircare,Beauty,78e281d4-b6ed-424b-a161-c10454c33398,2020-09-28 03:11:40,4,454.67
+2512,Jerry Sparks,kmoorejerrysparks@example.com,331,Makeup,Beauty,d032ff0e-5e98-4a09-9d53-83aae3317e5f,2019-10-17 02:54:27,5,136.93
+9474,Jacob Hicks,mmillerjacobhicks@example.net,394,Camera,Electronics,932d3cc4-c6c3-4061-b5c8-4c265ce7740b,2019-06-06 04:13:12,9,43.35
+5726,Jody Butler,angelacolemanjodybutler@example.org,250,Sofa,Home,b4ee1213-6057-4875-970a-cdfd942afc98,2019-10-19 21:53:38,3,151.25
+9243,Sean Taylor,hmillsseantaylor@example.org,139,Nail Care,Beauty,706dfd35-0579-486c-a41b-0828d1eda81e,2017-03-23 17:15:01,5,290.31
+4695,Dana Sanchez,fisherbrittneydanasanchez@example.net,432,Smartphone,Electronics,55d295d0-7d6f-498c-9b8c-ba120c4cbbb0,2017-12-12 12:32:09,7,242.35
+4473,Angela Stevenson,solistraceyangelastevenson@example.net,296,Sweater,Clothing,1185a25a-a4cc-4832-94c7-8e6ddbc390c8,2017-12-01 16:06:18,2,88.12
+6831,Steve Trevino,jessicadavidsonstevetrevino@example.net,443,Fiction,Books,ed2117c1-ea51-472a-9e66-eb648f4d49d2,2019-08-23 17:05:39,1,257.69
+1283,George Flores,pameladavisgeorgeflores@example.com,63,Jeans,Clothing,28ff5e2f-5d69-4e88-872f-11a581e72303,2018-07-14 05:35:33,1,474.68
+6807,Amanda Jarvis,vmedinaamandajarvis@example.com,496,Science Fiction,Books,f7bd5d6d-5d86-4dd6-b29b-7bfce18456f5,2022-08-28 00:08:24,9,470.71
+6092,Jane Adams,matthew16janeadams@example.org,195,Curtains,Home,7c582ec9-8bcc-473b-be04-bf001e213575,2021-03-20 01:02:44,1,329.51
+2094,Catherine Cobb,shannonbradleycatherinecobb@example.org,218,Rug,Home,b4a47519-a87f-4a75-acb4-f7afa8bc2d18,2023-12-06 00:39:55,7,334.44
+9512,Timothy Gonzalez,dwesttimothygonzalez@example.net,239,Skincare,Beauty,8942a1b5-25de-4382-826d-e95bb94e90ad,2019-10-22 06:15:28,8,77.7
+6049,Philip Wells,haileylongphilipwells@example.org,202,Shirt,Clothing,8339accd-e0a2-42a8-a18c-5b62284d5762,2021-12-20 12:32:47,9,327.6
+1895,Pamela Kline,sabrinawagnerpamelakline@example.org,424,Mystery,Books,140ab865-55d0-4a49-9c0e-0db83036d8e5,2017-02-24 14:38:27,5,139.55
+4162,George Wilson,mariapeckgeorgewilson@example.net,432,Smartphone,Electronics,5b620ea0-ebb3-4caf-8272-dea56c303545,2023-12-15 19:48:32,1,132.42
+4848,Jimmy Case,jamesdanieljimmycase@example.org,99,Science Fiction,Books,3bf0f035-ae4e-44cd-9003-dc27f7ddd7d8,2023-05-03 16:49:49,5,332.09
+1782,Anthony Murphy,dawnlambertanthonymurphy@example.org,139,Trousers,Clothing,16fa3dcd-c5cb-4251-ad0a-a8f8ae547f08,2022-04-09 02:18:21,2,66.07
+9984,Jeffery Duarte,ashleymoorejefferyduarte@example.com,291,Fiction,Books,54b4adbd-dbfc-4cd4-9cc1-1d9b5bdf62a8,2021-09-20 00:14:39,6,66.18
+2655,Walter Martin,nhernandezwaltermartin@example.net,378,Camera,Electronics,abb0e39e-7991-4480-8731-562a2baf72d4,2020-11-17 19:29:22,8,74.35
+2635,Kristina Booker,laurapollardkristinabooker@example.net,180,Makeup,Beauty,0db0dabe-d564-4b0c-9fe5-12a19ca03357,2022-07-29 01:00:02,5,485.8
+6111,Dana Tyler,diane94danatyler@example.org,255,Rug,Home,ddc52760-1031-4c12-a3f4-8c77daa69831,2021-11-13 12:43:41,6,320.4
+8442,Lisa Soto,benderpatricklisasoto@example.net,65,Nail Care,Beauty,d3dd921f-c0ad-48f5-9837-6ea680a85e2e,2020-02-16 23:04:51,1,64.7
+8949,David Johnson,danielgarciadavidjohnson@example.org,409,Non-fiction,Books,d0cbb390-bc5d-4169-b607-505bb4680069,2023-08-27 07:42:05,2,363.64
+4693,Travis Jacobson,sandersontravisjacobson@example.com,110,Non-fiction,Books,4b4cc94b-85f4-41ea-af45-f3371864b771,2019-05-18 22:18:31,9,476.56
+8131,Norma Sanchez,qporternormasanchez@example.net,333,Skirt,Clothing,95f7034c-e204-407f-a71c-5626e794bb3c,2018-06-28 08:53:45,2,438.37
+5639,Susan King,randyandersonsusanking@example.com,217,Smartphone,Electronics,236924ea-217a-4759-8421-758230fba1a4,2023-03-13 19:41:45,1,47.77
+7880,Sheila Carson,robert66sheilacarson@example.net,383,Science Fiction,Books,cbb8786b-95c1-4331-929f-635c84c7ba7f,2020-05-02 06:12:32,5,381.74
+9286,Andrea Collins,bobby42andreacollins@example.org,416,Makeup,Beauty,2c00f2e6-e71f-48d7-a13f-7371a3189fb3,2017-11-11 21:16:06,10,478.09
+4873,Rachel Lewis,lopezjoshuarachellewis@example.com,328,Laptop,Electronics,a1cda11f-58ca-4ff1-a570-ae68fba7df42,2018-05-20 20:43:12,9,70.89
+4775,Cynthia Johnson,phensleycynthiajohnson@example.com,315,Gaming Console,Electronics,16f8ebb9-cabb-442d-a9d9-f051f1cdf898,2020-10-20 14:38:34,9,11.37
+5005,Kathy Mccarty,joseph11kathymccarty@example.com,234,Smartphone,Electronics,9712b361-6784-458d-ab5a-fcba0f7e513d,2020-02-20 22:59:44,2,24.78
+9546,Joseph Young,warrendaniellejosephyoung@example.net,387,Shirt,Clothing,916fb18e-5822-41a3-8070-5ba8c84467c3,2018-06-12 07:19:03,7,493.77
+8106,Tammy Holland,martinwesleytammyholland@example.org,149,Makeup,Beauty,c77c29ab-5cdf-49a4-a279-91cbd521b25f,2018-11-12 10:49:12,3,167.2
+6514,Laura Hanson,rebekahthompsonlaurahanson@example.net,273,Gaming Console,Electronics,b7779bb4-fab7-4e30-8c0a-a3ebe24ce630,2020-04-06 01:38:41,8,321.06
+8545,Donald Martinez,wisemichelledonaldmartinez@example.net,135,Bath & Body,Beauty,7abfe592-7abe-4104-9a4a-73dbcc6b38b0,2018-08-16 07:13:44,6,21.58
+4000,Angela Taylor,erandallangelataylor@example.com,372,Nail Care,Beauty,31c62b41-c16e-471b-ad08-95ee99d6709c,2020-06-10 21:30:35,4,52.52
+8044,Shawn Warner,katherineraymondshawnwarner@example.net,269,Haircare,Beauty,c4c9a0f8-2eba-4349-a115-30805e5d2228,2020-10-30 07:27:35,9,297.15
+3868,Joseph Clark,rachael98josephclark@example.com,388,Skirt,Clothing,91272e61-a62c-4c30-9fb3-526fd6d5b132,2019-05-25 12:47:51,9,467.42
+3509,Elizabeth Cruz,matthewrobertselizabethcruz@example.org,66,Dress,Clothing,b7966ced-19be-4ea6-a7dc-54ec9228da03,2021-11-21 23:12:35,1,342.98
+6709,Austin Jones,cooperlindaaustinjones@example.org,37,Thriller,Books,0955d719-cca7-4857-adfa-f0c6f364b970,2017-10-18 01:08:22,3,220.62
+2382,Brad Anderson,alicia18bradanderson@example.net,281,Jeans,Clothing,9e37acd1-600f-4b67-bac5-2b35dbe707a2,2021-07-30 07:39:03,3,253.88
+7075,Charles Edwards,romeromatthewcharlesedwards@example.net,17,Jacket,Clothing,2d7f415f-3af2-4f5e-89f3-40e80e7c1b5b,2018-05-26 20:25:26,2,434.61
+7613,Lisa Wells,ihalllisawells@example.net,359,Non-fiction,Books,4e7d42d7-4fe1-4749-8a7b-af14db1e76b6,2023-03-07 07:23:38,10,104.97
+9716,Anthony Kaufman,danielwhiteanthonykaufman@example.org,68,Science Fiction,Books,d34bfec5-dd27-460b-924f-5b9d28ba49bf,2018-11-05 09:18:43,7,213.79
+9246,Melanie Clayton,charrismelanieclayton@example.net,423,Rug,Home,61390378-afb7-448b-abd8-fa35d66aab1d,2019-03-30 12:17:53,5,417.89
+6887,Leah Jones,juankaufmanleahjones@example.com,477,Non-fiction,Books,a624d677-4ab4-43fe-b89d-e5d8c20ef91e,2021-04-26 02:12:37,2,257.82
+8238,Sierra York,wmartinsierrayork@example.com,116,Non-fiction,Books,555279d0-3e3e-4713-9b69-bcde261b5063,2022-04-12 00:20:05,5,421.2
+1754,Ian Gray,qwareiangray@example.net,131,Gaming Console,Electronics,dc82c6dc-615c-4cd1-a43b-c7047a7a046a,2022-05-11 21:19:14,5,202.77
+5943,Christopher Williams,murphymarthachristopherwilliams@example.net,277,Thriller,Books,6a6d3b74-96cf-41e8-b085-7b9b6ed7d143,2019-07-27 22:00:02,8,178.04
+6638,David Wilson,lisa70davidwilson@example.org,54,Bath & Body,Beauty,a68bba32-5e38-49c8-95ac-8babde58f6a3,2023-12-07 15:13:15,8,340.4
+8909,Troy Wilson,lisawhitetroywilson@example.net,137,Smartwatch,Electronics,16d73536-5e63-49ec-8e27-693c60f8e03b,2018-04-25 17:20:34,10,47.79
+3053,David Munoz,kara75davidmunoz@example.org,370,Lamp,Home,ef549db8-096d-4d3e-9615-38ae32a44686,2023-03-09 23:49:06,7,266.56
+6180,Tom Torres,sjonestomtorres@example.org,81,Chair,Home,c1a469f3-6a5b-4054-bf8a-aa76d5b8453e,2019-11-18 17:43:25,8,73.99
+9727,Mark Taylor,natashacortezmarktaylor@example.org,248,Fragrance,Beauty,b1efffe5-1d08-4a74-a4a4-ffe796803efc,2019-02-02 05:00:45,10,481.3
+9797,Michelle Thompson,jenniferdavismichellethompson@example.net,199,Makeup,Beauty,a9a6657a-6e4b-44bb-9bb5-85e566d40e5f,2018-05-02 07:32:37,7,204.39
+8483,April Lewis,markstevensaprillewis@example.com,77,Makeup,Beauty,7cc9fb05-a114-4c00-b17a-c080265be603,2017-09-13 00:43:37,4,148.69
+7104,Deborah Cooper,susan61deborahcooper@example.net,385,Trousers,Clothing,7faaa8a2-b42c-4370-a617-e80108bd73fe,2018-03-14 03:51:19,7,52.7
+9718,Kendra Ferguson,anna49kendraferguson@example.org,362,Smartwatch,Electronics,eb3e0c2d-f60d-4783-9027-e223aa04bde6,2023-06-19 14:47:30,7,17.32
+5490,Sheila Roy,evanslindsaysheilaroy@example.com,444,Bed,Home,36742ab6-d4a5-41f2-b959-678e18f1f0d7,2023-08-15 19:31:52,5,181.43
+1912,Jennifer Armstrong,stevenhuangjenniferarmstrong@example.net,499,Curtains,Home,c933720c-71ab-4e35-bd68-c91f987be118,2020-03-06 02:46:27,9,258.84
+1445,Michelle Orozco,edennismichelleorozco@example.net,111,Jeans,Clothing,27c7f094-86f3-4e88-944c-5ca6b00e326f,2019-02-11 19:39:18,5,12.53
+2598,Vanessa Glover,jacksonlaurenvanessaglover@example.org,208,Fragrance,Beauty,d9d88cb2-51b8-4247-aff0-65d123ba25d1,2023-01-13 16:47:01,2,133.74
+7453,Melissa Reynolds,henryhernandezmelissareynolds@example.org,197,Gaming Console,Electronics,89a7bad9-6b27-4d5b-8c32-e663fad219ac,2022-10-20 13:16:04,2,406.23
+9624,Ralph Chavez,cvasquezralphchavez@example.net,207,Lamp,Home,892e4914-0e24-41b8-b713-aebebc74e2f8,2018-08-03 08:57:04,3,42.58
+1629,Nicole Meyer,rlongnicolemeyer@example.org,122,Science Fiction,Books,577916d6-339f-4116-b2d6-b6c744582482,2021-06-16 07:37:24,2,493.68
+7525,Rebecca Webb,john62rebeccawebb@example.org,409,Table,Home,3a388c9e-1cc1-4ab5-be68-e2d1b85960ee,2023-08-16 20:40:35,3,109.0
+5038,Maria Mcdaniel,tsmithmariamcdaniel@example.net,151,Haircare,Beauty,b3198f9e-0704-4241-bbe4-684049bca17f,2019-11-14 09:04:48,2,318.99
+7789,Sheila Waller,allenpatriciasheilawaller@example.com,403,Fiction,Books,9da58fc4-bc19-400e-93cd-9c40709704d2,2018-03-29 20:05:50,10,412.82
+1780,Brandi Jackson,amy57brandijackson@example.net,270,Haircare,Beauty,96439c88-8420-489b-86c6-61c08ca3c66a,2018-08-05 00:42:10,1,214.74
+5631,Nicole Anderson,bhogannicoleanderson@example.com,107,Lamp,Home,dcb33b4c-50ee-46d5-a8f7-2ec6825ff160,2017-03-19 21:29:13,6,116.4
+4658,Andrew Velez,jennifermackandrewvelez@example.com,2,Tablet,Electronics,1ae7f374-7296-4cf7-a169-35bac6d7ef63,2021-11-29 05:21:26,8,322.22
+1901,Kim Page,melissagamblekimpage@example.org,55,Science Fiction,Books,cca5553f-4417-4c47-be42-144598e8eac4,2020-01-23 23:59:19,3,467.79
+5898,Emily White,raymondkeithemilywhite@example.net,143,Jeans,Clothing,1b6b82c4-8809-4119-a3e3-0d677c85083c,2021-01-13 00:13:17,6,479.04
+9767,Brandi Carpenter,tiffanyrichardsbrandicarpenter@example.org,212,Biography,Books,ea5ffae1-0dc6-42e0-95c3-2b5b4a0c85a4,2017-03-27 19:59:14,2,479.52
+7056,Cory Bell,nmcculloughcorybell@example.com,164,Haircare,Beauty,474907cf-908b-4734-bd6b-8785dfe0192c,2023-03-25 21:16:24,4,242.55
+7251,Nicholas Brown,griffinwandanicholasbrown@example.org,42,Jacket,Clothing,2e34d119-31f1-42e4-84b6-1b491ad8c33c,2023-12-28 12:12:21,2,411.68
+2702,Andrew Rich,zleeandrewrich@example.org,244,Bed,Home,39f7d9f6-30a6-42e6-8569-2bd43f656c63,2017-09-23 01:32:20,5,467.1
+1455,Kevin Young,kpaynekevinyoung@example.net,395,Sweater,Clothing,3f53a39e-cd6d-47a5-828d-8e2d0b442458,2018-07-25 18:22:19,5,56.95
+2950,Alyssa Alvarez,juan55alyssaalvarez@example.com,277,Nail Care,Beauty,467fd92e-3d9f-463a-8750-e9d1dc19d2dc,2017-02-03 01:09:28,2,170.18
+3467,Dawn Patel,kimberly69dawnpatel@example.com,27,Smartwatch,Electronics,c0dc035d-7698-4093-919e-937e65a5e975,2021-04-12 15:46:27,2,457.48
+7059,Emily Hopkins,gjacksonemilyhopkins@example.com,418,Laptop,Electronics,5fd7ebaf-dbc5-48fc-8432-27feddc1e781,2017-05-10 20:57:35,5,464.48
+5681,Matthew Thomas,jamiearmstrongmatthewthomas@example.com,187,Dress,Clothing,f1582f38-3bcf-43c0-9091-3faded34ecf1,2021-11-08 01:51:34,3,214.1
+7225,Tammy Garcia,kaylee06tammygarcia@example.org,81,Bed,Home,5d5e1db4-6b69-4838-8a4a-3eb2d9c52719,2020-11-27 19:14:27,5,215.72
+1489,David Chapman,alicemartinezdavidchapman@example.com,200,Biography,Books,8256d76a-a897-494f-bd5b-0d355a98dda8,2022-12-01 23:08:48,9,126.03
+1306,Brian Mayer,grace50brianmayer@example.org,466,Bath & Body,Beauty,186f02b2-4a8f-4257-a760-1424dabef5bc,2022-05-15 05:50:26,10,128.09
+7290,Carolyn Rivera,stephanieowenscarolynrivera@example.net,428,Sofa,Home,8a6adfd7-9a34-440c-8825-b3d68cacf5ed,2017-09-24 09:41:42,8,60.99
+9073,Alan Washington,johnsonrickalanwashington@example.net,154,Biography,Books,fb741928-bba9-4325-b152-063f22379d1b,2018-04-05 10:40:33,5,15.77
+8532,Nicole Blevins,criveranicoleblevins@example.com,62,Smartphone,Electronics,c2a13842-9e5f-45f8-b461-bfd13f33bc16,2022-09-07 14:01:06,1,420.21
+1280,David Horne,fullerricharddavidhorne@example.net,352,Tools,Beauty,5dbb6f5b-9732-4201-9cda-fa5c9c129350,2023-02-23 09:34:23,6,34.44
+1974,Tyler Watson,chad72tylerwatson@example.com,332,Biography,Books,f1b845c8-151f-4258-bf4a-33cef2c0200f,2018-09-20 04:39:31,5,93.14
+4257,Douglas Villarreal,megancraigdouglasvillarreal@example.net,420,Thriller,Books,a6488c56-736e-4886-8f48-da5e43b0d2fc,2017-07-27 21:45:56,10,363.98
+2714,Margaret Peterson,james63margaretpeterson@example.net,167,Haircare,Beauty,51e02d3d-5330-4f5b-b07a-38f8813142a8,2018-01-09 16:38:10,6,449.14
+2230,Nathan Gonzalez,adamsbrandonnathangonzalez@example.net,251,Smartwatch,Electronics,76debadd-fa7d-46c2-ade9-2673da7fab85,2017-12-23 13:31:15,5,398.19
+8776,Carol Smith,pricemargaretcarolsmith@example.net,306,Smartwatch,Electronics,2f10c1e9-11d4-49e1-bba8-a22380fb18d9,2018-11-17 15:49:22,4,48.94
+9741,Rebecca Shaw,davidestradarebeccashaw@example.net,286,Thriller,Books,94bd4afd-3245-4aef-ace6-877babe579fa,2020-03-15 22:00:49,4,215.76
+7499,Amber Mendoza,yangmikeambermendoza@example.org,295,Sofa,Home,7e487a35-7fc6-4ada-9b3d-853d34f6e008,2017-06-06 03:21:36,5,51.98
+3615,Chloe Montgomery,davisjustinchloemontgomery@example.net,13,Non-fiction,Books,2de4b4ff-6c97-4d19-87b2-10003e40eeec,2018-05-03 17:54:12,10,233.95
+6889,Ralph Morgan,lwhiteralphmorgan@example.org,475,Jeans,Clothing,8f522d59-a673-46c5-bc6d-22150a520f11,2023-01-13 08:10:19,3,473.42
+3071,Jeffrey Valentine,greencourtneyjeffreyvalentine@example.org,251,Gaming Console,Electronics,16d3d1f9-f391-428f-ae13-e1196732d154,2023-06-16 06:03:33,5,463.48
+6564,Isaac Parker,justinharrisisaacparker@example.net,280,Sweater,Clothing,e4d9196d-1177-4745-9492-975fc317a70e,2017-11-21 18:43:03,7,448.23
+1078,Sarah Richards,umccormicksarahrichards@example.net,39,Table,Home,d87d4604-6de3-48cd-9996-ec677b6ca69b,2021-02-10 00:20:42,1,181.64
+3763,Sean Atkins,joanne98seanatkins@example.com,31,Bed,Home,5b055bfc-5658-4dce-b537-dff5b5667127,2019-11-10 21:17:32,8,396.52
+3797,Colin Mcmahon,ngilbertcolinmcmahon@example.com,157,Bath & Body,Beauty,7f3bea5a-e1dd-4b8f-b02b-168e406fbb65,2022-02-16 20:31:53,10,42.69
+5586,Scott Farmer,schneiderericscottfarmer@example.net,261,Nail Care,Beauty,3d6de26f-dd13-4402-a1fa-f938ccd741b6,2019-10-31 01:02:35,2,499.24
+5132,Kenneth Gray,colsonkennethgray@example.com,159,Chair,Home,e2954376-b71e-4e1f-b146-f047d1f4f5be,2019-09-19 14:38:40,10,481.76
+8315,Leah Cruz,ycruzleahcruz@example.org,98,Tools,Beauty,01762ad5-99a6-44cc-8e84-7c69e1c23ea7,2023-01-09 16:47:21,2,410.69
+4472,Jill Howard,salinastiffanyjillhoward@example.org,117,Nail Care,Beauty,33bf8baf-2e48-4e95-afaf-86b0bd6a5d1e,2023-03-22 01:02:04,5,129.1
+5165,Angela Hall,kjosephangelahall@example.net,230,Shirt,Clothing,4ba179b6-c065-48c7-a267-c62df7a3cb29,2020-07-20 20:22:09,2,281.51
+5559,Micheal Fuentes,alexandra79michealfuentes@example.com,63,Laptop,Electronics,43480d7d-4787-4da8-b261-01c842a542f3,2021-04-08 18:15:32,6,288.4
+9861,David Johnston,nicole73davidjohnston@example.com,172,Fragrance,Beauty,0ef2dc8a-e564-4390-b7e2-6bd67ba4bfc5,2018-07-05 10:53:07,8,160.77
+2019,Douglas Mitchell,amy70douglasmitchell@example.org,294,Chair,Home,067d74d1-c526-49b8-a0ca-656862774bc9,2023-07-05 04:29:54,1,114.0
+5521,Benjamin Diaz,matthew17benjamindiaz@example.org,129,Haircare,Beauty,49589e0f-988b-4f46-a0f5-b09b470e4d3b,2023-02-08 13:06:09,1,364.48
+7841,Melissa Francis,kennethjohnsonmelissafrancis@example.com,337,Mystery,Books,ff415970-e5d3-4af9-a147-5505b409b0bf,2019-06-10 16:14:29,7,152.74
+9829,Joe Summers,caleb68joesummers@example.net,421,Mystery,Books,f670eecd-8c32-4a5c-9d2c-b637602b0ad7,2021-04-18 03:18:01,10,345.5
+3086,Amber Clarke,paul91amberclarke@example.net,432,Chair,Home,615828dc-b2bd-45a6-99ca-c1a736fd6025,2019-10-12 14:35:06,10,31.1
+7185,Steven Thompson,mendozaandrewsteventhompson@example.org,239,Science Fiction,Books,50aca5ff-88b4-49c8-bf5c-65824b439eb4,2023-12-10 11:51:51,8,25.51
+5197,Joshua Lopez,vjohnsonjoshualopez@example.net,319,Dress,Clothing,f6b42776-24eb-49da-9acc-50415a48316d,2018-04-13 02:14:32,5,171.36
+3052,Heather Hardy,taylorbarbaraheatherhardy@example.com,461,Tools,Beauty,81ea6f36-019d-4c4c-9ec3-e4180f7b37e3,2018-07-30 03:47:12,4,181.74
+2017,Abigail Wilcox,rwadeabigailwilcox@example.org,5,Biography,Books,6b66c894-ac58-4814-bb40-a6e6d3786914,2017-01-10 03:42:52,9,37.36
+8711,Andrew Carr,bpattersonandrewcarr@example.org,43,Jacket,Clothing,2bb839db-632a-4dad-b7a8-2b86c4ae77f5,2018-05-21 06:45:27,10,298.6
+9501,Benjamin Pitts,janice38benjaminpitts@example.net,202,Rug,Home,2c99993d-c9a3-4f04-9c49-a8cd83783545,2021-01-31 03:55:19,8,333.61
+5385,Eric Taylor,apowellerictaylor@example.org,210,Sweater,Clothing,93da8dca-6d2e-4be6-acc1-dad5a36c62b6,2019-05-24 05:47:27,6,406.15
+6333,Evan Sanchez,connorjohnsonevansanchez@example.net,463,Bed,Home,e359e154-55d3-48d8-989d-b46f4c381011,2023-10-20 00:14:41,8,258.16
+9061,Eric Macdonald,shortwilliamericmacdonald@example.org,280,Rug,Home,5888a617-546a-42b9-9a6f-309232452935,2023-02-05 16:47:09,7,173.87
+6211,Don Mann,william35donmann@example.org,434,Makeup,Beauty,50617989-1be8-4088-bb79-a256a79425bf,2021-01-23 18:36:39,7,470.88
+3746,Jeffery Stephens,markhernandezjefferystephens@example.org,341,Trousers,Clothing,7709cc92-3bd5-4149-94b6-41b8ea3984b8,2019-08-20 11:51:37,7,46.87
+2922,Tanya Lopez,kelleydianatanyalopez@example.org,413,Smartwatch,Electronics,26e1f8f9-c246-472c-a65e-a9e3b4d51299,2020-02-08 17:38:27,7,39.42
+2472,Megan Morrison,lorimccoymeganmorrison@example.net,440,Laptop,Electronics,d2fb4c01-39c9-4f43-89ba-7603636f8a02,2021-05-16 22:29:40,3,442.8
+7896,Deborah Smith,jessicahernandezdeborahsmith@example.org,495,Smartwatch,Electronics,cb051672-fea7-4b85-a030-30500a4a2d43,2023-11-22 04:31:42,7,441.34
+7240,Natalie Jenkins,russell82nataliejenkins@example.com,102,Jacket,Clothing,5e36c795-fef6-43cb-b2fa-23dcb545e7d4,2018-06-22 22:09:08,10,393.77
+1517,Kayla Fox,wcaseykaylafox@example.org,312,Camera,Electronics,b6fa2c0c-c790-45f9-be04-c1a841175ac7,2021-05-26 07:10:00,5,190.01
+6762,Adriana Ramirez,marquezchristopheradrianaramirez@example.net,7,Camera,Electronics,6c2d6e8c-7a24-44b9-8f79-0478363d17b0,2023-01-01 04:52:40,9,270.96
+1324,Mark Rodriguez,allison49markrodriguez@example.net,390,Rug,Home,b7113d15-bcf7-4de1-9f79-94bf40c9a6c4,2018-12-23 18:40:00,4,303.22
+9492,James Mann,jessicacannonjamesmann@example.com,129,Jeans,Clothing,3bbfeb9e-d1eb-4f3c-8e33-a5aa4a93bdee,2021-09-03 03:26:19,6,420.35
+7027,Maria Mcdonald,benjamin88mariamcdonald@example.org,296,Trousers,Clothing,19df027d-d989-4003-88d9-6e0ebc263ce8,2022-08-02 01:07:28,4,230.49
+1225,Allen Shepard,zshawallenshepard@example.org,162,Nail Care,Beauty,a1af0f17-de47-4af8-bc95-e5164c6a50c4,2019-01-17 04:16:04,5,65.99
+5572,Kelly Ward,kellypetersonkellyward@example.com,406,Headphones,Electronics,85767f50-d936-4bd0-a54d-43c29f16e3dc,2023-10-23 04:40:26,4,71.3
+1431,Christopher Hawkins,nicolehoodchristopherhawkins@example.org,467,Haircare,Beauty,a9fecbcb-0012-4aa7-ab09-df069ed9a27a,2020-08-01 05:14:56,7,13.8
+3053,Aaron Long,edward42aaronlong@example.net,345,Trousers,Clothing,51a840c7-b717-4743-90d5-f3b38a9df1cb,2017-04-23 05:55:33,8,186.03
+1944,Casey Reed,bethany57caseyreed@example.org,282,Laptop,Electronics,49f5d4b2-cd53-417d-ba3c-fc7a2a4008ac,2023-09-13 05:45:30,1,239.48
+9400,Carrie Perry,michael63carrieperry@example.net,18,Laptop,Electronics,a0aab5f9-1fc8-4e89-9c16-7f7eef1f43d8,2023-11-08 17:42:42,7,165.02
+8790,Laura Sharp,edwardthompsonlaurasharp@example.org,22,Chair,Home,9a988aac-1042-4f5e-9870-ef84b4535960,2019-06-07 17:07:49,10,122.71
+4249,Eric Stout,samantha73ericstout@example.com,59,Sweater,Clothing,faab9466-97c2-448c-88f8-2a83490ac4dd,2019-11-30 22:27:55,1,19.03
+9635,Kevin Conley,jbeckkevinconley@example.org,14,Dress,Clothing,803b40df-8e85-4d78-b53f-305afc000d60,2022-06-29 15:41:03,1,159.09
+1709,Lori Dixon,dylanwilliamsloridixon@example.com,60,Chair,Home,c10c8b2e-6f3f-4a09-879e-44cfb9543e15,2022-10-21 04:22:45,2,167.92
+5964,Justin Gordon,bhughesjustingordon@example.net,256,Gaming Console,Electronics,3a023ae1-82ad-45ce-9ef3-b1e01e961a44,2021-12-23 03:05:26,4,476.61
+2537,Scott Hansen,kimberlyweaverscotthansen@example.org,15,Trousers,Clothing,82d6aca2-69aa-4c12-96b3-624008d5b568,2017-08-10 11:23:56,5,472.01
+3347,Cathy Moreno,rnelsoncathymoreno@example.com,312,Nail Care,Beauty,e80bb6f3-b866-4a48-a623-a9c598e996e3,2017-11-04 18:30:01,6,97.25
+7481,Amber Martin,sonyakelleyambermartin@example.com,165,Tools,Beauty,73178db2-eb6e-45ec-8e9b-95a52b416dfc,2023-02-12 18:56:55,8,487.48
+2015,Tara Bailey,yyoungtarabailey@example.com,310,Tablet,Electronics,78c3d031-a615-4faf-9b36-c0e05d0ed0c6,2020-06-19 11:22:00,3,246.23
+5173,Brianna Larsen,jeffreybryantbriannalarsen@example.com,423,Curtains,Home,cfee0d7f-a19c-4e83-b4fc-4f54bad53b4a,2020-05-17 19:38:26,2,275.73
+4904,Monique Bennett,wilcoxbrentmoniquebennett@example.com,261,Lamp,Home,6bd28cad-da46-44d4-af08-628c6579d221,2022-12-03 12:14:14,8,475.39
+5624,Marcus Hanna,vmackmarcushanna@example.org,373,Tablet,Electronics,9f75036f-6d03-498e-a645-dba65add54db,2023-04-12 02:41:18,8,295.18
+2357,Kerry Hood,michael99kerryhood@example.net,141,Sofa,Home,64f1e94c-256c-46a4-9a8b-a8a9062f051e,2023-06-17 23:17:58,9,219.81
+9085,Scott Perkins,qdanielscottperkins@example.net,337,Mystery,Books,72a0c38a-63e8-4a37-aa74-d6cc71c3d9d9,2023-09-14 17:09:36,7,464.69
+4444,Nathaniel Zuniga,batessamanthanathanielzuniga@example.net,61,Sofa,Home,57653e0e-4263-4bb4-a071-5a006ed7d25a,2023-02-14 13:37:05,3,25.69
+1060,Brian Wright,debramclaughlinbrianwright@example.net,199,Self-help,Books,38b2e5e3-e69e-4a84-bb8b-b64a5c81df7d,2021-12-08 05:19:28,3,194.69
+3055,Christopher Santos,jeffery43christophersantos@example.net,352,Sofa,Home,8d26b3eb-03ca-4d68-8654-1d5f2ca12c3c,2022-08-22 21:46:12,6,260.86
+3176,Susan Rivera,gswansonsusanrivera@example.org,181,Laptop,Electronics,e95efc93-0193-4cb7-9312-c61177bb5ae7,2018-08-08 07:07:01,9,282.79
+4361,Jared White,timothy08jaredwhite@example.com,150,Table,Home,d83bbbf2-4321-4baa-a19a-8736f0767ae5,2020-10-06 05:13:47,3,365.75
+6332,Jose Romero,danielwhitejoseromero@example.net,304,Thriller,Books,3dcd8175-ad38-40da-9b7f-1b8807ac4805,2023-04-24 06:16:53,9,337.61
+1230,Elizabeth Lewis,sanchezdebraelizabethlewis@example.org,144,Non-fiction,Books,28a72670-786e-4b44-87a4-c8e3766c7164,2022-10-28 03:18:54,1,96.72
+9986,Michael Perez,kingalyssamichaelperez@example.net,37,Headphones,Electronics,6d9b78ed-97c6-45eb-befa-ce76b14e8a25,2023-06-05 04:25:47,6,175.0
+1237,Joseph Myers,brenda30josephmyers@example.com,385,Shirt,Clothing,a87ef8d2-4215-44cb-9350-2ddc5f7c9e32,2022-11-03 08:48:29,7,456.42
+9219,Anthony Garza,john37anthonygarza@example.net,347,Shirt,Clothing,5c9f4ad2-83e7-450a-9796-19477b167296,2018-04-28 21:15:11,1,177.33
+5652,Adam Morales,spetersonadammorales@example.org,360,Makeup,Beauty,f1b9bc4d-a9d5-460b-9fc4-6a344b82a4ad,2019-03-08 03:17:53,8,485.01
+5297,Laura Bell,rasmussenlynnlaurabell@example.org,442,Tools,Beauty,b233dbc1-0557-40a9-8c05-725f10cb182e,2023-10-29 20:00:32,10,249.42
+3296,Zoe Murray,brownbrittanyzoemurray@example.org,146,Thriller,Books,527a925f-84f5-4442-8ead-262086664d90,2022-02-26 05:05:59,8,83.34
+3856,David Diaz,patricia42daviddiaz@example.com,206,Tools,Beauty,58d7b89c-ee52-42b2-87d2-dbff6d236912,2023-01-29 06:48:03,9,382.53
+9981,Emily Mendez,kathychavezemilymendez@example.com,432,Skirt,Clothing,2e660eaa-876f-419e-b649-c02e9b7a54b3,2019-08-09 17:02:02,9,320.07
+1891,Nichole Snyder,amberhallnicholesnyder@example.com,3,Dress,Clothing,b575e0a2-7f0b-4117-b331-86b0925f5239,2023-09-10 16:36:42,7,487.07
+1194,Chelsea Thomas,aturnerchelseathomas@example.com,220,Skincare,Beauty,156988c0-0945-45a4-a5e2-4e47f7d5554e,2022-05-31 15:25:50,4,237.56
+8553,Robert Smith,katelynchambersrobertsmith@example.net,444,Fiction,Books,1c2fb922-cd0e-45b7-8b8e-01e232c185c6,2023-03-05 15:33:54,7,295.54
+4515,William Moreno,gthomaswilliammoreno@example.net,313,Mystery,Books,f4765479-56ef-43f0-b5ed-9405e0b34736,2018-06-30 23:05:05,3,164.66
+8559,Raymond Johnston,timothycunninghamraymondjohnston@example.com,192,Fragrance,Beauty,9acc9ebb-ee61-45f4-b107-cc8625318b66,2019-06-21 01:34:14,8,87.72
+3061,Mark Solomon,williamsbrianmarksolomon@example.net,4,Laptop,Electronics,32bb137d-8252-4b7a-a781-50b2843d67dd,2018-01-23 09:37:03,4,337.8
+5426,Jason Martinez,brenda48jasonmartinez@example.net,90,Fiction,Books,dc5387ba-a206-4778-8f76-6bbff971b54d,2019-10-11 00:09:18,3,470.59
+4194,Melissa Castro,pachecochadmelissacastro@example.net,415,Mystery,Books,3ea561fb-c412-4312-9204-b7cc4f541534,2022-12-28 02:46:26,3,26.07
+2119,Jennifer Long,watkinsmichaeljenniferlong@example.org,493,Headphones,Electronics,671e4b4b-f7af-4b75-9f00-e8dde3c3c6fd,2023-07-10 12:43:19,9,329.54
+3929,Robert Diaz,luke45robertdiaz@example.com,258,Skirt,Clothing,2eddc55e-f1cc-4ae6-a999-5a6aad8d2a6a,2018-08-10 01:01:55,7,295.09
+3165,Regina Parker,lindamorenoreginaparker@example.net,24,Table,Home,7106d2aa-4f85-4a07-b2f3-dd9f976b23aa,2019-08-26 08:16:43,6,482.39
+9620,Melissa Campbell,russelljennifermelissacampbell@example.com,338,Jacket,Clothing,acbdc046-7838-4cd0-aaab-fb401b91f42b,2023-09-27 06:22:07,4,452.19
+7742,Megan Weeks,ohillmeganweeks@example.org,358,Shirt,Clothing,9e4b0a7c-9e0d-4f59-a8a0-84b072be5785,2023-09-15 07:42:16,6,144.76
+2099,Matthew Wallace,annhinesmatthewwallace@example.org,340,Makeup,Beauty,9d12076c-81a2-415f-b9e9-a92b0684a865,2023-03-18 23:49:54,4,127.57
+6426,Kyle Rodriguez,shawn66kylerodriguez@example.org,136,Gaming Console,Electronics,63d4a8a1-eb9c-4942-98f2-2bd4dfc9a607,2023-08-07 19:58:16,9,89.96
+5885,Patrick Murphy,lkirkpatrickmurphy@example.net,467,Shirt,Clothing,f1cfd613-cb5e-493f-88ba-2141c765e1f9,2021-01-28 07:44:36,6,254.99
+3461,Jeffery Harmon,alvarezcassandrajefferyharmon@example.net,463,Chair,Home,884a38b5-f2fb-4031-84cc-5371ce976906,2022-10-01 04:34:33,4,163.82
