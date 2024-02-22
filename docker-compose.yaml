@@ -2,8 +2,8 @@ version: "3.8"
 services:
   mysql:
     image: mysql:latest
-    networks:
-      - mynetwork
+    # networks:
+    #   - mynetwork
     volumes:
       - ./mysql:/var/lib/mysql
     environment:
@@ -15,8 +15,8 @@ services:
     image: backend:latest
     ports:
       - "9000:9000"
-    networks:
-      - mynetwork
+    # networks:
+    #   - mynetwork
     environment:
       - DB_ENGINE=django.db.backends.mysql
       - DB_NAME=predictdb
@@ -26,7 +26,7 @@ services:
       - DB_PORT=3306
     restart: always
 
-networks:
-  mynetwork:
-    name: deploy-link
-    external: true
+# networks:
+#   mynetwork:
+#     name: deploy-link
+#     external: true
