@@ -162,6 +162,3 @@ SESSION_COOKIE_AGE = 1800  # 10 minutes in seconds
 
 # Get the base directory of your Django app
 BASE_DIR1 = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
-# Define the relative path to your model file
-ML_MODEL_PATH = os.path.join(BASE_DIR1, 'gradient_boosting_regressor_model.joblib')
