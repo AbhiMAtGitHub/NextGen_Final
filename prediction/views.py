@@ -17,8 +17,10 @@ from .forms import CSVUploadForm
 from datetime import datetime, timedelta
 from django.utils.crypto import get_random_string
 from .models import UserToken
-import joblib
-import os
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import GradientBoostingRegressor
+from sklearn.metrics import mean_squared_error
+import numpy as np
 import io
 import json
 import pandas as pd
@@ -339,30 +341,52 @@ def prediction(request):
             try:
                 sample_data = pd.read_csv(csv_file)
                 
+                # Check if required fields are present
+                required_fields = ["PurchaseDate", "Quantity", "TotalAmount", "Category", "ProductName"]
+                missing_fields = [field for field in required_fields if field not in sample_data.columns]
+                if missing_fields:
+                    messages.error(request, f"Missing fields in CSV: {', '.join(missing_fields)}")
+                    return redirect('predict')
+                
+                # Check for null, empty, or missing values
+                if sample_data.isnull().values.any() or sample_data.empty:
+                    messages.error(request, "Null, empty, or missing values found in the CSV file.")
+                    return redirect('predict')
+                
+                # Check for outliers
+                numeric_columns = ["Quantity", "TotalAmount"]
+                outliers = []
+                for column in numeric_columns:
+                    Q1 = sample_data[column].quantile(0.25)
+                    Q3 = sample_data[column].quantile(0.75)
+                    IQR = Q3 - Q1
+                    outliers.extend(sample_data[(sample_data[column] < (Q1 - 1.5 * IQR)) | (sample_data[column] > (Q3 + 1.5 * IQR))].index)
+                if outliers:
+                    messages.error(request, f"Outliers found in rows: {', '.join(map(str, outliers))}")
+                    return redirect('predict')
+
                 # Preprocess the data
                 sample_data['PurchaseDate'] = pd.to_datetime(sample_data['PurchaseDate'])
                 sample_data['Year'] = sample_data['PurchaseDate'].dt.year
                 sample_data['Month'] = sample_data['PurchaseDate'].dt.month
                 sample_data['Day'] = sample_data['PurchaseDate'].dt.day
                 sample_data['Quantity'] = pd.to_numeric(sample_data['Quantity'])
+                sample_data['TotalAmount'] = pd.to_numeric(sample_data['TotalAmount'])
                 
             except Exception as e:
                 messages.error(request, f'Error reading CSV: {e}')
                 return redirect('predict')
-                           
-            model_path = settings.ML_MODEL_PATH
- 
-            if not os.path.exists(model_path):
-                messages.error(request, "Model file not found.")
-                return redirect('predict')
-                 
-            try:
-                model = joblib.load(model_path)
-            except Exception as e:
-                messages.error(request, f'Error loading model: {e}')
-                return redirect('predict')
              
             try:
+                # Train-test split
+                X = sample_data[['Year', 'Month', 'Day', 'Quantity']]
+                y = sample_data['TotalAmount']
+                X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+ 
+                # Train the model
+                model = GradientBoostingRegressor()
+                model.fit(X_train, y_train)
+
                 # Test the model
                 sample_data['PredictedTotalAmount'] = model.predict(sample_data[['Year', 'Month', 'Day', 'Quantity']])
 
@@ -402,7 +426,7 @@ def prediction(request):
                     'future_purchase_dates': future_data['PurchaseDate'].dt.strftime('%Y-%m').tolist(),
                     'predicted_total_amounts': future_data['PredictedTotalAmount'].tolist(),
                 }
-                
+
                 images_present = True
             except Exception as e:
                 messages.error(request, f'Error in prediction or data processing: {e}')
